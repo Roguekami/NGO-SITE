@@ -1,0 +1,2863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hope Rebuild - Disaster Relief Initiative</title>
+    <style>
+        /* ==================== RESET & BASE STYLES ==================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background-color: #f9fafb;
+        }
+
+        /* ==================== NAVIGATION ==================== */
+        .navbar {
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            color: #2563eb;
+        }
+
+        .logo-text h1 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1f2937;
+        }
+
+        .logo-text p {
+            font-size: 0.75rem;
+            color: #6b7280;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-link {
+            padding: 0.5rem 1rem;
+            color: #4b5563;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-link:hover {
+            background: #f3f4f6;
+            color: #2563eb;
+        }
+
+        .nav-link.active {
+            background: #dbeafe;
+            color: #2563eb;
+            font-weight: 600;
+        }
+
+        .donate-btn {
+            background: #dc2626;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-left: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px rgba(220, 38, 38, 0.3);
+        }
+
+        .donate-btn:hover {
+            background: #b91c1c;
+            box-shadow: 0 6px 12px rgba(220, 38, 38, 0.4);
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #4b5563;
+        }
+
+        /* ==================== HERO SECTION ==================== */
+        .hero {
+            padding: 140px 1.5rem 80px;
+            background: linear-gradient(135deg, #dbeafe 0%, #d1fae5 50%, #dbeafe 100%);
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #374151;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+            padding: 1.25rem 2.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.125rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: all 0.3s;
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(37, 99, 235, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #dc2626;
+            padding: 1.25rem 2.5rem;
+            border: 3px solid #dc2626;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.125rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: all 0.3s;
+            box-shadow: 0 10px 20px rgba(220, 38, 38, 0.2);
+            cursor: pointer;
+        }
+
+        .btn-secondary:hover {
+            background: #fef2f2;
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(220, 38, 38, 0.3);
+        }
+
+        /* ==================== SECTIONS ==================== */
+        .section {
+            padding: 4rem 1.5rem;
+        }
+
+        .section-white {
+            background: white;
+        }
+
+        .section-gray {
+            background: #f9fafb;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.25rem;
+            color: #6b7280;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* ==================== CARDS ==================== */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+
+        .card:hover {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .card-icon {
+            width: 64px;
+            height: 64px;
+            padding: 12px;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .card p {
+            color: #6b7280;
+            margin-bottom: 1rem;
+        }
+
+        /* ==================== PROGRAM CARDS ==================== */
+        .program-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            border-top: 4px solid;
+        }
+
+        .program-card:hover {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .program-card.blue {
+            border-color: #2563eb;
+        }
+
+        .program-card.green {
+            border-color: #16a34a;
+        }
+
+        .program-card.purple {
+            border-color: #9333ea;
+        }
+
+        .program-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .program-icon {
+            width: 64px;
+            height: 64px;
+            padding: 12px;
+            border-radius: 12px;
+            margin-right: 1rem;
+        }
+
+        .impact-box {
+            background: #f9fafb;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .impact-box h4 {
+            font-size: 0.875rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .impact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 0.75rem;
+            font-size: 0.875rem;
+        }
+
+        .impact-item::before {
+            content: "✓";
+            color: #16a34a;
+            font-weight: bold;
+            margin-right: 0.5rem;
+            flex-shrink: 0;
+        }
+
+        .program-btn {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 12px;
+            border: none;
+            color: white;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .program-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        /* ==================== CTA BANNERS ==================== */
+        .cta-banner {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            text-align: center;
+            color: white;
+            margin: 3rem 0;
+        }
+
+        .cta-banner h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .cta-banner p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-banner .btn-primary {
+            background: white;
+            color: #dc2626;
+        }
+
+        .cta-banner .btn-primary:hover {
+            background: #f3f4f6;
+        }
+
+        /* ==================== FORMS ==================== */
+        .form-container {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .form-label .required {
+            color: #dc2626;
+        }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 2px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            margin-top: 0.25rem;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .checkbox-group label {
+            font-size: 0.875rem;
+            color: #4b5563;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 1.25rem;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.125rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+        }
+
+        .form-submit:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(37, 99, 235, 0.4);
+        }
+
+        .form-submit.donate-submit {
+            background: #dc2626;
+        }
+
+        .form-submit.donate-submit:hover {
+            background: #b91c1c;
+        }
+
+        /* ==================== DONATION AMOUNTS ==================== */
+        .amount-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .amount-btn {
+            padding: 1.25rem;
+            border: 2px solid #d1d5db;
+            border-radius: 12px;
+            background: white;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .amount-btn:hover {
+            border-color: #dc2626;
+        }
+
+        .amount-btn.active {
+            border-color: #dc2626;
+            background: #fef2f2;
+            color: #dc2626;
+        }
+
+        .donation-type-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .type-btn {
+            padding: 1.5rem;
+            border: 3px solid #d1d5db;
+            border-radius: 12px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: left;
+        }
+
+        .type-btn:hover {
+            border-color: #2563eb;
+        }
+
+        .type-btn.active {
+            border-color: #2563eb;
+            background: #dbeafe;
+        }
+
+        .type-btn h3 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .type-btn p {
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+
+        /* ==================== ALERT BOXES ==================== */
+        .alert {
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .alert-warning {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+        }
+
+        .alert-info {
+            background: #dbeafe;
+            border-left: 4px solid #2563eb;
+        }
+
+        .alert-danger {
+            background: #fee2e2;
+            border-left: 4px solid #dc2626;
+        }
+
+        /* ==================== FOOTER ==================== */
+        .footer {
+            background: #111827;
+            color: white;
+            padding: 3rem 1.5rem 1.5rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            max-width: 1280px;
+            margin: 0 auto 3rem;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .footer-section h4 {
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-section a {
+            color: #9ca3af;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 2rem;
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.875rem;
+            color: #9ca3af;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        /* ==================== STEPS ==================== */
+        .steps-container {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .step {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: #dbeafe;
+            color: #2563eb;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .step-content p {
+            color: #6b7280;
+        }
+
+        /* ==================== RESOURCES ==================== */
+        .resource-link {
+            display: flex;
+            gap: 1rem;
+            padding: 1.25rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            transition: all 0.3s;
+            text-decoration: none;
+            color: inherit;
+            margin-bottom: 1rem;
+        }
+
+        .resource-link:hover {
+            background: #f9fafb;
+            border-color: #2563eb;
+        }
+
+        .resource-icon {
+            width: 24px;
+            height: 24px;
+            color: #2563eb;
+            flex-shrink: 0;
+            margin-top: 0.25rem;
+        }
+
+        .resource-content h3 {
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .resource-content p {
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .nav-menu.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: 1rem;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .section-header h2 {
+                font-size: 1.75rem;
+            }
+
+            .donation-type-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* ==================== HIDDEN CLASS ==================== */
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo" onclick="showPage('home')">
+                <svg class="logo-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                </svg>
+                <div class="logo-text">
+                    <h1>Hope Rebuild</h1>
+                    <p>Disaster Relief Initiative</p>
+                </div>
+            </div>
+
+            <div class="nav-menu" id="navMenu">
+                <a href="#" class="nav-link active" onclick="showPage('home')">Home</a>
+                <a href="#" class="nav-link" onclick="showPage('programs')">Programs</a>
+                <a href="gethelp.html" class="nav-link" onclick="showPage('get-help')">Get Help</a>
+                <a href="#" class="nav-link" onclick="showPage('resources')">Support & Resources</a>
+                <a href="#" class="nav-link" onclick="showPage('about')">About Us</a>
+                <a href="#" class="donate-btn" onclick="showPage('donate')">
+                    <span>❤️</span> Donate
+                </a>
+            </div>
+
+            <button class="mobile-toggle" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </nav>
+
+    <!-- ==================== HOME PAGE ==================== -->
+    <div id="page-home" class="page">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Rebuilding Lives After Disaster</h1>
+                <p>We provide emergency shelter, government aid guidance, and long-term recovery support for families affected by natural disasters</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick="showPage('get-help')">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                        </svg>
+                        I Need Help Now
+                    </button>
+                    <button class="btn-secondary" onclick="showPage('donate')">
+                        <span style="font-size: 1.5rem;">❤️</span>
+                        Help Someone Today
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission Section -->
+        <section class="section section-white">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Mission</h2>
+                    <p>To provide compassionate, effective disaster relief that helps families recover with dignity and rebuild stronger communities</p>
+                </div>
+
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-icon" style="background: #dbeafe; color: #2563eb;">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                            </svg>
+                        </div>
+                        <h3>Emergency Response</h3>
+                        <p>Immediate shelter and essential supplies for disaster survivors</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon" style="background: #d1fae5; color: #16a34a;">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                            </svg>
+                        </div>
+                        <h3>Aid Navigation</h3>
+                        <p>Expert guidance on accessing government assistance programs</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon" style="background: #e9d5ff; color: #9333ea;">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                            </svg>
+                        </div>
+                        <h3>Community Rebuilding</h3>
+                        <p>Long-term support for sustainable neighborhood recovery</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Programs Preview -->
+        <section class="section section-gray">
+            <div class="container">
+                <div class="section-header">
+                    <h2>How We Help</h2>
+                    <p>Three core programs serving disaster-affected communities</p>
+                </div>
+
+                <div class="card-grid">
+                    <div class="card" style="cursor: pointer;" onclick="showPage('programs')">
+                        <svg width="48" height="48" fill="none" stroke="#2563eb" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                        </svg>
+                        <h3>Emergency Housing</h3>
+                        <p>Movable homes and temporary shelter solutions</p>
+                        <span style="color: #2563eb; font-weight: 600;">Learn More →</span>                       <p style="color: #4b5563;">We treat every person with dignity, empathy, and respect</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; margin-bottom: 1rem;">
+                        <svg width="24" height="24" fill="none" stroke="#16a34a" viewBox="0 0 24 24" style="flex-shrink: 0; margin-right: 0.75rem; margin-top: 0.25rem;">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <div>
+                            <h3 style="font-weight: 700; margin-bottom: 0.25rem;">Transparency</h3>
+                            <p style="color: #4b5563;">Complete accountability in how we use donated funds</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; margin-bottom: 1rem;">
+                        <svg width="24" height="24" fill="none" stroke="#16a34a" viewBox="0 0 24 24" style="flex-shrink: 0; margin-right: 0.75rem; margin-top: 0.25rem;">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <div>
+                            <h3 style="font-weight: 700; margin-bottom: 0.25rem;">Community-Centered</h3>
+                            <p style="color: #4b5563;">Solutions designed with and for affected communities</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: flex-start;">
+                        <svg width="24" height="24" fill="none" stroke="#16a34a" viewBox="0 0 24 24" style="flex-shrink: 0; margin-right: 0.75rem; margin-top: 0.25rem;">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <div>
+                            <h3 style="font-weight: 700; margin-bottom: 0.25rem;">Excellence</h3>
+                            <p style="color: #4b5563;">Highest standards in service delivery and operations</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="alert alert-info">
+                    <div>
+                        <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">Why Donations Matter</h2>
+                        <p style="line-height: 1.8; margin-bottom: 1rem;">
+                            Your contributions directly fund life-changing programs. We maintain complete financial transparency with quarterly reports showing exactly how donations are used. On average, 95% of all funds go directly to program services, with only 5% for essential administrative costs.
+                        </p>
+                        <p style="line-height: 1.8;">
+                            Every donation helps provide emergency housing, legal assistance for accessing government aid, essential supplies, trauma counseling, job training, and community rebuilding resources. Your generosity transforms lives.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="alert alert-warning">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="flex-shrink: 0;">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                    </svg>
+                    <div>
+                        <h3 style="font-weight: 700; margin-bottom: 0.5rem;">Important Legal Disclaimer</h3>
+                        <p style="line-height: 1.8; margin-bottom: 0.75rem;">
+                            Hope Rebuild is an independent nonprofit organization. <strong>We are not a government agency</strong> and do not process government payments, refunds, or disaster relief funds directly.
+                        </p>
+                        <p style="line-height: 1.8;">
+                            We provide guidance and support to help disaster survivors navigate government assistance programs, understand tax relief options, and complete applications. We connect people with official government resources and advocate on their behalf, but all official government aid comes from government agencies, not from our organization.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="form-container">
+                    <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">Recognition & Partnerships</h2>
+                    <p style="color: #4b5563; line-height: 1.8; margin-bottom: 1rem;">
+                        We are a registered nonprofit organization with full government recognition and certification. We partner with national emergency management agencies, local government units, international relief organizations, and community groups to maximize our impact.
+                    </p>
+                    <p style="color: #4b5563; line-height: 1.8;">
+                        Our work has been recognized by humanitarian organizations and featured in media coverage highlighting effective disaster response programs.
+                    </p>
+                </div>
+
+                <div style="text-align: center; margin-top: 3rem;">
+                    <button class="btn-primary" style="background: #dc2626;" onclick="showPage('donate')">
+                        <span style="font-size: 1.5rem;">❤️</span>
+                        Support Our Mission
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== RESOURCES PAGE ==================== -->
+    <div id="page-resources" class="page hidden">
+        <div style="padding-top: 120px; padding-bottom: 4rem; background: #f9fafb;">
+            <div class="container">
+                <div class="section-header">
+                    <h1 style="font-size: 3rem; font-weight: 800;">Disaster Recovery Resources</h1>
+                    <p>Helpful information, guides, and links to support your recovery journey</p>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+                    <!-- Government Aid Resources -->
+                    <div class="form-container">
+                        <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                            <div style="background: #dbeafe; padding: 0.75rem; border-radius: 12px; margin-right: 1rem;">
+                                <svg width="32" height="32" fill="none" stroke="#2563eb" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                </svg>
+                            </div>
+                            <h2 style="font-size: 1.5rem; font-weight: 700;">Government Aid Programs</h2>
+                        </div>
+
+                        <a href="#" class="resource-link">
+                            <svg class="resource-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                            </svg>
+                            <div class="resource-content">
+                                <h3>National Emergency Management Agency (NEMA)</h3>
+                                <p>Official disaster relief and assistance programs</p>
+                            </div>
+                        </a>
+
+                        <a href="#" class="resource-link">
+                            <svg class="resource-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                            </svg>
+                            <div class="resource-content">
+                                <h3>Federal Inland Revenue Service</h3>
+                                <p>Tax relief information for disaster victims</p>
+                            </div>
+                        </a>
+
+                        <a href="#" class="resource-link">
+                            <svg class="resource-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                            </svg>
+                            <div class="resource-content">
+                                <h3>State Emergency Management Agencies</h3>
+                                <p>Local disaster response and recovery services</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Housing Resources -->
+                    <div class="form-container">
+                        <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                            <div style="background: #d1fae5; padding: 0.75rem; border-radius: 12px; margin-right: 1rem;">
+                                <svg width="32" height="32" fill="none" stroke="#16a34a" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                                </svg>
+                            </div>
+                            <h2 style="font-size: 1.5rem; font-weight: 700;">Housing & Shelter</h2>
+                        </div>
+
+                        <a href="#" class="resource-link">
+                            <svg class="resource-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                            </svg>
+                            <div class="resource-content">
+                                <h3>Emergency Shelter Locator</h3>
+                                <p>Find temporary housing in your area</p>
+                            </div>
+                        </a>
+
+                        <a href="#" class="resource-link">
+                            <svg class="resource-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                            </svg>
+                            <div class="resource-content">
+                                <h3>Affordable Housing Programs</h3>
+                                <p>Long-term housing assistance options</p>
+                            </div>
+                        </a>
+
+                        <a href="#" class="resource-link">
+                            <svg class="resource-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                            </svg>
+                            <div class="resource-content">
+                                <h3>Rebuilding Grants & Loans</h3>
+                                <p>Financial assistance for home repairs</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Downloadable Guides -->
+                <div class="form-container" style="margin-bottom: 3rem;">
+                    <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem; display: flex; align-items: center;">
+                        <svg width="24" height="24" fill="none" stroke="#9333ea" viewBox="0 0 24 24" style="margin-right: 0.75rem;">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                        </svg>
+                        Downloadable Guides
+                    </h2>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                        <div style="border: 2px solid #e5e7eb; border-radius: 12px; padding: 1.5rem; transition: all 0.3s; cursor: pointer;">
+                            <h3 style="font-weight: 700; margin-bottom: 0.5rem;">Disaster Recovery Checklist</h3>
+                            <p style="font-size: 0.875rem; color: #6b7280; margin-bottom: 1rem;">Step-by-step guide for the first 30 days after a disaster</p>
+                            <button style="color: #9333ea; font-weight: 600; background: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 0.5rem;">
+                                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                                </svg>
+                                Download PDF
+                            </button>
+                        </div>
+
+                        <div style="border: 2px solid #e5e7eb; border-radius: 12px; padding: 1.5rem; transition: all 0.3s; cursor: pointer;">
+                            <h3 style="font-weight: 700; margin-bottom: 0.5rem;">Government Aid Application Guide</h3>
+                            <p style="font-size: 0.875rem; color: #6b7280; margin-bottom: 1rem;">Complete instructions for applying for disaster relief</p>
+                            <button style="color: #9333ea; font-weight: 600; background: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 0.5rem;">
+                                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                                </svg>
+                                Download PDF
+                            </button>
+                        </div>
+
+                        <div style="border: 2px solid #e5e7eb; border-radius: 12px; padding: 1.5rem; transition: all 0.3s; cursor: pointer;">
+                            <h3 style="font-weight: 700; margin-bottom: 0.5rem;">Tax Relief for Disaster Victims</h3>
+                            <p style="font-size: 0.875rem; color: #6b7280; margin-bottom: 1rem;">Understanding available tax benefits and how to claim them</p>
+                            <button style="color: #9333ea; font-weight: 600; background: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 0.5rem;">
+                                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                                </svg>
+                                Download PDF
+                            </button>
+                        </div>
+
+                        <div style="border: 2px solid #e5e7eb; border-radius: 12px; padding: 1.5rem; transition: all 0.3s; cursor: pointer;">
+                            <h3 style="font-weight: 700; margin-bottom: 0.5rem;">Mental Health Support Resources</h3>
+                            <p style="font-size: 0.875rem; color: #6b7280; margin-bottom: 1rem;">Coping with trauma and finding professional help</p>
+                            <button style="color: #9333ea; font-weight: 600; background: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 0.5rem;">
+                                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                                </svg>
+                                Download PDF
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Section -->
+                <div class="form-container" style="margin-bottom: 3rem;">
+                    <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem;">Frequently Asked Questions</h2>
+
+                    <div style="margin-bottom: 1.5rem;">
+                        <h3 style="font-weight: 700; margin-bottom: 0.5rem;">Who is eligible for disaster relief assistance?</h3>
+                        <p style="color: #4b5563; line-height: 1.7;">Anyone who has been directly affected by a natural disaster may be eligible for our services. This includes those who have lost homes, sustained property damage, or experienced financial hardship due to disasters.</p>
+                    </div>
+
+                    <div style="margin-bottom: 1.5rem;">
+                        <h3 style="font-weight: 700; margin-bottom: 0.5rem;">How long does it take to receive help?</h3>
+                        <p style="color: #4b5563; line-height: 1.7;">Our emergency response team contacts applicants within 24 hours of submission. Emergency housing can typically be arranged within 48-72 hours depending on availability.</p>
+                    </div>
+
+                    <div style="margin-bottom: 1.5rem;">
+                        <h3 style="font-weight: 700; margin-bottom: 0.5rem;">Do I have to pay for your services?</h3>
+                        <p style="color: #4b5563; line-height: 1.7;">No. All our disaster relief services are provided free of charge to survivors. We are funded entirely by donations and grants.</p>
+                    </div>
+
+                    <div>
+                        <h3 style="font-weight: 700; margin-bottom: 0.5rem;">Can you help me get government disaster relief money?</h3>
+                        <p style="color: #4b5563; line-height: 1.7;">We provide guidance and assistance with completing government aid applications, but we cannot guarantee approval. All decisions about government assistance are made by the relevant government agencies.</p>
+                    </div>
+                </div>
+
+                <!-- Bottom CTA -->
+                <div class="cta-banner">
+                    <h2>Help Us Reach More People</h2>
+                    <p>These resources save lives. Your donation helps us expand our programs and assist more families in need</p>
+                    <button class="btn-primary" onclick="showPage('donate')">
+                        <span style="font-size: 1.5rem;">❤️</span>
+                        Donate Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand">
+                    <svg width="32" height="32" fill="none" stroke="#3b82f6" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                    </svg>
+                    <h3>Hope Rebuild</h3>
+                </div>
+                <p style="color: #9ca3af; font-size: 0.875rem; line-height: 1.6;">
+                    A trusted nonprofit organization dedicated to helping communities recover from natural disasters with dignity and hope.
+                </p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#" onclick="showPage('home')">Home</a></li>
+                    <li><a href="#" onclick="showPage('programs')">Programs</a></li>
+                    <li><a href="#" onclick="showPage('get-help')">Get Help</a></li>
+                    <li><a href="#" onclick="showPage('about')">About Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Get Involved</h4>
+                <ul>
+                    <li><a href="#" onclick="showPage('donate')">Donate</a></li>
+                    <li><a href="#" onclick="showPage('resources')">Resources</a></li>
+                    <li><a href="#">Volunteer</a></li>
+                    <li><a href="#">Partner With Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul style="color: #9ca3af; font-size: 0.875rem;">
+                    <li style="display: flex; align-items: flex-start; gap: 0.5rem;">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="flex-shrink: 0; margin-top: 0.125rem;">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                        </svg>
+                        <span>+234 800 HELP NOW<br>(+234 800 4357 669)</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 0.5rem; margin-top: 0.75rem;">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="flex-shrink: 0;">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                        <span>support@hoperebuild.org</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 0.5rem; margin-top: 0.75rem;">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="flex-shrink: 0;">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        <span>Lagos, Nigeria</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Hope Rebuild Initiative. All rights reserved.</p>
+            <div class="footer-links">
+                <span style="cursor: pointer;">Privacy Policy</span>
+                <span style="cursor: pointer;">Terms of Service</span>
+                <span style="cursor: pointer;">Transparency Report</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+    <script>
+        // Global variables for donation form
+        let selectedAmount = null;
+        let selectedDonationType = 'one-time';
+
+        // Page navigation
+        function showPage(pageName) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.add('hidden');
+            });
+
+            // Show selected page
+            document.getElementById('page-' + pageName).classList.remove('hidden');
+
+            // Update nav links
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+
+            // Add active class to clicked nav link
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                if (link.textContent.toLowerCase().includes(pageName.replace('-', ' '))) {
+                    link.classList.add('active');
+                }
+            });
+
+            // Close mobile menu
+            document.getElementById('navMenu').classList.remove('active');
+
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            document.getElementById('navMenu').classList.toggle('active');
+        }
+
+        // Donation type selection
+        function selectDonationType(element, type) {
+            document.querySelectorAll('.type-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            element.classList.add('active');
+            selectedDonationType = type;
+        }
+
+        // Amount selection
+        function selectAmount(element, amount) {
+            document.querySelectorAll('.amount-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            element.classList.add('active');
+            selectedAmount = amount;
+
+            const customAmountInput = document.getElementById('customAmount');
+            if (amount === 'custom') {
+                customAmountInput.style.display = 'block';
+                customAmountInput.required = true;
+            } else {
+                customAmountInput.style.display = 'none';
+                customAmountInput.required = false;
+                customAmountInput.value = '';
+            }
+        }
+
+        // Form submissions
+        function submitHelpForm(event) {
+            event.preventDefault();
+            alert('Thank you for your request! Our team will contact you within 24 hours.');
+            event.target.reset();
+        }
+
+        function submitDonation(event) {
+            event.preventDefault();
+            
+            const finalAmount = selectedAmount === 'custom' ? document.getElementById('customAmount').value : selectedAmount;
+            
+            if (!finalAmount) {
+                alert('Please select or enter a donation amount');
+                return;
+            }
+
+            alert(`Thank you for your ${selectedDonationType} donation of ₦${parseInt(finalAmount).toLocaleString()}! Your generosity will help families rebuild their lives.`);
+            event.target.reset();
+            
+            // Reset amount selection
+            document.querySelectorAll('.amount-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('customAmount').style.display = 'none';
+            selectedAmount = null;
+        }
+
+        // Initialize page on load
+        window.addEventListener('load', function() {
+            showPage('home');
+        });
+    </script>
+</body>
+</html>                        <span style="color: #2563eb; font-weight: 600;">Learn More →</span>
+                    </div>
+
+                    <div class="card" style="cursor: pointer;" onclick="showPage('programs')">
+                        <svg width="48" height="48" fill="none" stroke="#16a34a" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                        <h3>Government Aid Support</h3>
+                        <p>Navigating disaster relief and tax assistance</p>
+                        <span style="color: #16a34a; font-weight: 600;">Learn More →</span>
+                    </div>
+
+                    <div class="card" style="cursor: pointer;" onclick="showPage('programs')">
+                        <svg width="48" height="48" fill="none" stroke="#9333ea" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                        <h3>Community Recovery</h3>
+                        <p>Long-term rebuilding and resilience programs</p>
+                        <span style="color: #9333ea; font-weight: 600;">Learn More →</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Banner -->
+        <section class="section section-white">
+            <div class="container">
+                <div class="cta-banner">
+                    <h2>Help Families Rebuild Their Lives</h2>
+                    <p>Your support provides emergency shelter, essential supplies, and long-term recovery assistance to disaster survivors</p>
+                    <button class="btn-primary" onclick="showPage('donate')">
+                        <span style="font-size: 1.5rem;">❤️</span>
+                        Make a Donation
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ==================== PROGRAMS PAGE ==================== -->
+    <div id="page-programs" class="page hidden">
+        <div style="padding-top: 120px; padding-bottom: 4rem;">
+            <div class="container">
+                <div class="section-header">
+                    <h1 style="font-size: 3rem; font-weight: 800;">Our Programs</h1>
+                    <p>Comprehensive disaster relief services designed to help families recover and communities rebuild stronger</p>
+                </div>
+
+                <!-- Program Stats Banner -->
+                <div style="background: linear-gradient(135deg, #2563eb 0%, #16a34a 100%); border-radius: 16px; padding: 3rem 2rem; color: white; margin-bottom: 4rem;">
+                    <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 2rem; text-align: center;">Our Impact in Numbers</h2>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: center;">
+                        <div>
+                            <div style="font-size: 3rem; font-weight: 800; margin-bottom: 0.5rem;">2,500+</div>
+                            <p style="opacity: 0.95; font-size: 1.125rem;">Families Helped</p>
+                        </div>
+                        <div>
+                            <div style="font-size: 3rem; font-weight: 800; margin-bottom: 0.5rem;">500+</div>
+                            <p style="opacity: 0.95; font-size: 1.125rem;">Homes Provided</p>
+                        </div>
+                        <div>
+                            <div style="font-size: 3rem; font-weight: 800; margin-bottom: 0.5rem;">₦45M</div>
+                            <p style="opacity: 0.95; font-size: 1.125rem;">Aid Distributed</p>
+                        </div>
+                        <div>
+                            <div style="font-size: 3rem; font-weight: 800; margin-bottom: 0.5rem;">15</div>
+                            <p style="opacity: 0.95; font-size: 1.125rem;">Communities Rebuilt</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Emergency Housing Program -->
+                <div class="program-card blue" style="margin-bottom: 3rem;">
+                    <div class="program-header">
+                        <div class="program-icon" style="background: #dbeafe;">
+                            <svg fill="none" stroke="#2563eb" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                            </svg>
+                        </div>
+                        <h2 style="font-size: 2rem; font-weight: 700;">Emergency Housing Program</h2>
+                    </div>
+                    
+                    <p style="color: #4b5563; line-height: 1.8; margin-bottom: 1.5rem; font-size: 1.125rem;">
+                        Our flagship program provides immediate shelter solutions for families who have lost their homes to floods, fires, storms, and other natural disasters. We deploy movable housing units within 48-72 hours of application approval, ensuring families have safe, dignified temporary accommodation.
+                    </p>
+
+                    <div style="background: #f9fafb; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem;">
+                        <h3 style="font-size: 1.125rem; font-weight: 700; margin-bottom: 1rem; color: #1f2937;">What We Provide:</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                            <div>
+                                <div style="display: flex; align-items: flex-start; margin-bottom: 0.75rem;">
+                                    <span style="color: #2563eb; margin-right: 0.5rem; font-size: 1.25rem;">✓</span>
+                                    <span style="color: #4b5563;"><strong>Movable Home Units:</strong> Fully equipped temporary housing with beds, kitchen, and bathroom</span>
+                                </div>
+                                <div style="display: flex; align-items: flex-start; margin-bottom: 0.75rem;">
+                                    <span style="color: #2563eb; margin-right: 0.5rem; font-size: 1.25rem;">✓</span>
+                                    <span style="color: #4b5563;"><strong>Essential Furniture:</strong> Tables, chairs, storage, and sleeping arrangements</span>
+                                </div>
+                                <div style="display: flex; align-items: flex-start;">
+                                    <span style="color: #2563eb; margin-right: 0.5rem; font-size: 1.25rem;">✓</span>
+                                    <span style="color: #4b5563;"><strong>Basic Utilities:</strong> Connection to water, electricity where available</span>
+                                </div>
+                            </div>
+                            <div>
+                                <div style="display: flex; align-items: flex-start; margin-bottom: 0.75rem;">
+                                    <span style="color: #2563eb; margin-right: 0.5rem; font-size: 1.25rem;">✓</span>
+                                    <span style="color: #4b5563;"><strong>Household Supplies:</strong> Cooking utensils, bedding, hygiene products</span>
+                                </div>
+                                <div style="display: flex; align-items: flex-start; margin-bottom: 0.75rem;">
+                                    <span style="color: #2563eb; margin-right: 0.5rem; font-size: 1.25rem;">✓</span>
+                                    <span style="color: #4b5563;"><strong>Food Packages:</strong> Initial 2-week supply of non-perishables</span>
+                                </div>
+                                <div style="display: flex; align-items: flex-start;">
+                                    <span style="color: #2563eb; margin-right: 0.5rem; font-size: 1.25rem;">✓</span>
+                                    <span style="color: #4b5563;"><strong>Ongoing Support:</strong> Regular check-ins and maintenance</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="impact-box">
+                        <h4>How Your Donation Helps:</h4>
+                        <div class="impact-item">₦50,000 sponsors one complete movable home unit for a family (6 months)</div>
+                        <div class="impact-item">₦15,000 funds one month of housing support including utilities and maintenance</div>
+                        <div class="impact-item">₦5,000 provides essential furniture and household items for one family</div>
+                        <div class="impact-item">₦2,000 supplies a 2-week emergency food package</div>
+                    </div>
+
+                    <div style="background: #dbeafe; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0;">
+                        <h4 style="font-weight: 700; margin-bottom: 1rem; color: #1e40af;">Program Success Story</h4>
+                        <p style="color: #1e40af; font-style: italic; line-height: 1.7;">
+                            "After the floods destroyed our home, we had nowhere to go. Hope Rebuild provided us with a movable home within 3 days. It gave our family shelter, safety, and hope. We lived there for 8 months while rebuilding our permanent home. We are forever grateful."
+                            <br><strong>— Mrs. Adebayo, Lagos State</strong>
+                        </p>
+                    </div>
+                    
+                    <button class="program-btn" style="background: #2563eb;" onclick="showPage('donate')">
+                        Support Emergency Housing Program →
+                    </button>
+                </div>
+
+                <!-- Government Aid Program -->
+                <div class="program-card green" style="margin-bottom: 3rem;">
+                    <div class="program-header">
+                        <div class="program-icon" style="background: #d1fae5;">
+                            <svg fill="none" stroke="#16a34a" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                            </svg>
+                        </div>
+                        <h2 style="font-size: 2rem; font-weight: 700;">Government Aid Navigation Program</h2>
+                    </div>
+                    
+                    <p style="color: #4b5563; line-height: 1.8; margin-bottom: 1.5rem; font-size: 1.125rem;">
+                        Navigating government assistance can be overwhelming during a crisis. Our expert team guides disaster survivors through complex application processes, helps gather required documentation, and advocates on your behalf to access available government relief programs, tax benefits, and recovery grants.
+                    </p>
+
+                    <div style="background: #f9fafb; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem;">
+                        <h3 style="font-size: 1.125rem; font-weight: 700; margin-bottom: 1rem; color: #1f2937;">Services We Provide:</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                            <div>
+                                <div style="display: flex; align-items: flex-start; margin-bottom: 0.75rem;">
+                                    <span style="color: #16a34a; margin-right: 0.5rem; font-size: 1.25rem;">✓</span>
+                                    <span style="color: #4b5563;"><strong>Application Assistance:</strong> Help completing NEMA and state emergency forms</span>
+                                </div>
+                                <div style="display: flex; align-items: flex-start; margin-bottom: 0.75rem;">
+                                    <span style="color: #16a34a; margin-right: 0.5rem; font-size: 1.25rem;">✓</span>
+                                    <span style="color: #4b5563;"><strong>Document Preparation:</strong> Organizing proof of loss and identity documents</span>
+                                </div>
+                                <div style="display: flex; align-items: flex-start;">
+                                    <span style="color: #16a34a; margin-right: 0.5rem; font-size: 1.25rem;">✓</span>
+                                    <span style="color: #4b5563;"><strong>Legal Support:</strong> Pro bono legal aid for complex cases</span>
+                                </div>
+                            </div>
+                            <div>
+                                <div style="display: flex; align-items: flex-start; margin-bottom: 0.75rem;">
+                                    <span style="color: #16a34a; margin-right: 0.5rem; font-size: 1.25rem;">✓</span>
+                                    <span style="color: #4b5563;"><strong>Tax Relief Guidance:</strong> Understanding disaster-related tax deductions</span>
+                                </div>
+                                <div style="display: flex; align-items: flex-start; margin-bottom: 0.75rem;">
+                                    <span style="color: #16a34a; margin-right: 0.5rem; font-size: 1.25rem;">✓</span>
+                                    <span style="color: #4b5563;"><strong>Follow-up Services:</strong> Tracking application status and appeals</span>
+                                </div>
+                                <div style="display: flex; align-items: flex-start;">
+                                    <span style="color: #16a34a; margin-right: 0.5rem; font-size: 1.25rem;">✓</span>
+                                    <span style="color: #4b5563;"><strong>Advocacy:</strong> Representing you in government communications</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="impact-box">
+                        <h4>How Your Donation Helps:</h4>
+                        <div class="impact-item">₦25,000 funds complete application support for 5 families</div>
+                        <div class="impact-item">₦10,000 provides legal assistance and representation for one family's claims</div>
+                        <div class="impact-item">₦3,000 covers document preparation, filing fees, and photocopies</div>
+                        <div class="impact-item">₦1,500 supports follow-up services and status tracking for one case</div>
+                    </div>
+
+                    <div style="background: #d1fae5; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0;">
+                        <h4 style="font-weight: 700; margin-bottom: 1rem; color: #15803d;">Program Success Story</h4>
+                        <p style="color: #15803d; font-style: italic; line-height: 1.7;">
+                            "I didn't know where to start with government aid applications. The forms were confusing and I kept getting rejected. Hope Rebuild helped me organize my documents, fill out the forms correctly, and even spoke to officials on my behalf. I received ₦180,000 in disaster relief that I would have never gotten alone."
+                            <br><strong>— Mr. Okonkwo, Anambra State</strong>
+                        </p>
+                    </div>
+                    
+                    <button class="program-btn" style="background: #16a34a;" onclick="showPage('donate')">
+                        Support Government Aid Navigation →
+                    </button>
+                </div>
+
+                <!-- Community Rebuilding Program -->
+                <div class="program-card purple" style="margin-bottom: 3rem;">
+                    <div class="program-header">
+                        <div class="program-icon" style="background: #e9d5ff;">
+                            <svg fill="none" stroke="#9333ea" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                            </svg>
+                        </div>
+                        <h2 style="font-size: 2rem; font-weight: 700;">Community Rebuilding Initiative</h2>
+                    </div>
+                    
+                    <p style="color: #4b5563; line-height: 1.8; margin-bottom: 1.5rem; font-size: 1.125rem;">
+                        Disaster recovery doesn't end with emergency relief. Our Community Rebuilding Initiative focuses on long-term sustainable recovery through job training, mental health support, infrastructure restoration, and economic empowerment. We work alongside community leaders to create resilient neighborhoods that are better prepared for future challenges.
+                    </p>
+
+                    <div style="background: #f9fafb; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem;">
+                        <h3 style="font-size: 1.125rem; font-weight: 700; margin-bottom: 1rem; color: #1f2937;">Our Comprehensive Approach:</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                            <div>
+                                <div style="display: flex; align-items: flex-start; margin-bottom: 0.75rem;">
+                                    <span style="color: #9333ea; margin-right: 0.5rem; font-size: 1.25rem;">✓</span>
+                                    <span style="color: #4b5563;"><strong>Job Training Programs:</strong> Skills development for displaced workers</span>
+                                </div>
+                                <div style="display: flex; align-items: flex-start; margin-bottom: 0.75rem;">
+                                    <span style="color: #9333ea; margin-right: 0.5rem; font-size: 1.25rem;">✓</span>
+                                    <span style="color: #4b5563;"><strong>Mental Health Support:</strong> Trauma counseling and support groups</span>
+                                </div>
+                                <div style="display: flex; align-items: flex-start;">
+                                    <span style="color: #9333ea; margin-right: 0.5rem; font-size: 1.25rem;">✓</span>
+                                    <span style="color: #4b5563;"><strong>Small Business Grants:</strong> Helping entrepreneurs restart operations</span>
+                                </div>
+                            </div>
+                            <div>
+                                <div style="display: flex; align-items: flex-start; margin-bottom: 0.75rem;">
+                                    <span style="color: #9333ea; margin-right: 0.5rem; font-size: 1.25rem;">✓</span>
+                                    <span style="color: #4b5563;"><strong>Infrastructure Repair:</strong> Rebuilding community centers and schools</span>
+                                </div>
+                                <div style="display: flex; align-items: flex-start; margin-bottom: 0.75rem;">
+                                    <span style="color: #9333ea; margin-right: 0.5rem; font-size: 1.25rem;">✓</span>
+                                    <span style="color: #4b5563;"><strong>Youth Programs:</strong> Educational support for affected children</span>
+                                </div>
+                                <div style="display: flex; align-items: flex-start;">
+                                    <span style="color: #9333ea; margin-right: 0.5rem; font-size: 1.25rem;">✓</span>
+                                    <span style="color: #4b5563;"><strong>Disaster Preparedness:</strong> Training communities for future resilience</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="impact-box">
+                        <h4>How Your Donation Helps:</h4>
+                        <div class="impact-item">₦35,000 funds rebuilding materials for community spaces (market stalls, meeting halls)</div>
+                        <div class="impact-item">₦20,000 supports vocational training programs for 10 people (3-month courses)</div>
+                        <div class="impact-item">₦8,000 provides trauma counseling sessions for one affected family (8 sessions)</div>
+                        <div class="impact-item">₦5,000 offers small business restart grants or equipment</div>
+                    </div>
+
+                    <div style="background: #e9d5ff; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0;">
+                        <h4 style="font-weight: 700; margin-bottom: 1rem; color: #7e22ce;">Program Success Story</h4>
+                        <p style="color: #7e22ce; font-style: italic; line-height: 1.7;">
+                            "Our entire market was destroyed in the fire. Hope Rebuild didn't just help us rebuild the stalls—they trained 25 of us in new skills like tailoring and phone repair. They also provided counseling because many of us were traumatized. Today our market is thriving again and we're stronger than before."
+                            <br><strong>— Chief Nnamdi, Community Leader, Imo State</strong>
+                        </p>
+                    </div>
+                    
+                    <button class="program-btn" style="background: #9333ea;" onclick="showPage('donate')">
+                        Support Community Rebuilding →
+                    </button>
+                </div>
+
+                <!-- How to Access Programs -->
+                <div style="background: #f9fafb; border-radius: 16px; padding: 2.5rem; margin-bottom: 3rem;">
+                    <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 2rem; text-align: center;">How to Access Our Programs</h2>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                        <div style="text-align: center;">
+                            <div style="width: 64px; height: 64px; background: #dbeafe; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem; font-weight: 700; color: #2563eb;">1</div>
+                            <h3 style="font-weight: 700; margin-bottom: 0.5rem;">Submit Request</h3>
+                            <p style="color: #6b7280; font-size: 0.875rem;">Fill out our Get Help form with your information and needs</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="width: 64px; height: 64px; background: #d1fae5; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem; font-weight: 700; color: #16a34a;">2</div>
+                            <h3 style="font-weight: 700; margin-bottom: 0.5rem;">Assessment</h3>
+                            <p style="color: #6b7280; font-size: 0.875rem;">Our team reviews your case within 24 hours</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="width: 64px; height: 64px; background: #e9d5ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem; font-weight: 700; color: #9333ea;">3</div>
+                            <h3 style="font-weight: 700; margin-bottom: 0.5rem;">Get Support</h3>
+                            <p style="color: #6b7280; font-size: 0.875rem;">Receive assistance tailored to your specific situation</p>
+                        </div>
+                    </div>
+                    <div style="text-align: center; margin-top: 2rem;">
+                        <button class="btn-primary" onclick="showPage('get-help')">
+                            Apply for Assistance Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Inline CTA -->
+                <div class="cta-banner">
+                    <h2>Your Support Powers All Three Programs</h2>
+                    <p>Every donation helps provide emergency housing, government aid guidance, and long-term community rebuilding</p>
+                    <button class="btn-primary" onclick="showPage('donate')">
+                        <span style="font-size: 1.5rem;">❤️</span>
+                        Make a Donation Today
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>        <h4>How Your Donation Helps:</h4>
+                        <div class="impact-item">₦35,000 funds rebuilding materials for community spaces</div>
+                        <div class="impact-item">₦20,000 supports job training programs for 10 people</div>
+                        <div class="impact-item">₦8,000 provides trauma counseling for affected families</div>
+                    </div>
+                    <button class="program-btn" style="background: #9333ea;" onclick="showPage('donate')">
+                        Support This Program →
+                    </button>
+                </div>
+
+                <!-- Inline CTA -->
+                <div class="cta-banner">
+                    <h2>Your Support Changes Lives</h2>
+                    <p>Every donation helps families recover from disasters with dignity and hope</p>
+                    <button class="btn-primary" onclick="showPage('donate')">
+                        <span style="font-size: 1.5rem;">❤️</span>
+                        Donate Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== GET HELP PAGE ==================== -->
+    <div id="page-get-help" class="page hidden">
+        <div style="padding-top: 120px; padding-bottom: 4rem; background: #f9fafb;">
+            <div class="container" style="max-width: 900px;">
+                <div class="section-header">
+                    <h1 style="font-size: 3rem; font-weight: 800;">We're Here to Help You</h1>
+                    <p>If you've been affected by a natural disaster, we provide free support to help you recover. Our team will contact you within 24 hours.</p>
+                </div>
+
+                <!-- Steps -->
+                <div class="steps-container">
+                    <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem;">How We Can Help You</h2>
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Submit Your Request</h3>
+                            <p>Fill out the form below with your information and needs</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>We'll Contact You</h3>
+                            <p>A case manager will reach out within 24 hours to assess your situation</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Get Personalized Support</h3>
+                            <p>We'll connect you with housing, aid programs, or other services you need</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Help Request Form -->
+                <div class="form-container">
+                    <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem;">Request Assistance</h2>
+                    <form id="helpForm" onsubmit="submitHelpForm(event)">
+                        <div class="form-group">
+                            <label class="form-label">Full Name <span class="required">*</span></label>
+                            <input type="text" class="form-input" required placeholder="Enter your full name">
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Email Address <span class="required">*</span></label>
+                                <input type="email" class="form-input" required placeholder="your@email.com">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Phone Number</label>
+                                <input type="tel" class="form-input" placeholder="+234 XXX XXX XXXX">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Type of Assistance Needed <span class="required">*</span></label>
+                            <select class="form-select" required>
+                                <option value="">Select assistance type</option>
+                                <option value="emergency-housing">Emergency Housing</option>
+                                <option value="government-aid">Government Aid Guidance</option>
+                                <option value="tax-support">Tax Relief Support</option>
+                                <option value="community-resources">Community Resources</option>
+                                <option value="mental-health">Mental Health Support</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Tell Us About Your Situation</label>
+                            <textarea class="form-textarea" placeholder="Please describe what happened and how we can help you..."></textarea>
+                        </div>
+
+                        <button type="submit" class="form-submit">
+                            Submit Request for Help
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Emergency Alert -->
+                <div class="alert alert-danger">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="flex-shrink: 0;">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                    </svg>
+                    <div>
+                        <h3 style="font-weight: 700; margin-bottom: 0.5rem;">Emergency Situation?</h3>
+                        <p style="margin-bottom: 0.75rem;">If you're in immediate danger or need urgent assistance, please call our 24/7 emergency hotline:</p>
+                        <p style="font-size: 1.5rem; font-weight: 700; color: #dc2626;">+234 800 HELP NOW</p>
+                    </div>
+                </div>
+
+                <!-- Donor CTA -->
+                <div style="background: #dbeafe; border-radius: 16px; padding: 2.5rem; text-align: center; border: 2px solid #93c5fd; margin-top: 3rem;">
+                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem;">Not Affected by a Disaster?</h3>
+                    <p style="color: #374151; margin-bottom: 1.5rem;">You can still help families like these recover and rebuild their lives</p>
+                    <button class="btn-primary" style="background: #dc2626;" onclick="showPage('donate')">
+                        <span style="font-size: 1.25rem;">❤️</span>
+                        Donate to Help Others
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== DONATE PAGE ==================== -->
+    <div id="page-donate" class="page hidden">
+        <div style="padding-top: 120px; padding-bottom: 4rem; background: #f9fafb;">
+            <div class="container" style="max-width: 900px;">
+                <div class="section-header">
+                    <h1 style="font-size: 3rem; font-weight: 800;">Make a Difference Today</h1>
+                    <p>Your generosity provides immediate relief and long-term recovery support to families affected by disasters</p>
+                </div>
+
+                <!-- Impact Banner -->
+                <div style="background: linear-gradient(135deg, #2563eb 0%, #16a34a 100%); border-radius: 16px; padding: 2.5rem; color: white; margin-bottom: 3rem;">
+                    <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem; text-align: center;">Your Impact</h2>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2rem; text-align: center;">
+                        <div>
+                            <div style="font-size: 2.5rem; font-weight: 800; margin-bottom: 0.5rem;">₦5,000</div>
+                            <p style="opacity: 0.9;">Emergency supplies for 1 family</p>
+                        </div>
+                        <div>
+                            <div style="font-size: 2.5rem; font-weight: 800; margin-bottom: 0.5rem;">₦15,000</div>
+                            <p style="opacity: 0.9;">Temporary shelter for 1 week</p>
+                        </div>
+                        <div>
+                            <div style="font-size: 2.5rem; font-weight: 800; margin-bottom: 0.5rem;">₦50,000</div>
+                            <p style="opacity: 0.9;">Complete movable home unit</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Donation Form -->
+                <div class="form-container">
+                    <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 2rem;">Complete Your Donation</h2>
+                    <form id="donationForm" onsubmit="submitDonation(event)">
+                        <!-- Donation Type -->
+                        <div class="form-group">
+                            <label class="form-label">Donation Type <span class="required">*</span></label>
+                            <div class="donation-type-grid">
+                                <div class="type-btn active" onclick="selectDonationType(this, 'one-time')">
+                                    <h3>One-Time Donation</h3>
+                                    <p>Make a single contribution today</p>
+                                </div>
+                                <div class="type-btn" onclick="selectDonationType(this, 'monthly')">
+                                    <h3>Monthly Support</h3>
+                                    <p>Provide ongoing assistance</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Donation Amount -->
+                        <div class="form-group">
+                            <label class="form-label">Donation Amount <span class="required">*</span></label>
+                            <div class="amount-grid">
+                                <button type="button" class="amount-btn" onclick="selectAmount(this, 5000)">₦5,000</button>
+                                <button type="button" class="amount-btn" onclick="selectAmount(this, 10000)">₦10,000</button>
+                                <button type="button" class="amount-btn" onclick="selectAmount(this, 25000)">₦25,000</button>
+                                <button type="button" class="amount-btn" onclick="selectAmount(this, 50000)">₦50,000</button>
+                            </div>
+                            <button type="button" class="amount-btn" style="width: 100%; margin-top: 1rem;" onclick="selectAmount(this, 'custom')">Custom Amount</button>
+                            <input type="number" id="customAmount" class="form-input" placeholder="Enter custom amount" style="margin-top: 1rem; display: none;">
+                        </div>
+
+                        <!-- Personal Information -->
+                        <div style="border-top: 2px solid #e5e7eb; padding-top: 2rem; margin-top: 2rem;">
+                            <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1.5rem;">Your Information</h3>
+
+                            <div class="form-group">
+                                <label class="form-label">Full Name <span class="required">*</span></label>
+                                <input type="text" class="form-input" required placeholder="Enter your full name">
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">Email Address <span class="required">*</span></label>
+                                    <input type="email" class="form-input" required placeholder="your@email.com">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-input" placeholder="+234 XXX XXX XXXX">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Country <span class="required">*</span></label>
+                                <select class="form-select" required>
+                                    <option value="">Select your country</option>
+                                    <option value="Nigeria">Nigeria</option>
+                                    <option value="Ghana">Ghana</option>
+                                    <option value="Kenya">Kenya</option>
+                                    <option value="South Africa">South Africa</option>
+                                    <option value="United States">United States</option>
+                                    <option value="United Kingdom">United Kingdom</option>
+                                    <option value="Canada">Canada</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Message (Optional)</label>
+                                <textarea class="form-textarea" placeholder="Add a message of support (optional)"></textarea>
+                            </div>
+
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="updates">
+                                <label for="updates">Send me updates about how my donation is making an impact and future opportunities to help</label>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="form-submit donate-submit">
+                            <span style="font-size: 1.5rem;">❤️</span>
+                            Complete Donation
+                        </button>
+
+                        <p style="text-align: center; font-size: 0.875rem; color: #6b7280; margin-top: 1rem;">
+                            This is a secure donation form. Payment processing will be added in production.
+                        </p>
+                    </form>
+                </div>
+
+                <!-- Trust & Transparency -->
+                <div style="background: white; border-radius: 16px; padding: 2.5rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); margin-top: 3rem;">
+                    <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 2rem; text-align: center;">Trust & Transparency</h2>
+                    <div class="card-grid">
+                        <div style="text-align: center;">
+                            <div style="width: 48px; height: 48px; margin: 0 auto 1rem;">
+                                <svg fill="none" stroke="#16a34a" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <h3 style="font-weight: 700; margin-bottom: 0.5rem;">100% Accountable</h3>
+                            <p style="font-size: 0.875rem; color: #6b7280;">Every donation is tracked and reported publicly</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="width: 48px; height: 48px; margin: 0 auto 1rem;">
+                                <svg fill="none" stroke="#2563eb" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                                </svg>
+                            </div>
+                            <h3 style="font-weight: 700; margin-bottom: 0.5rem;">Registered NGO</h3>
+                            <p style="font-size: 0.875rem; color: #6b7280;">Fully certified and government-recognized organization</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="width: 48px; height: 48px; margin: 0 auto 1rem;">
+                                <svg fill="none" stroke="#9333ea" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                </svg>
+                            </div>
+                            <h3 style="font-weight: 700; margin-bottom: 0.5rem;">Direct Impact</h3>
+                            <p style="font-size: 0.875rem; color: #6b7280;">95% of funds go directly to program services</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== ABOUT PAGE ==================== -->
+    <div id="page-about" class="page hidden">
+        <div style="padding-top: 120px; padding-bottom: 4rem;">
+            <div class="container" style="max-width: 900px;">
+                <div class="section-header">
+                    <h1 style="font-size: 3rem; font-weight: 800;">About Hope Rebuild</h1>
+                    <p>A trusted nonprofit dedicated to helping communities recover from natural disasters</p>
+                </div>
+
+                <div class="form-container" style="margin-bottom: 2rem;">
+                    <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">Our Story</h2>
+                    <p style="color: #4b5563; line-height: 1.8; margin-bottom: 1rem;">
+                        Hope Rebuild was founded in 2020 in response to the growing need for coordinated disaster relief services in Nigeria. After witnessing the devastating impact of floods, fires, and storms on vulnerable communities, our founders brought together experts in emergency response, government relations, and community development to create a comprehensive support system for disaster survivors.
+                    </p>
+                    <p style="color: #4b5563; line-height: 1.8;">
+                        Today, we serve thousands of families annually across Nigeria, providing not just immediate emergency relief but long-term recovery support that helps communities rebuild stronger and more resilient than before.
+                    </p>
+                </div>
+
+                <div class="form-container" style="margin-bottom: 2rem;">
+                    <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">Our Mission</h2>
+                    <p style="color: #4b5563; line-height: 1.8;">
+                        To provide compassionate, effective disaster relief services that help families recover with dignity and rebuild stronger, more resilient communities. We believe every person deserves support during their darkest hours and the resources needed to restore their lives.
+                    </p>
+                </div>
+
+                <div class="form-container" style="margin-bottom: 2rem;">
+                    <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem;">Our Values</h2>
+                    <div style="display: flex; align-items: flex-start; margin-bottom: 1rem;">
+                        <svg width="24" height="24" fill="none" stroke="#16a34a" viewBox="0 0 24 24" style="flex-shrink: 0; margin-right: 0.75rem; margin-top: 0.25rem;">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <div>
+                            <h3 style="font-weight: 700; margin-bottom: 0.25rem;">Compassion First</h3>
+                            <p style="color: #4b5563;">We treat every person with dignity, empathy, and respect</p><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hope Rebuild - Disaster Relief Initiative</title>
+    <style>
+        /* ==================== RESET & BASE STYLES ==================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background-color: #f9fafb;
+        }
+
+        /* ==================== NAVIGATION ==================== */
+        .navbar {
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            color: #2563eb;
+        }
+
+        .logo-text h1 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1f2937;
+        }
+
+        .logo-text p {
+            font-size: 0.75rem;
+            color: #6b7280;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-link {
+            padding: 0.5rem 1rem;
+            color: #4b5563;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-link:hover {
+            background: #f3f4f6;
+            color: #2563eb;
+        }
+
+        .nav-link.active {
+            background: #dbeafe;
+            color: #2563eb;
+            font-weight: 600;
+        }
+
+        .donate-btn {
+            background: #dc2626;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-left: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px rgba(220, 38, 38, 0.3);
+        }
+
+        .donate-btn:hover {
+            background: #b91c1c;
+            box-shadow: 0 6px 12px rgba(220, 38, 38, 0.4);
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #4b5563;
+        }
+
+        /* ==================== HERO SECTION ==================== */
+        .hero {
+            padding: 140px 1.5rem 80px;
+            background: linear-gradient(135deg, #dbeafe 0%, #d1fae5 50%, #dbeafe 100%);
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #374151;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+            padding: 1.25rem 2.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.125rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: all 0.3s;
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(37, 99, 235, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #dc2626;
+            padding: 1.25rem 2.5rem;
+            border: 3px solid #dc2626;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.125rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: all 0.3s;
+            box-shadow: 0 10px 20px rgba(220, 38, 38, 0.2);
+            cursor: pointer;
+        }
+
+        .btn-secondary:hover {
+            background: #fef2f2;
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(220, 38, 38, 0.3);
+        }
+
+        /* ==================== SECTIONS ==================== */
+        .section {
+            padding: 4rem 1.5rem;
+        }
+
+        .section-white {
+            background: white;
+        }
+
+        .section-gray {
+            background: #f9fafb;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.25rem;
+            color: #6b7280;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* ==================== CARDS ==================== */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+
+        .card:hover {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .card-icon {
+            width: 64px;
+            height: 64px;
+            padding: 12px;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .card p {
+            color: #6b7280;
+            margin-bottom: 1rem;
+        }
+
+        /* ==================== PROGRAM CARDS ==================== */
+        .program-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            border-top: 4px solid;
+        }
+
+        .program-card:hover {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .program-card.blue {
+            border-color: #2563eb;
+        }
+
+        .program-card.green {
+            border-color: #16a34a;
+        }
+
+        .program-card.purple {
+            border-color: #9333ea;
+        }
+
+        .program-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .program-icon {
+            width: 64px;
+            height: 64px;
+            padding: 12px;
+            border-radius: 12px;
+            margin-right: 1rem;
+        }
+
+        .impact-box {
+            background: #f9fafb;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .impact-box h4 {
+            font-size: 0.875rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .impact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 0.75rem;
+            font-size: 0.875rem;
+        }
+
+        .impact-item::before {
+            content: "✓";
+            color: #16a34a;
+            font-weight: bold;
+            margin-right: 0.5rem;
+            flex-shrink: 0;
+        }
+
+        .program-btn {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 12px;
+            border: none;
+            color: white;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .program-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        /* ==================== CTA BANNERS ==================== */
+        .cta-banner {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            text-align: center;
+            color: white;
+            margin: 3rem 0;
+        }
+
+        .cta-banner h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .cta-banner p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-banner .btn-primary {
+            background: white;
+            color: #dc2626;
+        }
+
+        .cta-banner .btn-primary:hover {
+            background: #f3f4f6;
+        }
+
+        /* ==================== FORMS ==================== */
+        .form-container {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .form-label .required {
+            color: #dc2626;
+        }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 2px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            margin-top: 0.25rem;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .checkbox-group label {
+            font-size: 0.875rem;
+            color: #4b5563;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 1.25rem;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.125rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+        }
+
+        .form-submit:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(37, 99, 235, 0.4);
+        }
+
+        .form-submit.donate-submit {
+            background: #dc2626;
+        }
+
+        .form-submit.donate-submit:hover {
+            background: #b91c1c;
+        }
+
+        /* ==================== DONATION AMOUNTS ==================== */
+        .amount-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .amount-btn {
+            padding: 1.25rem;
+            border: 2px solid #d1d5db;
+            border-radius: 12px;
+            background: white;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .amount-btn:hover {
+            border-color: #dc2626;
+        }
+
+        .amount-btn.active {
+            border-color: #dc2626;
+            background: #fef2f2;
+            color: #dc2626;
+        }
+
+        .donation-type-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .type-btn {
+            padding: 1.5rem;
+            border: 3px solid #d1d5db;
+            border-radius: 12px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: left;
+        }
+
+        .type-btn:hover {
+            border-color: #2563eb;
+        }
+
+        .type-btn.active {
+            border-color: #2563eb;
+            background: #dbeafe;
+        }
+
+        .type-btn h3 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .type-btn p {
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+
+        /* ==================== ALERT BOXES ==================== */
+        .alert {
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .alert-warning {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+        }
+
+        .alert-info {
+            background: #dbeafe;
+            border-left: 4px solid #2563eb;
+        }
+
+        .alert-danger {
+            background: #fee2e2;
+            border-left: 4px solid #dc2626;
+        }
+
+        /* ==================== FOOTER ==================== */
+        .footer {
+            background: #111827;
+            color: white;
+            padding: 3rem 1.5rem 1.5rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            max-width: 1280px;
+            margin: 0 auto 3rem;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .footer-section h4 {
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-section a {
+            color: #9ca3af;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 2rem;
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.875rem;
+            color: #9ca3af;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        /* ==================== STEPS ==================== */
+        .steps-container {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .step {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: #dbeafe;
+            color: #2563eb;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .step-content p {
+            color: #6b7280;
+        }
+
+        /* ==================== RESOURCES ==================== */
+        .resource-link {
+            display: flex;
+            gap: 1rem;
+            padding: 1.25rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            transition: all 0.3s;
+            text-decoration: none;
+            color: inherit;
+            margin-bottom: 1rem;
+        }
+
+        .resource-link:hover {
+            background: #f9fafb;
+            border-color: #2563eb;
+        }
+
+        .resource-icon {
+            width: 24px;
+            height: 24px;
+            color: #2563eb;
+            flex-shrink: 0;
+            margin-top: 0.25rem;
+        }
+
+        .resource-content h3 {
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .resource-content p {
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .nav-menu.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: 1rem;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .section-header h2 {
+                font-size: 1.75rem;
+            }
+
+            .donation-type-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* ==================== HIDDEN CLASS ==================== */
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- ==================== NAVIGATION ==================== -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo" onclick="showPage('home')">
+                <svg class="logo-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                </svg>
+                <div class="logo-text">
+                    <h1>Hope Rebuild</h1>
+                    <p>Disaster Relief Initiative</p>
+                </div>
+            </div>
+
+            <div class="nav-menu" id="navMenu">
+                <a href="#" class="nav-link active" onclick="showPage('home')">Home</a>
+                <a href="#" class="nav-link" onclick="showPage('programs')">Programs</a>
+                <a href="#" class="nav-link" onclick="showPage('get-help')">Get Help</a>
+                <a href="#" class="nav-link" onclick="showPage('resources')">Support & Resources</a>
+                <a href="#" class="nav-link" onclick="showPage('about')">About Us</a>
+                <a href="#" class="donate-btn" onclick="showPage('donate')">
+                    <span>❤️</span> Donate
+                </a>
+            </div>
+
+            <button class="mobile-toggle" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </nav>
+
+    <!-- ==================== HOME PAGE ==================== -->
+    <div id="page-home" class="page">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Rebuilding Lives After Disaster</h1>
+                <p>We provide emergency shelter, government aid guidance, and long-term recovery support for families affected by natural disasters</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick="showPage('get-help')">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                        </svg>
+                        I Need Help Now
+                    </button>
+                    <button class="btn-secondary" onclick="showPage('donate')">
+                        <span style="font-size: 1.5rem;">❤️</span>
+                        Help Someone Today
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission Section -->
+        <section class="section section-white">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Mission</h2>
+                    <p>To provide compassionate, effective disaster relief that helps families recover with dignity and rebuild stronger communities</p>
+                </div>
+
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-icon" style="background: #dbeafe; color: #2563eb;">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                            </svg>
+                        </div>
+                        <h3>Emergency Response</h3>
+                        <p>Immediate shelter and essential supplies for disaster survivors</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon" style="background: #d1fae5; color: #16a34a;">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                            </svg>
+                        </div>
+                        <h3>Aid Navigation</h3>
+                        <p>Expert guidance on accessing government assistance programs</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon" style="background: #e9d5ff; color: #9333ea;">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                            </svg>
+                        </div>
+                        <h3>Community Rebuilding</h3>
+                        <p>Long-term support for sustainable neighborhood recovery</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Programs Preview -->
+        <section class="section section-gray">
+            <div class="container">
+                <div class="section-header">
+                    <h2>How We Help</h2>
+                    <p>Three core programs serving disaster-affected communities</p>
+                </div>
+
+                <div class="card-grid">
+                    <div class="card" style="cursor: pointer;" onclick="showPage('programs')">
+                        <svg width="48" height="48" fill="none" stroke="#2563eb" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                        </svg>
+                        <h3>Emergency Housing</h3>
+                        <p>Movable homes and temporary shelter solutions</p>
+                        <span style="color: #2563eb; font-weight: 600;">Learn More →</span>

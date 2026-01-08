@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate - Hope Rebuild</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background-color: #f9fafb;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            padding: 4rem 1.5rem;
+            text-align: center;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .header p {
+            font-size: 1.25rem;
+            opacity: 0.95;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 4rem 1.5rem;
+        }
+
+        /* Impact Banner */
+        .impact-banner {
+            background: linear-gradient(135deg, #2563eb 0%, #16a34a 100%);
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            color: white;
+            margin-bottom: 4rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .impact-banner h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .impact-item {
+            padding: 1rem;
+        }
+
+        .impact-amount {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .impact-description {
+            opacity: 0.95;
+            font-size: 1.125rem;
+        }
+
+        /* Donation Type Selection */
+        .donation-type-section {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+        }
+
+        .donation-type-section h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .type-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .type-card {
+            border: 3px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 2rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: white;
+        }
+
+        .type-card:hover {
+            border-color: #dc2626;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(220, 38, 38, 0.2);
+        }
+
+        .type-card.active {
+            border-color: #dc2626;
+            background: #fef2f2;
+        }
+
+        .type-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #1f2937;
+        }
+
+        .type-card p {
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+
+        .type-badge {
+            display: inline-block;
+            background: #dc2626;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Donation Form */
+        .donation-form-section {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+        }
+
+        .form-section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: #1f2937;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #f3f4f6;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+            color: #1f2937;
+        }
+
+        .required {
+            color: #dc2626;
+        }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 2px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s;
+            font-family: inherit;
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: #dc2626;
+            box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .form-help-text {
+            font-size: 0.875rem;
+            color: #6b7280;
+            margin-top: 0.5rem;
+        }
+
+        /* Amount Selection */
+        .amount-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .amount-btn {
+            padding: 1.25rem;
+            border: 2px solid #d1d5db;
+            border-radius: 12px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .amount-btn:hover {
+            border-color: #dc2626;
+            background: #fef2f2;
+        }
+
+        .amount-btn.active {
+            border-color: #dc2626;
+            background: #dc2626;
+            color: white;
+        }
+
+        .amount-label {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 0.25rem;
+        }
+
+        .amount-desc {
+            display: block;
+            font-size: 0.75rem;
+            opacity: 0.8;
+        }
+
+        /* Custom Amount */
+        .custom-amount {
+            display: none;
+            margin-top: 1rem;
+        }
+
+        .custom-amount.show {
+            display: block;
+        }
+
+        .currency-input-wrapper {
+            position: relative;
+        }
+
+        .currency-symbol {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-weight: 700;
+            color: #6b7280;
+            font-size: 1.125rem;
+        }
+
+        .currency-input {
+            padding-left: 2.5rem;
+        }
+
+        /* Checkbox Group */
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 1rem;
+            background: #f9fafb;
+            border-radius: 8px;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            margin-top: 0.25rem;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .checkbox-group label {
+            font-size: 0.875rem;
+            color: #4b5563;
+            line-height: 1.6;
+        }
+
+        /* Radio Group */
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .radio-option:hover {
+            border-color: #dc2626;
+            background: #fef2f2;
+        }
+
+        .radio-option.selected {
+            border-color: #dc2626;
+            background: #fef2f2;
+        }
+
+        .radio-option input[type="radio"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .radio-label {
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        /* Submit Button */
+        .form-submit {
+            width: 100%;
+            padding: 1.5rem;
+            background: #dc2626;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.25rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 10px 20px rgba(220, 38, 38, 0.3);
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .form-submit:hover {
+            background: #b91c1c;
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(220, 38, 38, 0.4);
+        }
+
+        .form-submit:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Trust Section */
+        .trust-section {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+        }
+
+        .trust-section h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .trust-item {
+            text-align: center;
+        }
+
+        .trust-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 1rem;
+        }
+
+        .trust-item h3 {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #1f2937;
+        }
+
+        .trust-item p {
+            font-size: 0.875rem;
+            color: #6b7280;
+            line-height: 1.6;
+        }
+
+        /* Other Ways to Give */
+        .other-ways {
+            background: #f3f4f6;
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .other-ways h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .ways-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .way-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .way-card h3 {
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: #1f2937;
+        }
+
+        .way-card p {
+            font-size: 0.875rem;
+            color: #6b7280;
+            line-height: 1.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .header p {
+                font-size: 1rem;
+            }
+
+            .donation-form-section {
+                padding: 2rem 1.5rem;
+            }
+
+            .amount-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .impact-amount {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <h1>Make a Difference Today</h1>
+        <p>Your generosity provides immediate relief and long-term recovery support to families affected by disasters. Every donation transforms lives.</p>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container">
+            <!-- Impact Banner -->
+            <div class="impact-banner">
+                <h2>See Your Impact</h2>
+                <div class="impact-grid">
+                    <div class="impact-item">
+                        <div class="impact-amount">₦5,000</div>
+                        <div class="impact-description">Emergency supplies for 1 family</div>
+                    </div>
+                    <div class="impact-item">
+                        <div class="impact-amount">₦15,000</div>
+                        <div class="impact-description">Temporary shelter for 1 week</div>
+                    </div>
+                    <div class="impact-item">
+                        <div class="impact-amount">₦25,000</div>
+                        <div class="impact-description">Aid support for 5 families</div>
+                    </div>
+                    <div class="impact-item">
+                        <div class="impact-amount">₦50,000</div>
+                        <div class="impact-description">Complete movable home unit</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Donation Type Selection -->
+            <div class="donation-type-section">
+                <h2>Choose Your Donation Type</h2>
+                <div class="type-grid">
+                    <div class="type-card active" id="oneTimeCard" onclick="selectDonationType('oneTime')">
+                        <h3>One-Time Donation</h3>
+                        <p>Make a single contribution that provides immediate help to families in crisis</p>
+                    </div>
+                    <div class="type-card" id="monthlyCard" onclick="selectDonationType('monthly')">
+                        <span class="type-badge">MOST IMPACT</span>
+                        <h3>Monthly Support</h3>
+                        <p>Become a sustaining supporter and help us plan long-term recovery programs</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Donation Form -->
+            <div class="donation-form-section">
+                <form id="donationForm" onsubmit="submitDonation(event)">
+                    <!-- Donation Amount -->
+                    <div style="margin-bottom: 3rem;">
+                        <h3 class="form-section-title">1. Select Your Donation Amount</h3>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Choose an amount or enter your own <span class="required">*</span></label>
+                            <div class="amount-grid">
+                                <button type="button" class="amount-btn" onclick="selectAmount(5000, this)">
+                                    <span class="amount-label">₦5,000</span>
+                                    <span class="amount-desc">Emergency supplies</span>
+                                </button>
+                                <button type="button" class="amount-btn" onclick="selectAmount(10000, this)">
+                                    <span class="amount-label">₦10,000</span>
+                                    <span class="amount-desc">Shelter for 3 days</span>
+                                </button>
+                                <button type="button" class="amount-btn" onclick="selectAmount(25000, this)">
+                                    <span class="amount-label">₦25,000</span>
+                                    <span class="amount-desc">Aid for 5 families</span>
+                                </button>
+                                <button type="button" class="amount-btn" onclick="selectAmount(50000, this)">
+                                    <span class="amount-label">₦50,000</span>
+                                    <span class="amount-desc">Movable home</span>
+                                </button>
+                                <button type="button" class="amount-btn" onclick="selectAmount(100000, this)">
+                                    <span class="amount-label">₦100,000</span>
+                                    <span class="amount-desc">Major impact</span>
+                                </button>
+                                <button type="button" class="amount-btn" onclick="selectAmount('custom', this)">
+                                    <span class="amount-label">Custom</span>
+                                    <span class="amount-desc">Your choice</span>
+                                </button>
+                            </div>
+                            
+                            <div class="custom-amount" id="customAmountSection">
+                                <div class="currency-input-wrapper">
+                                    <span class="currency-symbol">₦</span>
+                                    <input type="number" id="customAmountInput" class="form-input currency-input" placeholder="Enter your amount" min="500" step="100">
+                                </div>
+                                <p class="form-help-text">Minimum donation: ₦500</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Personal Information -->
+                    <div style="margin-bottom: 3rem;">
+                        <h3 class="form-section-title">2. Your Information</h3>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Full Name <span class="required">*</span></label>
+                            <input type="text" class="form-input" required placeholder="Enter your full name">
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Email Address <span class="required">*</span></label>
+                                <input type="email" class="form-input" required placeholder="your@email.com">
+                                <p class="form-help-text">For donation receipt and updates</p>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Phone Number</label>
+                                <input type="tel" class="form-input" placeholder="+234 XXX XXX XXXX">
+                                <p class="form-help-text">Optional</p>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Country <span class="required">*</span></label>
+                                <select class="form-select" required>
+                                    <option value="">Select your country</option>
+                                    <option value="Nigeria">Nigeria</option>
+                                    <option value="Ghana">Ghana</option>
+                                    <option value="Kenya">Kenya</option>
+                                    <option value="South Africa">South Africa</option>
+                                    <option value="United States">United States</option>
+                                    <option value="United Kingdom">United Kingdom</option>
+                                    <option value="Canada">Canada</option>
+                                    <option value="Germany">Germany</option>
+                                    <option value="France">France</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">State/Province</label>
+                                <input type="text" class="form-input" placeholder="Your state or province">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Donation Preferences -->
+                    <div style="margin-bottom: 3rem;">
+                        <h3 class="form-section-title">3. Donation Preferences</h3>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Direct your donation (Optional)</label>
+                            <div class="radio-group">
+                                <label class="radio-option selected">
+                                    <input type="radio" name="program" value="where-needed" checked>
+                                    <span class="radio-label">Where it's needed most (Recommended)</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="program" value="emergency-housing">
+                                    <span class="radio-label">Emergency Housing Program</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="program" value="government-aid">
+                                    <span class="radio-label">Government Aid Navigation</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="program" value="community-rebuilding">
+                                    <span class="radio-label">Community Rebuilding Initiative</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Donation in honor/memory of someone? (Optional)</label>
+                            <select class="form-select" id="tributeType" onchange="toggleTribute()">
+                                <option value="">No tribute</option>
+                                <option value="honor">In honor of</option>
+                                <option value="memory">In memory of</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group" id="tributeNameSection" style="display: none;">
+                            <label class="form-label">Name of person being honored/remembered</label>
+                            <input type="text" class="form-input" placeholder="Enter name">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Add a personal message (Optional)</label>
+                            <textarea class="form-input" rows="4" placeholder="Share why you're donating or add a message of support..."></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Communication Preferences -->
+                    <div style="margin-bottom: 3rem;">
+                        <h3 class="form-section-title">4. Stay Connected</h3>
+                        
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="updates" checked>
+                            <label for="updates">
+                                <strong>Send me impact updates</strong><br>
+                                Receive quarterly reports showing how your donation is making a difference, including stories from families you've helped.
+                            </label>
+                        </div>
+
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="newsletter">
+                            <label for="newsletter">
+                                <strong>Subscribe to newsletter</strong><br>
+                                Get monthly updates about our programs, upcoming events, and ways to get involved beyond donations.
+                            </label>
+                        </div>
+
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="publicRecognition">
+                            <label for="publicRecognition">
+                                <strong>Public recognition</strong><br>
+                                Allow us to list your name (or "Anonymous") on our website's donor recognition page. We will never share your contact information.
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Company Matching -->
+                    <div style="margin-bottom: 3rem;">
+                        <h3 class="form-section-title">5. Company Matching (Optional)</h3>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Does your employer match donations?</label>
+                            <select class="form-select" id="companyMatch" onchange="toggleCompanyInfo()">
+                                <option value="no">No / I don't know</option>
+                                <option value="yes">Yes, my company matches</option>
+                            </select>
+                        </div>
+
+                        <div id="companyInfoSection" style="display: none;">
+                            <div class="form-group">
+                                <label class="form-label">Company Name</label>
+                                <input type="text" class="form-input" placeholder="Enter your company name">
+                                <p class="form-help-text">We'll provide matching gift documentation</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Payment Method -->
+                    <div style="margin-bottom: 2rem;">
+                        <h3 class="form-section-title">6. Payment Method</h3>
+                        
+                        <div class="form-group">
+                            <label class="form-label">How would you like to pay? <span class="required">*</span></label>
+                            <div class="radio-group">
+                                <label class="radio-option selected">
+                                    <input type="radio" name="payment" value="card" checked>
+                                    <span class="radio-label">💳 Credit/Debit Card (Visa, Mastercard, Verve)</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="payment" value="bank-transfer">
+                                    <span class="radio-label">🏦 Bank Transfer</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="payment" value="mobile-money">
+                                    <span class="radio-label">📱 Mobile Money (MTN, Airtel, etc.)</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="payment" value="paypal">
+                                    <span class="radio-label">💰 PayPal</span>
+                                </label>
+                            </div>
+                            <p class="form-help-text">All transactions are secure and encrypted</p>
+                        </div>
+                    </div>
+
+                    <!-- Terms -->
+                    <div class="checkbox-group" style="border: 2px solid #dc2626; background: #fef2f2;">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms">
+                            <strong>I confirm this donation</strong><br>
+                            I understand that this is a charitable donation to Hope Rebuild, a registered nonprofit organization. Donations are tax-deductible to the extent allowed by law. By submitting this form, I authorize Hope Rebuild to process my donation.
+                        </label>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="form-submit">
+                        <span style="font-size: 1.5rem;">❤️</span>
+                        <span id="submitBtnText">Complete Donation</span>
+                    </button>
+
+                    <p style="text-align: center; font-size: 0.875rem; color: #6b7280; margin-top: 1rem;">
+                        🔒 Secure payment powered by Paystack • Your information is encrypted and safe
+                    </p>
+                </form>
+            </div>
+
+            <!-- Trust & Transparency -->
+            <div class="trust-section">
+                <h2>Why Donate to Hope Rebuild?</h2>
+                <div class="trust-grid">
+                    <div class="trust-item">
+                        <svg class="trust-icon" fill="none" stroke="#16a34a" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <h3>100% Accountable</h3>
+                        <p>Every donation is tracked with quarterly impact reports showing exactly how your money helps families recover.</p>
+                    </div>
+                    <div class="trust-item">
+                        <svg class="trust-icon" fill="none" stroke="#2563eb" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                        <h3>Registered & Certified</h3>
+                        <p>Fully certified nonprofit with government recognition. All donations are tax-deductible.</p>
+                    </div>
+                    <div class="trust-item">
+                        <svg class="trust-icon" fill="none" stroke="#9333ea" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7

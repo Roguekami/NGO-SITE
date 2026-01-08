@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Help - Hope Rebuild</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background-color: #f9fafb;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, #dbeafe 0%, #d1fae5 100%);
+            padding: 4rem 1.5rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: #1f2937;
+        }
+
+        .header p {
+            font-size: 1.25rem;
+            color: #374151;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 4rem 1.5rem;
+        }
+
+        /* Info Cards */
+        .info-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .info-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #2563eb;
+        }
+
+        .info-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: #1f2937;
+        }
+
+        .info-card p {
+            color: #6b7280;
+            line-height: 1.7;
+        }
+
+        .info-card.green {
+            border-left-color: #16a34a;
+        }
+
+        .info-card.purple {
+            border-left-color: #9333ea;
+        }
+
+        /* Steps Section */
+        .steps-section {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+        }
+
+        .steps-section h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .step {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid #f3f4f6;
+        }
+
+        .step:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #2563eb, #3b82f6);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+            box-shadow: 0 4px 6px rgba(37, 99, 235, 0.3);
+        }
+
+        .step-content h3 {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            font-size: 1.125rem;
+            color: #1f2937;
+        }
+
+        .step-content p {
+            color: #6b7280;
+            line-height: 1.7;
+        }
+
+        /* Eligibility Section */
+        .eligibility-section {
+            background: #dbeafe;
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            border: 2px solid #93c5fd;
+        }
+
+        .eligibility-section h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #1e40af;
+        }
+
+        .eligibility-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .eligibility-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .eligibility-item::before {
+            content: "✓";
+            color: #16a34a;
+            font-weight: bold;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .eligibility-item span {
+            color: #1e40af;
+            line-height: 1.7;
+        }
+
+        /* Form Section */
+        .form-section {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+        }
+
+        .form-section h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #1f2937;
+        }
+
+        .form-description {
+            color: #6b7280;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+            color: #1f2937;
+        }
+
+        .required {
+            color: #dc2626;
+        }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 2px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s;
+            font-family: inherit;
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .form-help-text {
+            font-size: 0.875rem;
+            color: #6b7280;
+            margin-top: 0.5rem;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: #f9fafb;
+            border-radius: 8px;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            margin-top: 0.25rem;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .checkbox-group label {
+            font-size: 0.875rem;
+            color: #4b5563;
+            line-height: 1.6;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 1.25rem;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.125rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+            margin-top: 1rem;
+        }
+
+        .form-submit:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(37, 99, 235, 0.4);
+        }
+
+        /* Emergency Alert */
+        .emergency-alert {
+            background: #fee2e2;
+            border: 2px solid #fca5a5;
+            border-left: 6px solid #dc2626;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .emergency-icon {
+            width: 48px;
+            height: 48px;
+            flex-shrink: 0;
+        }
+
+        .emergency-content h3 {
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: #991b1b;
+            font-size: 1.25rem;
+        }
+
+        .emergency-content p {
+            color: #7f1d1d;
+            line-height: 1.7;
+            margin-bottom: 0.75rem;
+        }
+
+        .emergency-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #dc2626;
+            margin-top: 0.5rem;
+        }
+
+        /* What Happens Next */
+        .what-next {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+        }
+
+        .what-next h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 10px;
+            bottom: 10px;
+            width: 3px;
+            background: linear-gradient(to bottom, #2563eb, #16a34a);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -2.4rem;
+            top: 0.25rem;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border: 4px solid #2563eb;
+            border-radius: 50%;
+        }
+
+        .timeline-content h3 {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #1f2937;
+        }
+
+        .timeline-content p {
+            color: #6b7280;
+            line-height: 1.7;
+        }
+
+        .timeline-time {
+            display: inline-block;
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 0.25rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+        }
+
+        .faq-section h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .faq-item {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid #f3f4f6;
+        }
+
+        .faq-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            font-size: 1.125rem;
+            color: #1f2937;
+        }
+
+        .faq-answer {
+            color: #6b7280;
+            line-height: 1.8;
+        }
+
+        /* Donor CTA */
+        .donor-cta {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            text-align: center;
+            border: 2px solid #93c5fd;
+        }
+
+        .donor-cta h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #1e40af;
+        }
+
+        .donor-cta p {
+            color: #1e40af;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .btn-donate {
+            background: #dc2626;
+            color: white;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.125rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 10px 20px rgba(220, 38, 38, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .btn-donate:hover {
+            background: #b91c1c;
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(220, 38, 38, 0.4);
+        }
+
+        /* Support Methods */
+        .support-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .support-method {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+
+        .support-method:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .support-method-icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 1rem;
+        }
+
+        .support-method h4 {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #1f2937;
+        }
+
+        .support-method p {
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .header p {
+                font-size: 1rem;
+            }
+
+            .form-section {
+                padding: 2rem 1.5rem;
+            }
+
+            .emergency-alert {
+                flex-direction: column;
+            }
+
+            .timeline {
+                padding-left: 2.5rem;
+            }
+
+            .timeline-dot {
+                left: -2.15rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <h1>We're Here to Help You</h1>
+        <p>If you've been affected by a natural disaster, we provide free support to help you recover. Our compassionate team is ready to assist you 24/7.</p>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container">
+            <!-- Info Cards -->
+            <div class="info-cards">
+                <div class="info-card">
+                    <h3>🏠 Emergency Housing</h3>
+                    <p>Immediate shelter solutions including movable homes, temporary accommodation, and essential household supplies for displaced families.</p>
+                </div>
+                <div class="info-card green">
+                    <h3>📋 Government Aid Guidance</h3>
+                    <p>Expert assistance navigating complex government assistance programs, tax relief applications, and disaster recovery grants.</p>
+                </div>
+                <div class="info-card purple">
+                    <h3>💼 Community Support</h3>
+                    <p>Long-term recovery services including job training, mental health counseling, and community rebuilding programs.</p>
+                </div>
+            </div>
+
+            <!-- Eligibility Section -->
+            <div class="eligibility-section">
+                <h2>Who Can Apply for Assistance?</h2>
+                <div class="eligibility-list">
+                    <div class="eligibility-item">
+                        <span>Families who have lost their homes due to natural disasters</span>
+                    </div>
+                    <div class="eligibility-item">
+                        <span>Individuals whose property was damaged by floods, fires, or storms</span>
+                    </div>
+                    <div class="eligibility-item">
+                        <span>Communities affected by earthquakes or other catastrophic events</span>
+                    </div>
+                    <div class="eligibility-item">
+                        <span>People experiencing financial hardship due to disaster-related job loss</span>
+                    </div>
+                    <div class="eligibility-item">
+                        <span>Those needing help accessing government disaster relief programs</span>
+                    </div>
+                    <div class="eligibility-item">
+                        <span>Anyone requiring temporary shelter or essential supplies</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How It Works Steps -->
+            <div class="steps-section">
+                <h2>How Our Support Process Works</h2>
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Submit Your Request</h3>
+                        <p>Fill out the simple assistance request form below with your contact information and a brief description of your situation. All information is kept confidential and secure.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Initial Assessment (Within 24 Hours)</h3>
+                        <p>A dedicated case manager will review your request and contact you to assess your immediate needs and eligibility for our programs.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Personalized Support Plan</h3>
+                        <p>We'll create a customized recovery plan based on your specific situation, connecting you with the right programs and resources.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Receive Assistance</h3>
+                        <p>Get the help you need—whether it's emergency housing, aid application support, or long-term recovery services. We'll be with you every step of the way.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Request Assistance Form -->
+            <div class="form-section">
+                <h2>Request Assistance</h2>
+                <p class="form-description">Complete this form to start your recovery journey. Our team will respond within 24 hours. All services are provided free of charge to disaster survivors.</p>
+                
+                <form id="helpForm" onsubmit="submitForm(event)">
+                    <!-- Personal Information -->
+                    <div class="form-group">
+                        <label class="form-label">Full Name <span class="required">*</span></label>
+                        <input type="text" class="form-input" required placeholder="Enter your full name">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Email Address <span class="required">*</span></label>
+                            <input type="email" class="form-input" required placeholder="your@email.com">
+                            <p class="form-help-text">We'll use this to send you updates on your request</p>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Phone Number <span class="required">*</span></label>
+                            <input type="tel" class="form-input" required placeholder="+234 XXX XXX XXXX">
+                            <p class="form-help-text">For urgent contact by our case manager</p>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">State/Region <span class="required">*</span></label>
+                            <select class="form-select" required>
+                                <option value="">Select your state</option>
+                                <option value="Abia">Abia</option>
+                                <option value="Adamawa">Adamawa</option>
+                                <option value="Akwa Ibom">Akwa Ibom</option>
+                                <option value="Anambra">Anambra</option>
+                                <option value="Bauchi">Bauchi</option>
+                                <option value="Bayelsa">Bayelsa</option>
+                                <option value="Benue">Benue</option>
+                                <option value="Borno">Borno</option>
+                                <option value="Cross River">Cross River</option>
+                                <option value="Delta">Delta</option>
+                                <option value="Ebonyi">Ebonyi</option>
+                                <option value="Edo">Edo</option>
+                                <option value="Ekiti">Ekiti</option>
+                                <option value="Enugu">Enugu</option>
+                                <option value="FCT">Federal Capital Territory</option>
+                                <option value="Gombe">Gombe</option>
+                                <option value="Imo">Imo</option>
+                                <option value="Jigawa">Jigawa</option>
+                                <option value="Kaduna">Kaduna</option>
+                                <option value="Kano">Kano</option>
+                                <option value="Katsina">Katsina</option>
+                                <option value="Kebbi">Kebbi</option>
+                                <option value="Kogi">Kogi</option>
+                                <option value="Kwara">Kwara</option>
+                                <option value="Lagos">Lagos</option>
+                                <option value="Nasarawa">Nasarawa</option>
+                                <option value="Niger">Niger</option>
+                                <option value="Ogun">Ogun</option>
+                                <option value="Ondo">Ondo</option>
+                                <option value="Osun">Osun</option>
+                                <option value="Oyo">Oyo</option>
+                                <option value="Plateau">Plateau</option>
+                                <option value="Rivers">Rivers</option>
+                                <option value="Sokoto">Sokoto</option>
+                                <option value="Taraba">Taraba</option>
+                                <option value="Yobe">Yobe</option>
+                                <option value="Zamfara">Zamfara</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">City/Town <span class="required">*</span></label>
+                            <input type="text" class="form-input" required placeholder="Enter your city or town">
+                        </div>
+                    </div>
+
+                    <!-- Assistance Type -->
+                    <div class="form-group">
+                        <label class="form-label">Type of Assistance Needed <span class="required">*</span></label>
+                        <select class="form-select" required>
+                            <option value="">Select primary assistance type</option>
+                            <option value="emergency-housing">Emergency Housing / Temporary Shelter</option>
+                            <option value="government-aid">Government Aid Application Support</option>
+                            <option value="tax-relief">Tax Relief and Financial Guidance</option>
+                            <option value="community-resources">Community Resources and Support</option>
+                            <option value="mental-health">Mental Health and Counseling Services</option>
+                            <option value="job-training">Job Training and Employment Support</option>
+                            <option value="food-supplies">Food and Essential Supplies</option>
+                            <option value="medical">Medical Assistance</option>
+                            <option value="other">Other (please describe below)</option>
+                        </select>
+                        <p class="form-help-text">Select the most urgent type of help you need</p>
+                    </div>
+
+                    <!-- Disaster Information -->
+                    <div class="form-group">
+                        <label class="form-label">Type of Disaster <span class="required">*</span></label>
+                        <select class="form-select" required>
+                            <option value="">Select disaster type</option>
+                            <option value="flood">Flood</option>
+                            <option value="fire">Fire</option>
+                            <option value="storm">Storm/Hurricane</option>
+                            <option value="earthquake">Earthquake</option>
+                            <option value="landslide">Landslide</option>
+                            <option value="building-collapse">Building Collapse</option>
+                            <option value="other">Other Natural Disaster</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">When Did This Happen? <span class="required">*</span></label>
+                        <input type="date" class="form-input" required>
+                        <p class="form-help-text">Approximate date of the disaster</p>
+                    </div>
+
+                    <!-- Family Size -->
+                    <div class="form-group">
+                        <label class="form-label">Number of People in Your Household <span class="required">*</span></label>
+                        <select class="form-select" required>
+                            <option value="">Select household size</option>
+                            <option value="1">1 person (just me)</option>
+                            <option value="2">2 people</option>
+                            <option value="3">3 people</option>
+                            <option value="4">4 people</option>
+                            <option value="5">5 people</option>
+                            <option value="6">6 people</option>
+                            <option value="7-10">7-10 people</option>
+                            <option value="10+">More than 10 people</option>
+                        </select>
+                        <p class="form-help-text">Include children, elderly, and any dependents</p>
+                    </div>
+
+                    <!-- Current Situation -->
+                    <div class="form-group">
+                        <label class="form-label">Current Living Situation <span class="required">*</span></label>
+                        <select class="form-select" required>
+                            <option value="">Select your current situation</option>
+                            <option value="homeless">Currently homeless / No shelter</option>
+                            <option value="temporary">Staying with family/friends temporarily</option>
+                            <option value="damaged-home">Still in damaged home (unsafe)</option>
+                            <option value="evacuation">In evacuation center</option>
+                            <option value="rented">Rented temporary accommodation</option>
+                            <option value="other">Other (please describe below)</option>
+                        </select>
+                    </div>
+
+                    <!-- Detailed Description -->
+                    <div class="form-group">
+                        <label class="form-label">Tell Us About Your Situation <span class="required">*</span></label>
+                        <textarea class="form-textarea" required placeholder="Please describe:
+- What happened during the disaster
+- What help you need most urgently
+- Any special circumstances (elderly, children, disabilities, medical needs)
+- Any other important details we should know"></textarea>
+                        <p class="form-help-text">Be as detailed as possible so we can provide the best support</p>
+                    </div>
+
+                    <!-- Previous Aid -->
+                    <div class="form-group">
+                        <label class="form-label">Have You Received Any Disaster Assistance Already?</label>
+                        <select class="form-select">
+                            <option value="">Select option</option>
+                            <option value="no">No, I haven't received any help</option>
+                            <option value="government">Yes, from government agencies</option>
+                            <option value="ngo">Yes, from other NGOs</option>
+                            <option value="both">Yes, from multiple sources</option>
+                        </select>
+                        <p class="form-help-text">This helps us avoid duplication and fill gaps in support</p>
+                    </div>
+
+                    <!-- Consent -->
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="consent" required>
+                        <label for="consent">
+                            I consent to Hope Rebuild contacting me regarding my assistance request and confirm that the information provided is accurate to the best of my knowledge. I understand that all services are provided free of charge and that my information will be kept confidential.
+                        </label>
+                    </div>
+
+                    <button type="submit" class="form-submit">
+                        Submit Request for Help
+                    </button>
+                </form>
+            </div>
+
+            <!-- What Happens Next -->
+            <div class="what-next">
+                <h2>What Happens After You Submit?</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-time">Within 2 hours</span>
+                            <h3>Confirmation Email</h3>
+                            <p>You'll receive an automatic confirmation that we received your request. Keep this email for your records.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-time">Within 24 hours</span>
+                            <h3>Case Manager Assignment</h3>
+                            <p>A dedicated case manager will be assigned to your case and will call you to discuss your immediate needs and verify your situation.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-time">24-48 hours</span>
+                            <h3>Initial Assessment Complete</h3>
+                            <p>We'll evaluate your eligibility for our programs and create a personalized support plan tailored to your specific needs.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-time">48-72 hours</span>
+                            <h3>Assistance Begins</h3>
+                            <p>Emergency housing can be arranged, government aid applications can start, or you'll be connected with other critical services you need.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-time">Ongoing</span>
+                            <h3>Continuous Support</h3>
+                            <p>Your case manager will check in regularly, help with follow-up needs, and ensure you have access to long-term recovery resources.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Emergency Alert -->
+            <div class="emergency-alert">
+                <svg class="emergency-icon" fill="none" stroke="#dc2626" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                </svg>
+                <div class="emergency-content">
+                    <h3>Need Immediate Help?</h3>
+                    <p>If you're in immediate danger, need urgent medical attention, or require emergency shelter tonight, please call our 24/7 emergency hotline right now. Don't wait for the form response.</p>
+                    <p style="margin-bottom: 0.5rem; font-weight: 600;">Our Emergency Hotline (Available 24/7):</p>
+                    <div class="emergency-number">+234 800 HELP NOW</div>
+                    <p style="font-size: 0.875rem; margin-top: 0.5rem;">(+234 800 4357 669)</p>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="faq-section">
+                <h2>Frequently Asked Questions</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Do I have to pay for your services?</div>
+                    <div class="faq-answer">No. All our disaster relief services are provided completely free of charge to survivors. We are funded entirely by donations and grants. You will never be asked to pay for assistance.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What documents do I need to apply?</div>
+                    <div class="faq-answer">You don't need any documents to submit this initial request. During the assessment process, we may ask for identification and proof of the disaster (photos, police reports, etc.), but we can help you obtain these if you don't have them.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">How long can I stay in emergency housing?</div>
+                    <div class="faq-answer">Emergency housing is typically provided for 3-6 months, with possible extensions based on your recovery progress and needs. We work with you to transition to permanent housing solutions.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Can you guarantee I'll receive government disaster aid?</div>
+                    <div class="faq-answer">We cannot guarantee government aid approval as those decisions are made by government agencies. However, we significantly improve your chances by helping you complete applications correctly, gather proper documentation, and advocating on your behalf.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What if I'm not a Nigerian citizen?</div>
+                    <div class="faq-answer">Our emergency services are available to anyone affected by disaster in Nigeria, regardless of citizenship status. We help all people in need during crisis situations.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Can I apply if I already received some government help?</div>
+                    <div class="faq-answer">Yes! Government aid and our services can complement each other. We help fill gaps in support and provide services that government programs may not cover, such as mental health counseling or job training.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What if my situation changes after I submit the form?</div>
+                    <div class="faq-answer">Please contact your assigned case manager immediately if your situation worsens or changes. You can also call our hotline to update your information at any time.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Do you help with rebuilding permanent homes?</div>
+                    <div class="faq-answer">While we primarily provide temporary housing, our Community Rebuilding program can connect you with resources, grants, and partnerships that support permanent home reconstruction. We also help you access government rebuilding programs.</div>
+                </div>
+            </div>
+
+            <!-- Additional Support Methods -->
+            <div class="what-next">
+                <h2>Other Ways to Reach Us</h2>
+                <div class="support-methods">
+                    <div class="support-method">
+                        <svg class="support-method-icon" fill="none" stroke="#2563eb" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                        </svg>
+                        <h4>Phone</h4>
+                        <p>+234 800 4357 669<br>24/7 Emergency Line</p>
+                    </div>
+                    <div class="support-method">
+                        <svg class="support-method-icon" fill="none" stroke="#16a34a" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                        <h4>Email</h4>
+                        <p>help@hoperebuild.org<br>Response within 24 hours</p>
+                    </div>
+                    <div class="support-method">
+                        <svg class="support-method-icon" fill="none" stroke="#9333ea" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                        </svg>
+                        <h4>WhatsApp</h4>
+                        <p>+234 800 4357 669<br>Quick responses</p>
+                    </div>
+                    <div class="support-method">
+                        <svg class="support-method-icon" fill="none" stroke="#dc2626" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        <h4>Walk-In Office</h4>
+                        <p>Lagos Office<br>Mon-Fri 8am-6pm</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Donor CTA -->
+            <div class="donor-cta">
+                <h3>Not Affected by a Disaster?</h3>
+                <p>You can still make a difference. Your donation helps provide emergency housing, food supplies, and recovery support to families like these who are rebuilding their lives after disasters.</p>
+                <button class="btn-donate" onclick="window.location.href='donate.html'">
+                    <span style="font-size: 1.5rem;">❤️</span>
+                    Donate to Help Others
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(event.target);
+            const name = formData.get('text') || 'there';
+            
+            // Show success message
+            alert(`Thank you for submitting your request. Our case manager will contact you within 24 hours at the phone number you provided. Please keep your phone nearby.\n\nIf you need immediate assistance, please call our emergency hotline: +234 800 HELP NOW`);
+            
+            // Reset form
+            event.target.reset();
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Set max date for disaster date to today
+        window.addEventListener('load', function() {
+            const dateInput = document.querySelector('input[type="date"]');
+            if (dateInput) {
+                const today = new Date().toISOString().split('T')[0];
+                dateInput.max = today;
+            }
+        });
+    </script>
+</body>
+</html>
