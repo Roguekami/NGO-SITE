@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="Global.css" rel="stylesheet">
+ 
+    <title>Hope Rebuild - Disaster Relief Initiative</title>
+    <link href="Resource.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <svg class="logo-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                </svg>
+                <div class="logo-text">
+                    <h1>NGO World Foudation</h1>
+                    <p>Disaster Relief Initiative</p>
+                </div>
+            </div>
+
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link active" >Home</a>
+                <a href="programs.html" class="nav-link" >Programs</a>
+                <a href="gethelp.html" class="nav-link" >Get Help</a>
+                <a href="" class="nav-link">Support & Resources</a>
+                <a href="#" class="nav-link">About Us</a>
+                <a href="Donate.html" class="donate-btn">
+                    <span>❤️</span> Donate
+                </a>
+            </div>
+
+            <button class="mobile-toggle" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </nav>
+
+<div  class="page">
+    <div class="page">
+        <div style="padding-top: 120px; padding-bottom: 4rem; background: #f9fafb;">
+            <div class="container">
+                <div class="section-header">
+                    <h1 style="font-size: 3rem; font-weight: 800;">Disaster Recovery Resources</h1>
+                    <p>Helpful information, guides, and links to support your recovery journey</p>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+                    <!-- Government Aid Resources -->
+                    <div class="form-container">
+                        <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                            <div style="background: #dbeafe; padding: 0.75rem; border-radius: 12px; margin-right: 1rem;">
+                                <svg width="32" height="32" fill="none" stroke="#2563eb" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                </svg>
+                            </div>
+                            <h2 style="font-size: 1.5rem; font-weight: 700;">Government Aid Programs</h2>
+                        </div>
+
+                        <a href="#" class="resource-link">
+                            <svg class="resource-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                            </svg>
+                            <div class="resource-content">
+                                <h3>National Emergency Management Agency (NEMA)</h3>
+                                <p>Official disaster relief and assistance programs</p>
+                            </div>
+                        </a>
+
+                        <a href="#" class="resource-link">
+                            <svg class="resource-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                            </svg>
+                            <div class="resource-content">
+                                <h3>Federal Inland Revenue Service</h3>
+                                <p>Tax relief information for disaster victims</p>
+                            </div>
+                        </a>
+
+                        <a href="#" class="resource-link">
+                            <svg class="resource-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                            </svg>
+                            <div class="resource-content">
+                                <h3>State Emergency Management Agencies</h3>
+                                <p>Local disaster response and recovery services</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Housing Resources -->
+                    <div class="form-container">
+                        <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                            <div style="background: #d1fae5; padding: 0.75rem; border-radius: 12px; margin-right: 1rem;">
+                                <svg width="32" height="32" fill="none" stroke="#16a34a" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                                </svg>
+                            </div>
+                            <h2 style="font-size: 1.5rem; font-weight: 700;">Housing & Shelter</h2>
+                        </div>
+
+                        <a href="#" class="resource-link">
+                            <svg class="resource-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                            </svg>
+                            <div class="resource-content">
+                                <h3>Emergency Shelter Locator</h3>
+                                <p>Find temporary housing in your area</p>
+                            </div>
+                        </a>
+
+                        <a href="#" class="resource-link">
+                            <svg class="resource-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                            </svg>
+                            <div class="resource-content">
+                                <h3>Affordable Housing Programs</h3>
+                                <p>Long-term housing assistance options</p>
+                            </div>
+                        </a>
+
+                        <a href="#" class="resource-link">
+                            <svg class="resource-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                            </svg>
+                            <div class="resource-content">
+                                <h3>Rebuilding Grants & Loans</h3>
+                                <p>Financial assistance for home repairs</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Downloadable Guides -->
+                <div class="form-container" style="margin-bottom: 3rem;">
+                    <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem; display: flex; align-items: center;">
+                        <svg width="24" height="24" fill="none" stroke="#9333ea" viewBox="0 0 24 24" style="margin-right: 0.75rem;">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                        </svg>
+                        Downloadable Guides
+                    </h2>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                        <div style="border: 2px solid #e5e7eb; border-radius: 12px; padding: 1.5rem; transition: all 0.3s; cursor: pointer;">
+                            <h3 style="font-weight: 700; margin-bottom: 0.5rem;">Disaster Recovery Checklist</h3>
+                            <p style="font-size: 0.875rem; color: #6b7280; margin-bottom: 1rem;">Step-by-step guide for the first 30 days after a disaster</p>
+                            <button style="color: #9333ea; font-weight: 600; background: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 0.5rem;">
+                                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                                </svg>
+                                Download PDF
+                            </button>
+                        </div>
+
+                        <div style="border: 2px solid #e5e7eb; border-radius: 12px; padding: 1.5rem; transition: all 0.3s; cursor: pointer;">
+                            <h3 style="font-weight: 700; margin-bottom: 0.5rem;">Government Aid Application Guide</h3>
+                            <p style="font-size: 0.875rem; color: #6b7280; margin-bottom: 1rem;">Complete instructions for applying for disaster relief</p>
+                            <button style="color: #9333ea; font-weight: 600; background: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 0.5rem;">
+                                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                                </svg>
+                                Download PDF
+                            </button>
+                        </div>
+
+                        <div style="border: 2px solid #e5e7eb; border-radius: 12px; padding: 1.5rem; transition: all 0.3s; cursor: pointer;">
+                            <h3 style="font-weight: 700; margin-bottom: 0.5rem;">Tax Relief for Disaster Victims</h3>
+                            <p style="font-size: 0.875rem; color: #6b7280; margin-bottom: 1rem;">Understanding available tax benefits and how to claim them</p>
+                            <button style="color: #9333ea; font-weight: 600; background: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 0.5rem;">
+                                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                                </svg>
+                                Download PDF
+                            </button>
+                        </div>
+
+                        <div style="border: 2px solid #e5e7eb; border-radius: 12px; padding: 1.5rem; transition: all 0.3s; cursor: pointer;">
+                            <h3 style="font-weight: 700; margin-bottom: 0.5rem;">Mental Health Support Resources</h3>
+                            <p style="font-size: 0.875rem; color: #6b7280; margin-bottom: 1rem;">Coping with trauma and finding professional help</p>
+                            <button style="color: #9333ea; font-weight: 600; background: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 0.5rem;">
+                                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                                </svg>
+                                Download PDF
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Section -->
+                <div class="form-container" style="margin-bottom: 3rem;">
+                    <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem;">Frequently Asked Questions</h2>
+
+                    <div style="margin-bottom: 1.5rem;">
+                        <h3 style="font-weight: 700; margin-bottom: 0.5rem;">Who is eligible for disaster relief assistance?</h3>
+                        <p style="color: #4b5563; line-height: 1.7;">Anyone who has been directly affected by a natural disaster may be eligible for our services. This includes those who have lost homes, sustained property damage, or experienced financial hardship due to disasters.</p>
+                    </div>
+
+                    <div style="margin-bottom: 1.5rem;">
+                        <h3 style="font-weight: 700; margin-bottom: 0.5rem;">How long does it take to receive help?</h3>
+                        <p style="color: #4b5563; line-height: 1.7;">Our emergency response team contacts applicants within 24 hours of submission. Emergency housing can typically be arranged within 48-72 hours depending on availability.</p>
+                    </div>
+
+                    <div style="margin-bottom: 1.5rem;">
+                        <h3 style="font-weight: 700; margin-bottom: 0.5rem;">Do I have to pay for your services?</h3>
+                        <p style="color: #4b5563; line-height: 1.7;">No. All our disaster relief services are provided free of charge to survivors. We are funded entirely by donations and grants.</p>
+                    </div>
+
+                    <div>
+                        <h3 style="font-weight: 700; margin-bottom: 0.5rem;">Can you help me get government disaster relief money?</h3>
+                        <p style="color: #4b5563; line-height: 1.7;">We provide guidance and assistance with completing government aid applications, but we cannot guarantee approval. All decisions about government assistance are made by the relevant government agencies.</p>
+                    </div>
+                </div>
+
+                <!-- Bottom CTA -->
+                <div class="cta-banner">
+                    <h2>Help Us Reach More People</h2>
+                    <p>These resources save lives. Your donation helps us expand our programs and assist more families in need</p>
+                    <button class="btn-primary" onclick="showPage('donate')">
+                        <span style="font-size: 1.5rem;">❤️</span>
+                        Donate Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+        <script src="main.js"></script>
+
+</body>
+</html>

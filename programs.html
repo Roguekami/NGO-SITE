@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+ 
+    <title>Hope Rebuild - Disaster Relief Initiative</title>
+    <link href="programs.css" rel="stylesheet">
+    <link href="Global.css" rel="stylesheet">
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo" onclick="showPage('home')">
+                <svg class="logo-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                </svg>
+                <div class="logo-text">
+                    <h1>NGO World Foudation</h1>
+                    <p>Disaster Relief Initiative</p>
+                </div>
+            </div>
+
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link " >Home</a>
+                <a href="programs.html" class="nav-link active" >Programs</a>
+                <a href="gethelp.html" class="nav-link" >Get Help</a>
+                <a href="#" class="nav-link">Support & Resources</a>
+                <a href="#" class="nav-link">About Us</a>
+                <a href="" class="donate-btn">
+                    <span>❤️</span> Donate
+                </a>
+            </div>
+
+            <button class="mobile-toggle" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </nav>
+
+    <main class="programs">
+    <div  class="page">
+        <div style="padding-top: 120px; padding-bottom: 4rem;">
+            <div class="container">
+                <div class="section-header">
+                    <h1 style="font-size: 3rem; font-weight: 800;">Our Programs</h1>
+                    <p>Comprehensive disaster relief services designed to help families recover and communities rebuild stronger</p>
+                </div>
+
+                <!-- Program Stats Banner -->
+                <div style="background: linear-gradient(135deg, #2563eb 0%, #16a34a 100%); border-radius: 16px; padding: 3rem 2rem; color: white; margin-bottom: 4rem;">
+                    <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 2rem; text-align: center;">Our Impact in Numbers</h2>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: center;">
+                        <div>
+                            <div style="font-size: 3rem; font-weight: 800; margin-bottom: 0.5rem;">2,500+</div>
+                            <p style="opacity: 0.95; font-size: 1.125rem;">Families Helped</p>
+                        </div>
+                        <div>
+                            <div style="font-size: 3rem; font-weight: 800; margin-bottom: 0.5rem;">500+</div>
+                            <p style="opacity: 0.95; font-size: 1.125rem;">Homes Provided</p>
+                        </div>
+                        <div>
+                            <div style="font-size: 3rem; font-weight: 800; margin-bottom: 0.5rem;">₦45M</div>
+                            <p style="opacity: 0.95; font-size: 1.125rem;">Aid Distributed</p>
+                        </div>
+                        <div>
+                            <div style="font-size: 3rem; font-weight: 800; margin-bottom: 0.5rem;">15</div>
+                            <p style="opacity: 0.95; font-size: 1.125rem;">Communities Rebuilt</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Emergency Housing Program -->
+                <div class="program-card blue" style="margin-bottom: 3rem;">
+                    <div class="program-header">
+                        <div class="program-icon" style="background: #dbeafe;">
+                            <svg fill="none" stroke="#2563eb" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                            </svg>
+                        </div>
+                        <h2 style="font-size: 2rem; font-weight: 700;">Emergency Housing Program</h2>
+                    </div>
+                    
+                    <p style="color: #4b5563; line-height: 1.8; margin-bottom: 1.5rem; font-size: 1.125rem;">
+                        Our flagship program provides immediate shelter solutions for families who have lost their homes to floods, fires, storms, and other natural disasters. We deploy movable housing units within 48-72 hours of application approval, ensuring families have safe, dignified temporary accommodation.
+                    </p>
+
+                    <div style="background: #f9fafb; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem;">
+                        <h3 style="font-size: 1.125rem; font-weight: 700; margin-bottom: 1rem; color: #1f2937;">What We Provide:</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                            <div>
+                                <div style="display: flex; align-items: flex-start; margin-bottom: 0.75rem;">
+                                    <span style="color: #2563eb; margin-right: 0.5rem; font-size: 1.25rem;">✓</span>
+                                    <span style="color: #4b5563;"><strong>Movable Home Units:</strong> Fully equipped temporary housing with beds, kitchen, and bathroom</span>
+                                </div>
+                                <div style="display: flex; align-items: flex-start; margin-bottom: 0.75rem;">
+                                    <span style="color: #2563eb; margin-right: 0.5rem; font-size: 1.25rem;">✓</span>
+                                    <span style="color: #4b5563;"><strong>Essential Furniture:</strong> Tables, chairs, storage, and sleeping arrangements</span>
+                                </div>
+                                <div style="display: flex; align-items: flex-start;">
+                                    <span style="color: #2563eb; margin-right: 0.5rem; font-size: 1.25rem;">✓</span>
+                                    <span style="color: #4b5563;"><strong>Basic Utilities:</strong> Connection to water, electricity where available</span>
+                                </div>
+                            </div>
+                            <div>
+                                <div style="display: flex; align-items: flex-start; margin-bottom: 0.75rem;">
+                                    <span style="color: #2563eb; margin-right: 0.5rem; font-size: 1.25rem;">✓</span>
+                                    <span style="color: #4b5563;"><strong>Household Supplies:</strong> Cooking utensils, bedding, hygiene products</span>
+                                </div>
+                                <div style="display: flex; align-items: flex-start; margin-bottom: 0.75rem;">
+                                    <span style="color: #2563eb; margin-right: 0.5rem; font-size: 1.25rem;">✓</span>
+                                    <span style="color: #4b5563;"><strong>Food Packages:</strong> Initial 2-week supply of non-perishables</span>
+                                </div>
+                                <div style="display: flex; align-items: flex-start;">
+                                    <span style="color: #2563eb; margin-right: 0.5rem; font-size: 1.25rem;">✓</span>
+                                    <span style="color: #4b5563;"><strong>Ongoing Support:</strong> Regular check-ins and maintenance</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="impact-box">
+                        <h4>How Your Donation Helps:</h4>
+                        <div class="impact-item">₦50,000 sponsors one complete movable home unit for a family (6 months)</div>
+                        <div class="impact-item">₦15,000 funds one month of housing support including utilities and maintenance</div>
+                        <div class="impact-item">₦5,000 provides essential furniture and household items for one family</div>
+                        <div class="impact-item">₦2,000 supplies a 2-week emergency food package</div>
+                    </div>
+
+                    <div style="background: #dbeafe; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0;">
+                        <h4 style="font-weight: 700; margin-bottom: 1rem; color: #1e40af;">Program Success Story</h4>
+                        <p style="color: #1e40af; font-style: italic; line-height: 1.7;">
+                            "After the floods destroyed our home, we had nowhere to go. Hope Rebuild provided us with a movable home within 3 days. It gave our family shelter, safety, and hope. We lived there for 8 months while rebuilding our permanent home. We are forever grateful."
+                            <br><strong>— Mrs. Adebayo, Lagos State</strong>
+                        </p>
+                    </div>
+                    
+                    <button class="program-btn" style="background: #2563eb;" onclick="showPage('donate')">
+                        Support Emergency Housing Program →
+                    </button>
+                </div>
+
+                <!-- Government Aid Program -->
+                <div class="program-card green" style="margin-bottom: 3rem;">
+                    <div class="program-header">
+                        <div class="program-icon" style="background: #d1fae5;">
+                            <svg fill="none" stroke="#16a34a" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                            </svg>
+                        </div>
+                        <h2 style="font-size: 2rem; font-weight: 700;">Government Aid Navigation Program</h2>
+                    </div>
+                    
+                    <p style="color: #4b5563; line-height: 1.8; margin-bottom: 1.5rem; font-size: 1.125rem;">
+                        Navigating government assistance can be overwhelming during a crisis. Our expert team guides disaster survivors through complex application processes, helps gather required documentation, and advocates on your behalf to access available government relief programs, tax benefits, and recovery grants.
+                    </p>
+
+                    <div style="background: #f9fafb; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem;">
+                        <h3 style="font-size: 1.125rem; font-weight: 700; margin-bottom: 1rem; color: #1f2937;">Services We Provide:</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                            <div>
+                                <div style="display: flex; align-items: flex-start; margin-bottom: 0.75rem;">
+                                    <span style="color: #16a34a; margin-right: 0.5rem; font-size: 1.25rem;">✓</span>
+                                    <span style="color: #4b5563;"><strong>Application Assistance:</strong> Help completing NEMA and state emergency forms</span>
+                                </div>
+                                <div style="display: flex; align-items: flex-start; margin-bottom: 0.75rem;">
+                                    <span style="color: #16a34a; margin-right: 0.5rem; font-size: 1.25rem;">✓</span>
+                                    <span style="color: #4b5563;"><strong>Document Preparation:</strong> Organizing proof of loss and identity documents</span>
+                                </div>
+                                <div style="display: flex; align-items: flex-start;">
+                                    <span style="color: #16a34a; margin-right: 0.5rem; font-size: 1.25rem;">✓</span>
+                                    <span style="color: #4b5563;"><strong>Legal Support:</strong> Pro bono legal aid for complex cases</span>
+                                </div>
+                            </div>
+                            <div>
+                                <div style="display: flex; align-items: flex-start; margin-bottom: 0.75rem;">
+                                    <span style="color: #16a34a; margin-right: 0.5rem; font-size: 1.25rem;">✓</span>
+                                    <span style="color: #4b5563;"><strong>Tax Relief Guidance:</strong> Understanding disaster-related tax deductions</span>
+                                </div>
+                                <div style="display: flex; align-items: flex-start; margin-bottom: 0.75rem;">
+                                    <span style="color: #16a34a; margin-right: 0.5rem; font-size: 1.25rem;">✓</span>
+                                    <span style="color: #4b5563;"><strong>Follow-up Services:</strong> Tracking application status and appeals</span>
+                                </div>
+                                <div style="display: flex; align-items: flex-start;">
+                                    <span style="color: #16a34a; margin-right: 0.5rem; font-size: 1.25rem;">✓</span>
+                                    <span style="color: #4b5563;"><strong>Advocacy:</strong> Representing you in government communications</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="impact-box">
+                        <h4>How Your Donation Helps:</h4>
+                        <div class="impact-item">₦25,000 funds complete application support for 5 families</div>
+                        <div class="impact-item">₦10,000 provides legal assistance and representation for one family's claims</div>
+                        <div class="impact-item">₦3,000 covers document preparation, filing fees, and photocopies</div>
+                        <div class="impact-item">₦1,500 supports follow-up services and status tracking for one case</div>
+                    </div>
+
+                    <div style="background: #d1fae5; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0;">
+                        <h4 style="font-weight: 700; margin-bottom: 1rem; color: #15803d;">Program Success Story</h4>
+                        <p style="color: #15803d; font-style: italic; line-height: 1.7;">
+                            "I didn't know where to start with government aid applications. The forms were confusing and I kept getting rejected. Hope Rebuild helped me organize my documents, fill out the forms correctly, and even spoke to officials on my behalf. I received ₦180,000 in disaster relief that I would have never gotten alone."
+                            <br><strong>— Mr. Okonkwo, Anambra State</strong>
+                        </p>
+                    </div>
+                    
+                    <button class="program-btn" style="background: #16a34a;" onclick="showPage('donate')">
+                        Support Government Aid Navigation →
+                    </button>
+                </div>
+
+                <!-- Community Rebuilding Program -->
+                <div class="program-card purple" style="margin-bottom: 3rem;">
+                    <div class="program-header">
+                        <div class="program-icon" style="background: #e9d5ff;">
+                            <svg fill="none" stroke="#9333ea" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                            </svg>
+                        </div>
+                        <h2 style="font-size: 2rem; font-weight: 700;">Community Rebuilding Initiative</h2>
+                    </div>
+                    
+                    <p style="color: #4b5563; line-height: 1.8; margin-bottom: 1.5rem; font-size: 1.125rem;">
+                        Disaster recovery doesn't end with emergency relief. Our Community Rebuilding Initiative focuses on long-term sustainable recovery through job training, mental health support, infrastructure restoration, and economic empowerment. We work alongside community leaders to create resilient neighborhoods that are better prepared for future challenges.
+                    </p>
+
+                    <div style="background: #f9fafb; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem;">
+                        <h3 style="font-size: 1.125rem; font-weight: 700; margin-bottom: 1rem; color: #1f2937;">Our Comprehensive Approach:</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                            <div>
+                                <div style="display: flex; align-items: flex-start; margin-bottom: 0.75rem;">
+                                    <span style="color: #9333ea; margin-right: 0.5rem; font-size: 1.25rem;">✓</span>
+                                    <span style="color: #4b5563;"><strong>Job Training Programs:</strong> Skills development for displaced workers</span>
+                                </div>
+                                <div style="display: flex; align-items: flex-start; margin-bottom: 0.75rem;">
+                                    <span style="color: #9333ea; margin-right: 0.5rem; font-size: 1.25rem;">✓</span>
+                                    <span style="color: #4b5563;"><strong>Mental Health Support:</strong> Trauma counseling and support groups</span>
+                                </div>
+                                <div style="display: flex; align-items: flex-start;">
+                                    <span style="color: #9333ea; margin-right: 0.5rem; font-size: 1.25rem;">✓</span>
+                                    <span style="color: #4b5563;"><strong>Small Business Grants:</strong> Helping entrepreneurs restart operations</span>
+                                </div>
+                            </div>
+                            <div>
+                                <div style="display: flex; align-items: flex-start; margin-bottom: 0.75rem;">
+                                    <span style="color: #9333ea; margin-right: 0.5rem; font-size: 1.25rem;">✓</span>
+                                    <span style="color: #4b5563;"><strong>Infrastructure Repair:</strong> Rebuilding community centers and schools</span>
+                                </div>
+                                <div style="display: flex; align-items: flex-start; margin-bottom: 0.75rem;">
+                                    <span style="color: #9333ea; margin-right: 0.5rem; font-size: 1.25rem;">✓</span>
+                                    <span style="color: #4b5563;"><strong>Youth Programs:</strong> Educational support for affected children</span>
+                                </div>
+                                <div style="display: flex; align-items: flex-start;">
+                                    <span style="color: #9333ea; margin-right: 0.5rem; font-size: 1.25rem;">✓</span>
+                                    <span style="color: #4b5563;"><strong>Disaster Preparedness:</strong> Training communities for future resilience</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="impact-box">
+                        <h4>How Your Donation Helps:</h4>
+                        <div class="impact-item">₦35,000 funds rebuilding materials for community spaces (market stalls, meeting halls)</div>
+                        <div class="impact-item">₦20,000 supports vocational training programs for 10 people (3-month courses)</div>
+                        <div class="impact-item">₦8,000 provides trauma counseling sessions for one affected family (8 sessions)</div>
+                        <div class="impact-item">₦5,000 offers small business restart grants or equipment</div>
+                    </div>
+
+                    <div style="background: #e9d5ff; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0;">
+                        <h4 style="font-weight: 700; margin-bottom: 1rem; color: #7e22ce;">Program Success Story</h4>
+                        <p style="color: #7e22ce; font-style: italic; line-height: 1.7;">
+                            "Our entire market was destroyed in the fire. Hope Rebuild didn't just help us rebuild the stalls—they trained 25 of us in new skills like tailoring and phone repair. They also provided counseling because many of us were traumatized. Today our market is thriving again and we're stronger than before."
+                            <br><strong>— Chief Nnamdi, Community Leader, Imo State</strong>
+                        </p>
+                    </div>
+                    
+                    <button class="program-btn" style="background: #9333ea;" onclick="showPage('donate')">
+                        Support Community Rebuilding →
+                    </button>
+                </div>
+
+                <!-- How to Access Programs -->
+                <div style="background: #f9fafb; border-radius: 16px; padding: 2.5rem; margin-bottom: 3rem;">
+                    <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 2rem; text-align: center;">How to Access Our Programs</h2>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                        <div style="text-align: center;">
+                            <div style="width: 64px; height: 64px; background: #dbeafe; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem; font-weight: 700; color: #2563eb;">1</div>
+                            <h3 style="font-weight: 700; margin-bottom: 0.5rem;">Submit Request</h3>
+                            <p style="color: #6b7280; font-size: 0.875rem;">Fill out our Get Help form with your information and needs</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="width: 64px; height: 64px; background: #d1fae5; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem; font-weight: 700; color: #16a34a;">2</div>
+                            <h3 style="font-weight: 700; margin-bottom: 0.5rem;">Assessment</h3>
+                            <p style="color: #6b7280; font-size: 0.875rem;">Our team reviews your case within 24 hours</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="width: 64px; height: 64px; background: #e9d5ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem; font-weight: 700; color: #9333ea;">3</div>
+                            <h3 style="font-weight: 700; margin-bottom: 0.5rem;">Get Support</h3>
+                            <p style="color: #6b7280; font-size: 0.875rem;">Receive assistance tailored to your specific situation</p>
+                        </div>
+                    </div>
+                    <div style="text-align: center; margin-top: 2rem;">
+                        <button class="btn-primary" onclick="showPage('get-help')">
+                            Apply for Assistance Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Inline CTA -->
+                <div class="cta-banner">
+                    <h2>Your Support Powers All Three Programs</h2>
+                    <p>Every donation helps provide emergency housing, government aid guidance, and long-term community rebuilding</p>
+                    <button class="btn-primary" onclick="showPage('donate')">
+                        <span style="font-size: 1.5rem;">❤️</span>
+                        Make a Donation Today
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>     
+    </main>   
+    <script src="main.js"></script>
+</body>
+</html>
