@@ -9,7 +9,7 @@
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   line-height: 1.6;
   color: #1f2937;
-  background-color: #f9fafb;
+  background-color: white;
        }
 
         /* ==================== NAVIGATION ==================== */
@@ -138,7 +138,56 @@
   filter: brightness(10%); 
   z-index: -1;
 }
+/* Add these animations to your style.css file */
 
+/* Keyframe animation for sliding in from left */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Apply animation to hero heading */
+.hero h1 {
+    animation: slideInLeft 0.8s ease-out;
+    animation-fill-mode: both;
+}
+
+/* Apply animation to hero paragraph with delay */
+.hero p {
+    animation: slideInLeft 0.8s ease-out;
+    animation-delay: 0.2s;
+    animation-fill-mode: both;
+    opacity: 0; /* Start invisible */
+}
+
+/* Apply animation to hero buttons with more delay */
+.hero-buttons {
+    animation: slideInLeft 0.8s ease-out;
+    animation-delay: 0.4s;
+    animation-fill-mode: both;
+    opacity: 0; /* Start invisible */
+}
+
+/* Optional: Add animation to individual buttons for staggered effect */
+.hero-buttons .btn-primary {
+    animation: slideInLeft 0.8s ease-out;
+    animation-delay: 0.5s;
+    animation-fill-mode: both;
+    opacity: 0;
+}
+
+.hero-buttons .btn-secondary {
+    animation: slideInLeft 0.8s ease-out;
+    animation-delay: 0.7s;
+    animation-fill-mode: both;
+    opacity: 0;
+}
 
         .hero-content {
             max-width: 900px;
@@ -216,15 +265,19 @@
 
         /* ==================== SECTIONS ==================== */
         .section {
-            padding: 4rem 1.5rem;
+            padding: 5rem 1.5rem;
         }
+                #sect{
+                        padding: 1rem 1.5rem;
+
+        }
+
 
         .section-white {
             background: white;
         }
 
         .section-gray {
-            background: #f9fafb;
         }
 
         .container {
@@ -236,13 +289,13 @@
             text-align: center;
             margin-bottom: 3rem;
         }
-
+       
         .section-header h2 {
-            width: 30%;
+            width: 28%;
             margin: 0 auto 1rem auto;
-            padding: 10px 10px;
+            padding: 5px 0px;
             background-color: #f0f0f0;
-            border-radius: 30px;
+            border-radius: 40px;
             font-size: 2.5rem;
             font-weight: 800;
              color:#1F2937;
@@ -420,7 +473,6 @@
         .form-container {
             background: white;
             border-radius: 16px;
-            padding: 2.5rem;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
@@ -589,9 +641,56 @@
             padding: 1.5rem;
             border-radius: 12px;
             margin: 2rem 0;
-            display: flex;
             gap: 1rem;
         }
+.three-section {
+  display: grid;
+    grid-template-columns: repeat(3, 0.33fr);
+  gap: 2rem;
+  margin-left: 2rem;
+  margin-top: 5rem;
+}
+.box{
+            border-left: 4px solid #2563eb;
+              padding: 1.5rem;
+
+                        border-radius: 12px;
+                        background-color: #cdd7f4;
+ gap: 1rem;
+ padding-left: 0.5rem;
+}
+.box1{
+                        border-radius: 12px;
+            background: #fef3c7;
+  padding: 1.5rem;
+ border-left: 4px solid #f59e0b;
+
+ gap: 1rem;
+ padding-left: 0.5rem;
+}
+.box2{
+                        border-radius: 12px;
+            background: white;
+  padding: 1.5rem;
+ border-left: 4px solid rgb(228, 228, 228);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+ gap: 1rem;
+ padding-left: 0.5rem;
+}
+
+.disclaimer-title {
+  display: flex;
+  align-items: center;      /* centers SVG vertically */
+  gap: 0.5rem;              /* space between icon and text */
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.disclaimer-title svg {
+  flex-shrink: 0;           /* prevents squishing */
+}
 
         .alert-warning {
             background: #fef3c7;
@@ -613,6 +712,7 @@
             background: #111827;
             color: white;
             padding: 3rem 1.5rem 1.5rem;
+            margin-top: 8rem;
         }
 
         .footer-grid {
@@ -807,3 +907,27 @@
         .hidden {
             display: none !important;
         }
+/* Container for the side-by-side layout */
+/* All 3 boxes side by side */
+.three-column-container {
+    display: grid;
+    grid-template-columns: repeat(3, 0.4fr);
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+
+
+
+/* Responsive: Stack on tablets and mobile */
+@media (max-width: 1200px) {
+    .three-column-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+    .three-column-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

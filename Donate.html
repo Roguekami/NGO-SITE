@@ -8,6 +8,7 @@
  
     <title>Hope Rebuild - Disaster Relief Initiative</title>
     <link href="donate.css" rel="stylesheet">
+    <link href="Global.css" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar">
@@ -38,8 +39,10 @@
     </nav>
 </head>
 <body>
+
+
     <!-- Header -->
-    <div class="header">
+    <div class="donate-header">
         <h1>Make a Difference Today</h1>
         <p>Your generosity provides immediate relief and long-term recovery support to families affected by disasters. Every donation transforms lives.</p>
     </div>
@@ -205,22 +208,8 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label">Donation in honor/memory of someone? (Optional)</label>
-                            <select class="form-select" id="tributeType" onchange="toggleTribute()">
-                                <option value="">No tribute</option>
-                                <option value="honor">In honor of</option>
-                                <option value="memory">In memory of</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group" id="tributeNameSection" style="display: none;">
-                            <label class="form-label">Name of person being honored/remembered</label>
-                            <input type="text" class="form-input" placeholder="Enter name">
-                        </div>
-
-                        <div class="form-group">
                             <label class="form-label">Add a personal message (Optional)</label>
-                            <textarea class="form-input" rows="4" placeholder="Share why you're donating or add a message of support..."></textarea>
+                            <textarea class="form-textarea" rows="4" placeholder="Share why you're donating or add a message of support..."></textarea>
                         </div>
                     </div>
 
@@ -232,7 +221,7 @@
                             <input type="checkbox" id="updates" checked>
                             <label for="updates">
                                 <strong>Send me impact updates</strong><br>
-                                Receive quarterly reports showing how your donation is making a difference, including stories from families you've helped.
+                                Receive quarterly reports showing how your donation is making a difference
                             </label>
                         </div>
 
@@ -240,50 +229,21 @@
                             <input type="checkbox" id="newsletter">
                             <label for="newsletter">
                                 <strong>Subscribe to newsletter</strong><br>
-                                Get monthly updates about our programs, upcoming events, and ways to get involved beyond donations.
+                                Get monthly updates about our programs and events
                             </label>
-                        </div>
-
-                        <div class="checkbox-group">
-                            <input type="checkbox" id="publicRecognition">
-                            <label for="publicRecognition">
-                                <strong>Public recognition</strong><br>
-                                Allow us to list your name (or "Anonymous") on our website's donor recognition page. We will never share your contact information.
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- Company Matching -->
-                    <div style="margin-bottom: 3rem;">
-                        <h3 class="form-section-title">5. Company Matching (Optional)</h3>
-                        
-                        <div class="form-group">
-                            <label class="form-label">Does your employer match donations?</label>
-                            <select class="form-select" id="companyMatch" onchange="toggleCompanyInfo()">
-                                <option value="no">No / I don't know</option>
-                                <option value="yes">Yes, my company matches</option>
-                            </select>
-                        </div>
-
-                        <div id="companyInfoSection" style="display: none;">
-                            <div class="form-group">
-                                <label class="form-label">Company Name</label>
-                                <input type="text" class="form-input" placeholder="Enter your company name">
-                                <p class="form-help-text">We'll provide matching gift documentation</p>
-                            </div>
                         </div>
                     </div>
 
                     <!-- Payment Method -->
                     <div style="margin-bottom: 2rem;">
-                        <h3 class="form-section-title">6. Payment Method</h3>
+                        <h3 class="form-section-title">5. Payment Method</h3>
                         
                         <div class="form-group">
                             <label class="form-label">How would you like to pay? <span class="required">*</span></label>
                             <div class="radio-group">
                                 <label class="radio-option selected">
                                     <input type="radio" name="payment" value="card" checked>
-                                    <span class="radio-label">💳 Credit/Debit Card (Visa, Mastercard, Verve)</span>
+                                    <span class="radio-label">💳 Credit/Debit Card</span>
                                 </label>
                                 <label class="radio-option">
                                     <input type="radio" name="payment" value="bank-transfer">
@@ -291,14 +251,9 @@
                                 </label>
                                 <label class="radio-option">
                                     <input type="radio" name="payment" value="mobile-money">
-                                    <span class="radio-label">📱 Mobile Money (MTN, Airtel, etc.)</span>
-                                </label>
-                                <label class="radio-option">
-                                    <input type="radio" name="payment" value="paypal">
-                                    <span class="radio-label">💰 PayPal</span>
+                                    <span class="radio-label">📱 Mobile Money</span>
                                 </label>
                             </div>
-                            <p class="form-help-text">All transactions are secure and encrypted</p>
                         </div>
                     </div>
 
@@ -307,18 +262,18 @@
                         <input type="checkbox" id="terms" required>
                         <label for="terms">
                             <strong>I confirm this donation</strong><br>
-                            I understand that this is a charitable donation to Hope Rebuild, a registered nonprofit organization. Donations are tax-deductible to the extent allowed by law. By submitting this form, I authorize Hope Rebuild to process my donation.
+                            I authorize Hope Rebuild to process my donation
                         </label>
                     </div>
 
                     <!-- Submit Button -->
                     <button type="submit" class="form-submit">
                         <span style="font-size: 1.5rem;">❤️</span>
-                        <span id="submitBtnText">Complete Donation</span>
+                        <span>Complete Donation</span>
                     </button>
 
                     <p style="text-align: center; font-size: 0.875rem; color: #6b7280; margin-top: 1rem;">
-                        🔒 Secure payment powered by Paystack • Your information is encrypted and safe
+                        🔒 Secure payment • Your information is encrypted and safe
                     </p>
                 </form>
             </div>
@@ -332,15 +287,76 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
                         <h3>100% Accountable</h3>
-                        <p>Every donation is tracked with quarterly impact reports showing exactly how your money helps families recover.</p>
+                        <p>Every donation is tracked with quarterly impact reports</p>
                     </div>
                     <div class="trust-item">
                         <svg class="trust-icon" fill="none" stroke="#2563eb" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                         </svg>
                         <h3>Registered & Certified</h3>
-                        <p>Fully certified nonprofit with government recognition. All donations are tax-deductible.</p>
+                        <p>Fully certified nonprofit with government recognition</p>
                     </div>
                     <div class="trust-item">
                         <svg class="trust-icon" fill="none" stroke="#9333ea" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                        <h3>Direct Impact</h3>
+                        <p>95% of funds go directly to program services</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand">
+                    <svg width="32" height="32" fill="none" stroke="#3b82f6" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                    </svg>
+                    <h3>Hope Rebuild</h3>
+                </div>
+                <p style="color: #9ca3af; font-size: 0.875rem;">
+                    A trusted nonprofit organization dedicated to helping communities recover from natural disasters.
+                </p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="get-help.html">Get Help</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Get Involved</h4>
+                <ul>
+                    <li><a href="donate.html">Donate</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="#">Volunteer</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul style="color: #9ca3af; font-size: 0.875rem;">
+                    <li>+234 800 HELP NOW</li>
+                    <li>support@hoperebuild.org</li>
+                    <li>Lagos, Nigeria</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Hope Rebuild Initiative. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/donate.js"></script>
+</body>
+</html>

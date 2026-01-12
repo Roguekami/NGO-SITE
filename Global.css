@@ -216,15 +216,17 @@
 
         /* ==================== SECTIONS ==================== */
         .section {
-            padding: 4rem 1.5rem;
+            padding: 5rem 1.5rem;
         }
+        #sect{
+                        padding: 1rem 1.5rem;
 
+        }
         .section-white {
             background: white;
         }
 
         .section-gray {
-            background: #f9fafb;
         }
 
         .container {
@@ -238,7 +240,7 @@
         }
 
         .section-header h2 {
-            width: 30%;
+            width: 25%;
             margin: 0 auto 1rem auto;
             padding: 10px 10px;
             background-color: #f0f0f0;
@@ -248,7 +250,7 @@
              color:#1F2937;
             margin-bottom: 1rem;
         }
-
+        
         .section-header p {
             font-size: 1.25rem;
             color:#374151;
@@ -420,7 +422,9 @@
         .form-container {
             background: white;
             border-radius: 16px;
-            padding: 2.5rem;
+              padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
@@ -590,7 +594,7 @@
             border-radius: 12px;
             margin: 2rem 0;
             display: flex;
-            gap: 1rem;
+            gap: 0rem;
         }
 
         .alert-warning {
@@ -599,7 +603,6 @@
         }
 
         .alert-info {
-            background: #dbeafe;
             border-left: 4px solid #2563eb;
         }
 
@@ -1263,7 +1266,6 @@
         }
 
         .alert-info {
-            background: #dbeafe;
             border-left: 4px solid #2563eb;
         }
 
@@ -1466,4 +1468,5 @@
                 text-align: center;
             }
         }
+
 
