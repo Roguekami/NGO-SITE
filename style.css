@@ -48,7 +48,9 @@
         .logo-text h1 {
             font-size: 1.25rem;
             font-weight: 700;
-            color: #1f2937;
+        }
+        .logo-text h1:hover {
+            color: #1d4ed8;
         }
 
         .logo-text p {
@@ -291,13 +293,13 @@
         }
        
         .section-header h2 {
-            width: 28%;
+        width: 21%;
             margin: 0 auto 1rem auto;
-            padding: 5px 0px;
+            padding: 4px 0px;
             background-color: #f0f0f0;
             border-radius: 40px;
-            font-size: 2.5rem;
-            font-weight: 800;
+            font-size: 2rem;
+            font-weight: 700;
              color:#1F2937;
             margin-bottom: 1rem;
         }
