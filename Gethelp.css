@@ -1528,7 +1528,8 @@
         }
 
         .header p {
-            font-size: 1.25rem;
+            font-size: 1.35rem;
+            font-weight: 500;
             color: #ffffff;
             max-width: 800px;
             margin: 0 auto;
