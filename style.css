@@ -290,7 +290,7 @@
         }
        
         .section-header h2 {
-            max-width: 15%;
+        width: 21%;
             margin: 0 auto 1rem auto;
             padding: 4px 0px;
             background-color: #f0f0f0;
