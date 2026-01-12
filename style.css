@@ -279,9 +279,6 @@
             background: white;
         }
 
-        .section-gray {
-        }
-
         .container {
             max-width: 1280px;
             margin: 0 auto;
@@ -293,15 +290,36 @@
         }
        
         .section-header h2 {
-        width: 21%;
+            max-width: 15%;
             margin: 0 auto 1rem auto;
             padding: 4px 0px;
             background-color: #f0f0f0;
             border-radius: 40px;
-            font-size: 2rem;
+            font-size: 22px;
             font-weight: 700;
-             color:#1F2937;
+            color:#1F2937;
             margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+
+        .section-header2 h2{
+            max-width: 21%;
+            margin: 0 auto 1rem auto;
+            padding: 4px 0px;
+            background-color: #e7e4e4;
+            border-radius: 40px;
+            font-size: 18px;
+            font-weight: 700;
+            color:#1F2937;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.2rem;
         }
 
         .section-header p {
@@ -933,7 +951,6 @@
         grid-template-columns: repeat(2, 1fr);
     }
 }
-
 
 
 /* ABOUT US */
