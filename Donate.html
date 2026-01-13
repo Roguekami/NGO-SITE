@@ -18,7 +18,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                 </svg>
                 <div class="logo-text">
-                    <h1>NGO World Foudation</h1>
+                    <h1>THE NGO WORLD FOUNDATION</h1>
                     <p>Disaster Relief Initiative</p>
                 </div>
             </div>
@@ -73,22 +73,6 @@
                 </div>
             </div>
 
-            <!-- Donation Type Selection -->
-            <div class="donation-type-section">
-                <h2>Choose Your Donation Type</h2>
-                <div class="type-grid">
-                    <div class="type-card active" id="oneTimeCard" onclick="selectDonationType('oneTime')">
-                        <h3>One-Time Donation</h3>
-                        <p>Make a single contribution that provides immediate help to families in crisis</p>
-                    </div>
-                    <div class="type-card" id="monthlyCard" onclick="selectDonationType('monthly')">
-                        <span class="type-badge">MOST IMPACT</span>
-                        <h3>Monthly Support</h3>
-                        <p>Become a sustaining supporter and help us plan long-term recovery programs</p>
-                    </div>
-                </div>
-            </div>
-
             <!-- Donation Form -->
             <div class="donation-form-section">
                 <form id="donationForm" onsubmit="submitDonation(event)">
@@ -97,32 +81,12 @@
                         <h3 class="form-section-title">1. Select Your Donation Amount</h3>
                         
                         <div class="form-group">
-                            <label class="form-label">Choose an amount or enter your own <span class="required">*</span></label>
-                            <div class="amount-grid">
-                                <button type="button" class="amount-btn" onclick="selectAmount(5000, this)">
-                                    <span class="amount-label">₦5,000</span>
-                                    <span class="amount-desc">Emergency supplies</span>
-                                </button>
-                                <button type="button" class="amount-btn" onclick="selectAmount(10000, this)">
-                                    <span class="amount-label">₦10,000</span>
-                                    <span class="amount-desc">Shelter for 3 days</span>
-                                </button>
-                                <button type="button" class="amount-btn" onclick="selectAmount(25000, this)">
-                                    <span class="amount-label">₦25,000</span>
-                                    <span class="amount-desc">Aid for 5 families</span>
-                                </button>
-                                <button type="button" class="amount-btn" onclick="selectAmount(50000, this)">
-                                    <span class="amount-label">₦50,000</span>
-                                    <span class="amount-desc">Movable home</span>
-                                </button>
-                                <button type="button" class="amount-btn" onclick="selectAmount(100000, this)">
-                                    <span class="amount-label">₦100,000</span>
-                                    <span class="amount-desc">Major impact</span>
-                                </button>
-                                <button type="button" class="amount-btn" onclick="selectAmount('custom', this)">
-                                    <span class="amount-label">Custom</span>
-                                    <span class="amount-desc">Your choice</span>
-                                </button>
+
+                            <div class="form-group">
+                                <label class="form-label">Amount($)<span class="required">*</span></label>
+                                <input type="text" class="form-input" required placeholder="Enter any amount you wish to donate">
+                            </div>
+
                             </div>
                             
                             <div class="custom-amount" id="customAmountSection">
@@ -213,46 +177,23 @@
                         </div>
                     </div>
 
-                    <!-- Communication Preferences -->
-                    <div style="margin-bottom: 3rem;">
-                        <h3 class="form-section-title">4. Stay Connected</h3>
-                        
-                        <div class="checkbox-group">
-                            <input type="checkbox" id="updates" checked>
-                            <label for="updates">
-                                <strong>Send me impact updates</strong><br>
-                                Receive quarterly reports showing how your donation is making a difference
-                            </label>
-                        </div>
-
-                        <div class="checkbox-group">
-                            <input type="checkbox" id="newsletter">
-                            <label for="newsletter">
-                                <strong>Subscribe to newsletter</strong><br>
-                                Get monthly updates about our programs and events
-                            </label>
-                        </div>
-                    </div>
 
                     <!-- Payment Method -->
                     <div style="margin-bottom: 2rem;">
-                        <h3 class="form-section-title">5. Payment Method</h3>
+                        <h3 class="form-section-title">4. Donate </h3>
                         
                         <div class="form-group">
-                            <label class="form-label">How would you like to pay? <span class="required">*</span></label>
                             <div class="radio-group">
-                                <label class="radio-option selected">
-                                    <input type="radio" name="payment" value="card" checked>
-                                    <span class="radio-label">💳 Credit/Debit Card</span>
-                                </label>
-                                <label class="radio-option">
-                                    <input type="radio" name="payment" value="bank-transfer">
-                                    <span class="radio-label">🏦 Bank Transfer</span>
-                                </label>
-                                <label class="radio-option">
-                                    <input type="radio" name="payment" value="mobile-money">
-                                    <span class="radio-label">📱 Mobile Money</span>
-                                </label>
+                                <a href="https://www.paypal.me/YOUR_PAYPAL_USERNAME" target="_blank">
+                                    <div style="background:#0070ba;
+                                                color:#fff;
+                                                padding:12px 18px;
+                                                border:none;
+                                                border-radius:6px;
+                                                font-size:16px;
+                                                cursor:pointer;"
+                                         > ❤️ Donate with PayPal</div>
+                                  </a>                                
                             </div>
                         </div>
                     </div>

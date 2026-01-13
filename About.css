@@ -1235,6 +1235,10 @@
     margin: 3rem auto;
 }
 
+.partners-grid a {
+    text-decoration: none;
+}
+
 .partner-logo {
     height: 80px;
     background: #f9fafb;
