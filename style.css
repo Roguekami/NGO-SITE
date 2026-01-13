@@ -290,7 +290,7 @@
         }
        
         .section-header h2 {
-        width: 21%;
+             width: 15%;
             margin: 0 auto 1rem auto;
             padding: 4px 0px;
             background-color: #f0f0f0;
@@ -299,34 +299,16 @@
             font-weight: 700;
             color:#1F2937;
             margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            align-content: center;
-            justify-content: center;
-            gap: 0.5rem;
         }
 
 
-        .section-header2 h2{
-            max-width: 21%;
-            margin: 0 auto 1rem auto;
-            padding: 4px 0px;
-            background-color: #e7e4e4;
-            border-radius: 40px;
-            font-size: 18px;
-            font-weight: 700;
-            color:#1F2937;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.2rem;
-        }
+
 
         .section-header p {
             font-size: 1.25rem;
             color:#374151;
             max-width: 800px;
-                        font-weight: 600;
+            font-weight: 600;
             margin: 0 auto;
         }
 
