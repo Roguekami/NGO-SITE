@@ -18,7 +18,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                 </svg>
                 <div class="logo-text">
-                     <a href="index.html" style="color: #1f2937;text-decoration: none;"><h1> The NGO WORLD FOUNDATION</h1></a></h1>
+                     <a href="index.html" style="color: #1f2937;text-decoration: none;"><h1> THE NGO WORLD FOUNDATION</h1></a></h1>
                     <p>Disaster Relief Initiative</p>
                 </div>
             </div>
@@ -127,6 +127,9 @@
                 
                 <form id="helpForm" onsubmit="submitForm(event)">
                     <!-- Personal Information -->
+                     <div class="form-group">
+                        <input type="hidden" class="form-input" name="REQUEST FOR ASSISTANCE " >
+                    </div>
                     <div class="form-group">
                         <label class="form-label">Full Name <span class="required">*</span></label>
                         <input type="text" class="form-input" required placeholder="Enter your full name">
@@ -140,55 +143,12 @@
                         </div>
                         <div class="form-group">
                             <label class="form-label">Phone Number <span class="required">*</span></label>
-                            <input type="tel" class="form-input" required placeholder="+234 XXX XXX XXXX">
+                            <input type="tel" class="form-input" required placeholder="+111 XXX XXX XXXX">
                             <p class="form-help-text">For urgent contact by our case manager</p>
                         </div>
                     </div>
 
                     <div class="form-row">
-                        <div class="form-group">
-                            <label class="form-label">State/Region <span class="required">*</span></label>
-                            <select class="form-select" required>
-                                <option value="">Select your state</option>
-                                <option value="Abia">Abia</option>
-                                <option value="Adamawa">Adamawa</option>
-                                <option value="Akwa Ibom">Akwa Ibom</option>
-                                <option value="Anambra">Anambra</option>
-                                <option value="Bauchi">Bauchi</option>
-                                <option value="Bayelsa">Bayelsa</option>
-                                <option value="Benue">Benue</option>
-                                <option value="Borno">Borno</option>
-                                <option value="Cross River">Cross River</option>
-                                <option value="Delta">Delta</option>
-                                <option value="Ebonyi">Ebonyi</option>
-                                <option value="Edo">Edo</option>
-                                <option value="Ekiti">Ekiti</option>
-                                <option value="Enugu">Enugu</option>
-                                <option value="FCT">Federal Capital Territory</option>
-                                <option value="Gombe">Gombe</option>
-                                <option value="Imo">Imo</option>
-                                <option value="Jigawa">Jigawa</option>
-                                <option value="Kaduna">Kaduna</option>
-                                <option value="Kano">Kano</option>
-                                <option value="Katsina">Katsina</option>
-                                <option value="Kebbi">Kebbi</option>
-                                <option value="Kogi">Kogi</option>
-                                <option value="Kwara">Kwara</option>
-                                <option value="Lagos">Lagos</option>
-                                <option value="Nasarawa">Nasarawa</option>
-                                <option value="Niger">Niger</option>
-                                <option value="Ogun">Ogun</option>
-                                <option value="Ondo">Ondo</option>
-                                <option value="Osun">Osun</option>
-                                <option value="Oyo">Oyo</option>
-                                <option value="Plateau">Plateau</option>
-                                <option value="Rivers">Rivers</option>
-                                <option value="Sokoto">Sokoto</option>
-                                <option value="Taraba">Taraba</option>
-                                <option value="Yobe">Yobe</option>
-                                <option value="Zamfara">Zamfara</option>
-                            </select>
-                        </div>
                         <div class="form-group">
                             <label class="form-label">City/Town <span class="required">*</span></label>
                             <input type="text" class="form-input" required placeholder="Enter your city or town">
@@ -365,50 +325,122 @@
             </div>
 
             <!-- FAQ Section -->
-            <div class="faq-section">
-                <h2>Frequently Asked Questions</h2>
-                
-                <div class="faq-item">
-                    <div class="faq-question">Do I have to pay for your services?</div>
-                    <div class="faq-answer">No. All our disaster relief services are provided completely free of charge to survivors. We are funded entirely by donations and grants. You will never be asked to pay for assistance.</div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">What documents do I need to apply?</div>
-                    <div class="faq-answer">You don't need any documents to submit this initial request. During the assessment process, we may ask for identification and proof of the disaster (photos, police reports, etc.), but we can help you obtain these if you don't have them.</div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">How long can I stay in emergency housing?</div>
-                    <div class="faq-answer">Emergency housing is typically provided for 3-6 months, with possible extensions based on your recovery progress and needs. We work with you to transition to permanent housing solutions.</div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">Can you guarantee I'll receive government disaster aid?</div>
-                    <div class="faq-answer">We cannot guarantee government aid approval as those decisions are made by government agencies. However, we significantly improve your chances by helping you complete applications correctly, gather proper documentation, and advocating on your behalf.</div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">What if I'm not a Nigerian citizen?</div>
-                    <div class="faq-answer">Our emergency services are available to anyone affected by disaster in Nigeria, regardless of citizenship status. We help all people in need during crisis situations.</div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">Can I apply if I already received some government help?</div>
-                    <div class="faq-answer">Yes! Government aid and our services can complement each other. We help fill gaps in support and provide services that government programs may not cover, such as mental health counseling or job training.</div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">What if my situation changes after I submit the form?</div>
-                    <div class="faq-answer">Please contact your assigned case manager immediately if your situation worsens or changes. You can also call our hotline to update your information at any time.</div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">Do you help with rebuilding permanent homes?</div>
-                    <div class="faq-answer">While we primarily provide temporary housing, our Community Rebuilding program can connect you with resources, grants, and partnerships that support permanent home reconstruction. We also help you access government rebuilding programs.</div>
-                </div>
+<!-- FAQ Section -->
+<div class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    
+    <div class="faq-item">
+        <div class="faq-question">
+            Do I have to pay for your services?
+            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+        </div>
+        <div class="faq-answer">
+            <div class="faq-answer-content">
+                No. All our disaster relief services are provided completely free of charge to survivors. We are funded entirely by donations and grants. You will never be asked to pay for assistance.
             </div>
+        </div>
+    </div>
 
+    <div class="faq-item">
+        <div class="faq-question">
+            What documents do I need to apply?
+            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+        </div>
+        <div class="faq-answer">
+            <div class="faq-answer-content">
+                You don't need any documents to submit this initial request. During the assessment process, we may ask for identification and proof of the disaster (photos, police reports, etc.), but we can help you obtain these if you don't have them.
+            </div>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">
+            How long can I stay in emergency housing?
+            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+        </div>
+        <div class="faq-answer">
+            <div class="faq-answer-content">
+                Emergency housing is typically provided for 3-6 months, with possible extensions based on your recovery progress and needs. We work with you to transition to permanent housing solutions.
+            </div>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">
+            Can you guarantee I'll receive government disaster aid?
+            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+        </div>
+        <div class="faq-answer">
+            <div class="faq-answer-content">
+                We cannot guarantee government aid approval as those decisions are made by government agencies. However, we significantly improve your chances by helping you complete applications correctly, gather proper documentation, and advocating on your behalf.
+            </div>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">
+            What if I'm not an American citizen?
+            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+        </div>
+        <div class="faq-answer">
+            <div class="faq-answer-content">
+                Our emergency services are available to anyone affected by disaster in America, regardless of citizenship status. We help all people in need during crisis situations.
+            </div>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">
+            Can I apply if I already received some government help?
+            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+        </div>
+        <div class="faq-answer">
+            <div class="faq-answer-content">
+                Yes! Government aid and our services can complement each other. We help fill gaps in support and provide services that government programs may not cover, such as mental health counseling or job training.
+            </div>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">
+            What if my situation changes after I submit the form?
+            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+        </div>
+        <div class="faq-answer">
+            <div class="faq-answer-content">
+                Please contact your assigned case manager immediately if your situation worsens or changes. You can also call our hotline to update your information at any time.
+            </div>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">
+            Do you help with rebuilding permanent homes?
+            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+        </div>
+        <div class="faq-answer">
+            <div class="faq-answer-content">
+                While we primarily provide temporary housing, our Community Rebuilding program can connect you with resources, grants, and partnerships that support permanent home reconstruction. We also help you access government rebuilding programs.
+            </div>
+        </div>
+    </div>
+</div>
             <!-- Additional Support Methods -->
             <div class="what-next">
                 <h2>Other Ways to Reach Us</h2>
@@ -456,36 +488,74 @@
             </div>
         </div>
     </div>
+    <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand">
+                    <svg width="32" height="32" fill="none" stroke="#3b82f6" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                    </svg>
+                    <h4> <a href="index.html" style="text-decoration: none; color: white;" href="Privacy.html">NGO WORLD FOUNDATION</a></h3>
+                </div>
+                <p style="color: #9ca3af; font-size: 0.875rem; line-height: 1.6;">
+                    A trusted nonprofit organization dedicated to helping communities recover from natural disasters with dignity and hope.
+                </p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="programs.html" >Programs</a></li>
+                    <li><a href="gethelp.html" >Get Help</a></li>
+                    <li><a href="About.html" >About Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Get Involved</h4>
+                <ul>
+                    <li><a href="Donate.html" >Donate</a></li>
+                    <li><a href="Resource.html" >Support & Resources</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul style="color: #9ca3af; font-size: 0.875rem;">
+                    <li style="display: flex; align-items: flex-start; gap: 0.5rem;">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="flex-shrink: 0; margin-top: 0.125rem;">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                        </svg>
+                        <span>+234 800 HELP NOW<br>(+234 800 4357 669)</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 0.5rem; margin-top: 0.75rem;">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="flex-shrink: 0;">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                        <span>support@hoperebuild.org</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 0.5rem; margin-top: 0.75rem;">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="flex-shrink: 0;">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                            <path stroke-linecap="round"  stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        <span>Lagos, Nigeria</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 The Ngo World Foundation. All rights reserved.</p>
+            <div class="footer-links">
+                <a style="cursor: pointer; text-decoration: none; color: #9ca3af" href="Privacy.html">Privacy Policy</a>
+                <a style="cursor: pointer;text-decoration: none; color: #9ca3af"  href="Terms.html" >Terms of Service</a>
+            </div>
+        </div>
+    </footer>
 
     <!-- JavaScript -->
-    <script>
-        function submitForm(event) {
-            event.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(event.target);
-            const name = formData.get('text') || 'there';
-            
-            // Show success message
-            alert(`Thank you for submitting your request. Our case manager will contact you within 24 hours at the phone number you provided. Please keep your phone nearby.\n\nIf you need immediate assistance, please call our emergency hotline: +234 800 HELP NOW`);
-            
-            // Reset form
-            event.target.reset();
-            
-            // Scroll to top
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // Set max date for disaster date to today
-        window.addEventListener('load', function() {
-            const dateInput = document.querySelector('input[type="date"]');
-            if (dateInput) {
-                const today = new Date().toISOString().split('T')[0];
-                dateInput.max = today;
-            }
-        });
-
-    </script>
     <script src="main.js"></script>
     <script src="get.js"></script>
 </body>
