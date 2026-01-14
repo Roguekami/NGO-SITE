@@ -51,28 +51,27 @@
     <div class="main-content">
         <div class="container">
             <!-- Impact Banner -->
-            <div class="impact-banner">
-                <h2>See Your Impact</h2>
-                <div class="impact-grid">
-                    <div class="impact-item">
-                        <div class="impact-amount">₦5,000</div>
-                        <div class="impact-description">Emergency supplies for 1 family</div>
-                    </div>
-                    <div class="impact-item">
-                        <div class="impact-amount">₦15,000</div>
-                        <div class="impact-description">Temporary shelter for 1 week</div>
-                    </div>
-                    <div class="impact-item">
-                        <div class="impact-amount">₦25,000</div>
-                        <div class="impact-description">Aid support for 5 families</div>
-                    </div>
-                    <div class="impact-item">
-                        <div class="impact-amount">₦50,000</div>
-                        <div class="impact-description">Complete movable home unit</div>
-                    </div>
-                </div>
-            </div>
-
+<div class="impact-banner">
+    <h2>See Your Impact</h2>
+    <div class="impact-grid">
+        <div class="impact-item">
+            <div class="impact-amount" data-base="5000" data-increment="50">$5,000</div>
+            <div class="impact-description">Emergency supplies for 1 family</div>
+        </div>
+        <div class="impact-item">
+            <div class="impact-amount" data-base="15000" data-increment="150">$15,000</div>
+            <div class="impact-description">Temporary shelter for 1 week</div>
+        </div>
+        <div class="impact-item">
+            <div class="impact-amount" data-base="25000" data-increment="250">25,000</div>
+            <div class="impact-description">Aid support for 5 families</div>
+        </div>
+        <div class="impact-item">
+            <div class="impact-amount" data-base="50000" data-increment="500">50,000</div>
+            <div class="impact-description">Complete movable home unit</div>
+        </div>
+    </div>
+</div>
             <!-- Donation Form -->
             <div class="donation-form-section">
                 <form id="donationForm" onsubmit="submitDonation(event)">
@@ -91,10 +90,10 @@
                             
                             <div class="custom-amount" id="customAmountSection">
                                 <div class="currency-input-wrapper">
-                                    <span class="currency-symbol">₦</span>
+                                    <span class="currency-symbol">$</span>
                                     <input type="number" id="customAmountInput" class="form-input currency-input" placeholder="Enter your amount" min="500" step="100">
                                 </div>
-                                <p class="form-help-text">Minimum donation: ₦500</p>
+                                <p class="form-help-text">Minimum donation: $500</p>
                             </div>
                         </div>
                     </div>
@@ -116,7 +115,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Phone Number</label>
-                                <input type="tel" class="form-input" placeholder="+234 XXX XXX XXXX">
+                                <input type="tel" class="form-input" placeholder="+111 XXX XXXX">
                                 <p class="form-help-text">Optional</p>
                             </div>
                         </div>

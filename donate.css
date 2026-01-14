@@ -120,7 +120,103 @@
             cursor: pointer;
             color: #4b5563;
         }
+/* Impact Banner Layout */
+.impact-banner {
+    background: linear-gradient(135deg, #2563eb 0%, #16a34a 100%);
+    border-radius: 20px;
+    padding: 3.5rem 2.5rem;
+    margin-bottom: 3rem;
+    color: white;
+    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.25);
+}
 
+.impact-banner h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 3rem;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    letter-spacing: -0.02em;
+}
+
+.impact-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem;
+}
+
+.impact-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.impact-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.impact-amount {
+    font-size: 2.75rem;
+    font-weight: 900;
+    line-height: 1;
+    color: white;
+    margin: 0px auto;
+    letter-spacing: -0.03em;
+}
+
+.impact-description {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 500;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .impact-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+    .impact-banner {
+        padding: 2.5rem 1.5rem;
+        border-radius: 16px;
+    }
+
+    .impact-banner h2 {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .impact-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .impact-item {
+        padding: 1.25rem 1rem;
+    }
+
+    .impact-amount {
+        font-size: 2.25rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .impact-description {
+        font-size: 0.9375rem;
+    }
+}
 
         .container {
             max-width: 1000px;

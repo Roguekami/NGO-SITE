@@ -361,13 +361,7 @@
             font-size: 0.875rem;
         }
 
-        .impact-item::before {
-            content: "✓";
-            color: #16a34a;
-            font-weight: bold;
-            margin-right: 0.5rem;
-            flex-shrink: 0;
-        }
+
 
         .program-btn {
             width: 100%;
@@ -1026,13 +1020,6 @@
             font-size: 0.875rem;
         }
 
-        .impact-item::before {
-            content: "✓";
-            color: #16a34a;
-            font-weight: bold;
-            margin-right: 0.5rem;
-            flex-shrink: 0;
-        }
 
         .program-btn {
             width: 100%;
