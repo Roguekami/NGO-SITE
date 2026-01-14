@@ -452,11 +452,20 @@
             width: 20px;
             height: 20px;
             cursor: pointer;
+            accent-color: #dc2626;
         }
 
         .radio-label {
             font-weight: 600;
             color: #1f2937;
+            flex: 1;
+        }
+
+        .radio-option.selected::after {
+            content: "✓";
+            color: #dc2626;
+            font-weight: bold;
+            font-size: 1.25rem;
         }
 
         /* Submit Button */
