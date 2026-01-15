@@ -120,6 +120,14 @@
             cursor: pointer;
             color: #4b5563;
         }
+
+        .donate-header {
+            padding-bottom: 3.5rem;
+        }
+
+        
+
+
 /* Impact Banner Layout */
 .impact-banner {
     background: linear-gradient(135deg, #2563eb 0%, #16a34a 100%);
@@ -221,7 +229,7 @@
         .container {
             max-width: 1000px;
             margin: 0 auto;
-            padding: 0 1.5rem;
+            padding: 2.5rem 1.5rem;
         }
 
         /* Header Section */
@@ -703,3 +711,5 @@
                 font-size: 2rem;
             }
         }
+
+        

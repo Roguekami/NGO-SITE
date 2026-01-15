@@ -1407,7 +1407,7 @@
         }
 
         /* ==================== RESPONSIVE ==================== */
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
             .nav-menu {
                 display: none;
             }
@@ -1426,6 +1426,10 @@
 
             .mobile-toggle {
                 display: block;
+            }
+
+            .logo-text h1{
+                font-size: 14px;
             }
 
             .hero h1 {
