@@ -32,6 +32,15 @@
             height: 80px;
         }
 
+        .navbar.scrolled {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .navbar.scrolled .nav-container {
+            height: 60px;
+        }
+
+
         .logo {
             display: flex;
             align-items: center;
@@ -62,6 +71,7 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            transition: all 0.3s ease 0s;
         }
 
         .nav-link {
@@ -71,6 +81,11 @@
             border-radius: 8px;
             transition: all 0.3s;
             font-weight: 500;
+            transition: all 0.3s ease 0s;
+        }
+
+        .navbar.scrolled .nav-container {
+            height: 60px;
         }
 
         .nav-link:hover {
@@ -82,6 +97,11 @@
             background: #dbeafe;
             color: #2563eb;
             font-weight: 600;
+        }
+
+        .navbar.scrolled .nav-link {
+            padding: 0.4rem 0.8rem;
+            font-size: 0.9rem;
         }
 
         .donate-btn {
@@ -101,6 +121,12 @@
         .donate-btn:hover {
             background: #b91c1c;
             box-shadow: 0 6px 12px rgba(220, 38, 38, 0.4);
+        }
+
+        
+        .navbar.scrolled .donate-btn {
+            padding: 0.6rem 1.2rem;
+            font-size: 0.9rem;
         }
 
         .mobile-toggle {
@@ -1316,6 +1342,10 @@
     .section-header p {
         font-size: 1.125rem;
     }
+
+    .navbar.scrolled .nav-menu {
+        top: 60px;
+    }
 }
 
 /* ==================== MOBILE RESPONSIVE (768px and below) ==================== */
@@ -1363,6 +1393,10 @@
         max-width: 25%;
         gap: 0.25rem;
     }
+
+    .navbar.scrolled .nav-menu {
+        top: 60px;
+ }
 
     .section-header img {
         width: 5%;
@@ -1435,4 +1469,8 @@
         font-size: 0.9rem;
         padding: 0 0.5rem;
     }
+
+    .navbar.scrolled .nav-menu {
+        top: 60px;
+ }
 }

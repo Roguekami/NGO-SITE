@@ -1,8 +1,4 @@
-        // Global variables for donation form
-        let selectedAmount = null;
-        let selectedDonationType = 'one-time';
 
-        // Page navigation
 
         // Mobile menu toggle
         function toggleMobileMenu() {
@@ -18,24 +14,32 @@
             selectedDonationType = type;
         }
 
-        // Amount selection
-        function selectAmount(element, amount) {
-            document.querySelectorAll('.amount-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            element.classList.add('active');
-            selectedAmount = amount;
+        const navbar = document.getElementById('navbar');
+        const scrollThreshold = 50; // Starts shrinking after 50px scroll
 
-            const customAmountInput = document.getElementById('customAmount');
-            if (amount === 'custom') {
-                customAmountInput.style.display = 'block';
-                customAmountInput.required = true;
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > scrollThreshold) {
+                // Scrolled down - shrink navbar
+                navbar.classList.add('scrolled');
             } else {
-                customAmountInput.style.display = 'none';
-                customAmountInput.required = false;
-                customAmountInput.value = '';
+                // At top - enlarge navbar
+                navbar.classList.remove('scrolled');
             }
-        }
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navMenu = document.getElementById('navMenu');
+            const mobileToggle = document.querySelector('.mobile-toggle');
+            
+            if (!navMenu.contains(event.target) && !mobileToggle.contains(event.target)) {
+                navMenu.classList.remove('active');
+            }
+        });
+
+
 
         // Form submissions
         function submitHelpForm(event) {
@@ -44,24 +48,6 @@
             event.target.reset();
         }
 
-        function submitDonation(event) {
-            event.preventDefault();
-            
-            const finalAmount = selectedAmount === 'custom' ? document.getElementById('customAmount').value : selectedAmount;
-            
-            if (!finalAmount) {
-                alert('Please select or enter a donation amount');
-                return;
-            }
-
-            alert(`Thank you for your ${selectedDonationType} donation of ₦${parseInt(finalAmount).toLocaleString()}! Your generosity will help families rebuild their lives.`);
-            event.target.reset();
-            
-            // Reset amount selection
-            document.querySelectorAll('.amount-btn').forEach(btn => btn.classList.remove('active'));
-            document.getElementById('customAmount').style.display = 'none';
-            selectedAmount = null;
-        }
 
         // Initialize page on load
         window.addEventListener('load', function() {

@@ -43,6 +43,15 @@
             height: 80px;
         }
 
+        .navbar.scrolled {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .navbar.scrolled .nav-container {
+            height: 60px;
+        }
+
+
         .logo {
             display: flex;
             align-items: center;
@@ -91,6 +100,11 @@
             background: #dbeafe;
             color: #2563eb;
             font-weight: 600;
+        }
+
+        .navbar.scrolled .nav-link {
+            padding: 0.4rem 0.8rem;
+            font-size: 0.9rem;
         }
 
         .donate-btn {
@@ -710,6 +724,8 @@
             .impact-amount {
                 font-size: 2rem;
             }
+
+            
         }
 
         
