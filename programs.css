@@ -35,7 +35,13 @@
             width: 100%;
             top: 0;
             z-index: 1000;
+            transition: all 0.3s ease-in-out;
         }
+
+        .navbar.scrolled {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
 
         .nav-container {
             max-width: 1280px;
@@ -45,6 +51,10 @@
             justify-content: space-between;
             align-items: center;
             height: 80px;
+        }
+
+        .navbar.scrolled .nav-container {
+            height: 60px;
         }
 
         .logo {
@@ -58,16 +68,19 @@
             width: 40px;
             height: 40px;
             color: #2563eb;
+            transition: all 0.3s ease-in-out;
         }
 
         .logo-text h1 {
             font-size: 1.25rem;
             font-weight: 700;
             color: #1f2937;
+            transition: all 0.3s ease-in-out;
         }
         .logo-text p {
             font-size: 0.75rem;
             color: #6b7280;
+            transition: all 0.3s ease-in-out;
         }
 
         .nav-menu {
@@ -83,6 +96,11 @@
             border-radius: 8px;
             transition: all 0.3s;
             font-weight: 500;
+        }
+
+        .navbar.scrolled .nav-link {
+            padding: 0.4rem 0.8rem;
+            font-size: 0.9rem;
         }
 
         .nav-link:hover {
@@ -110,6 +128,14 @@
             transition: all 0.3s;
             box-shadow: 0 4px 6px rgba(220, 38, 38, 0.3);
         }
+
+        .navbar.scrolled .donate-btn {
+            padding: 0.6rem 1.2rem;
+            font-size: 0.9rem;
+        }
+
+
+
         .donate-btn:hover {
             background: #b91c1c;
             box-shadow: 0 6px 12px rgba(220, 38, 38, 0.4);
@@ -957,3 +983,929 @@
         }
 
 
+/* ==================== RESPONSIVE DESIGN - COMPLETE FIX ==================== */
+
+/* Large Tablets & Small Desktops (1024px - 1280px) */
+@media (max-width: 1280px) {
+    .nav-container {
+        padding: 0 1rem;
+    }
+    
+    .section-header h1,
+    .section-header h2 {
+        width: auto;
+        max-width: 400px;
+        padding: 6px 20px;
+    }
+    
+    .cta-banner {
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+}
+
+/* ==================== RESPONSIVE DESIGN - COMPLETE FIX ==================== */
+
+/* Large Desktops - Minor adjustments */
+@media (max-width: 1280px) {
+    .nav-container {
+        padding: 0 1rem;
+    }
+    
+    .section-header h1,
+    .section-header h2 {
+        width: auto;
+        max-width: 400px;
+        padding: 6px 20px;
+    }
+    
+    .cta-banner {
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+}
+
+/* Tablets - NAVBAR COLLAPSES HERE */
+@media (max-width: 1024px) {
+    /* ===== NAVIGATION - COLLAPSE AT TABLET SIZE ===== */
+    .nav-menu {
+        display: none;
+    }
+
+    .nav-menu.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+    }
+    
+    .navbar.scrolled .nav-menu.active {
+        top: 60px;
+    }
+    
+    .nav-link {
+        width: 100%;
+        text-align: center;
+        padding: 0.75rem 1rem;
+        margin: 0.25rem 0;
+        font-size: 1rem;
+    }
+    
+    .navbar.scrolled .nav-link {
+        padding: 0.75rem 1rem;
+    }
+    
+    .donate-btn {
+        width: 100%;
+        justify-content: center;
+        margin-left: 0;
+        margin-top: 0.5rem;
+        font-size: 1rem;
+    }
+    
+    .navbar.scrolled .donate-btn {
+        padding: 0.75rem 1.5rem;
+    }
+
+    .mobile-toggle {
+        display: block;
+    }
+    
+    /* ===== OTHER TABLET STYLES ===== */
+    .nav-container {
+        height: 70px;
+    }
+    
+    .navbar.scrolled .nav-container {
+        height: 60px;
+    }
+    
+    .logo-text h1 {
+        font-size: 1.1rem;
+    }
+    
+    .logo-text p {
+        font-size: 0.7rem;
+    }
+    
+    .logo-icon {
+        width: 35px;
+        height: 35px;
+    }
+    
+    /* Hero Section */
+    .hero {
+        padding: 120px 1.5rem 60px;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+    }
+    
+    .btn-primary, .btn-secondary {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+    }
+    
+    /* Section Headers */
+    .section-header h1,
+    .section-header h2 {
+        width: auto;
+        max-width: 350px;
+        font-size: 1.5rem;
+        padding: 6px 16px;
+    }
+    
+    .section-header h1 img,
+    .section-header h2 img {
+        width: 8% !important;
+    }
+    
+    .section-header p {
+        font-size: 1.1rem;
+    }
+    
+    /* Stats Banner */
+    .stats-banner {
+        margin-left: 1rem !important;
+        margin-right: 1rem !important;
+        padding: 2.5rem 1.5rem !important;
+    }
+    
+    .stats-banner h2 {
+        font-size: 1.5rem !important;
+    }
+    
+    .stats-banner > div {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    
+    .stats-banner div[style*="font-size: 3rem"] {
+        font-size: 2.5rem !important;
+    }
+    
+    .stats-banner p {
+        font-size: 1rem !important;
+    }
+    
+    /* Program Cards */
+    .program-card {
+        padding: 2rem;
+    }
+    
+    .program-header h2 {
+        font-size: 1.75rem !important;
+    }
+    
+    /* Floating Images in Program Cards */
+    .program-card img[style*="float: right"] {
+        width: 45% !important;
+        max-width: 350px !important;
+    }
+    
+    /* CTA Banner */
+    .cta-banner {
+        padding: 2.5rem 1.5rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    
+    .cta-banner h2 {
+        font-size: 1.75rem;
+    }
+    
+    .cta-banner p {
+        font-size: 1.1rem;
+    }
+    
+    /* Cards */
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+/* Mobile Landscape & Small Tablets (600px - 768px) */
+@media (max-width: 768px) {
+    /* Logo - Smaller on mobile */
+    .logo-text h1 {
+        font-size: 1rem;
+    }
+    
+    .logo-text p {
+        font-size: 0.65rem;
+    }
+    
+    .logo-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    /* Hero Section */
+    .hero {
+        padding: 100px 1rem 50px;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    .btn-primary, .btn-secondary {
+        width: 100%;
+        justify-content: center;
+        padding: 1rem 1.5rem;
+    }
+    
+    /* Programs Section */
+    .programs {
+        padding-top: 80px;
+    }
+    
+    /* Sections */
+    .section {
+        padding: 3rem 1rem;
+    }
+    
+    #sect {
+        padding: 1rem;
+    }
+
+    /* Section Headers */
+    .section-header {
+        margin-bottom: 2rem;
+    }
+    
+    .section-header h1,
+    .section-header h2 {
+        font-size: 1.25rem;
+        width: auto;
+        max-width: 90%;
+        padding: 6px 12px;
+    }
+    
+    .section-header h1 img,
+    .section-header h2 img {
+        width: 10% !important;
+    }
+
+    .section-header p {
+        font-size: 1rem;
+        padding: 0 0.5rem;
+    }
+    
+    /* Stats Banner */
+    .stats-banner {
+        border-radius: 20px !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding: 2rem 1rem !important;
+        margin-bottom: 2rem !important;
+    }
+    
+    .stats-banner h2 {
+        font-size: 1.25rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .stats-banner > div {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+    
+    .stats-banner div[style*="font-size: 3rem"] {
+        font-size: 2rem !important;
+    }
+    
+    .stats-banner p {
+        font-size: 0.95rem !important;
+    }
+    
+    /* Cards */
+    .card-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .card {
+        padding: 1.5rem;
+    }
+    
+    .card h3 {
+        font-size: 1.25rem;
+    }
+    
+    /* Program Cards */
+    .program-card {
+        padding: 1.5rem;
+        margin-bottom: 2rem !important;
+    }
+    
+    .program-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .program-header h2 {
+        font-size: 1.5rem !important;
+        margin-top: 1rem;
+    }
+    
+    .program-icon {
+        width: 56px;
+        height: 56px;
+        padding: 10px;
+        margin-right: 0;
+    }
+    
+    /* Floating Images - CRITICAL FIX */
+    .program-card img[style*="float: right"],
+    .program-card img[style*="float"] {
+        float: none !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 0 1rem 0 !important;
+        display: block;
+    }
+    
+    .program-card > div[style*="overflow: auto"] {
+        overflow: visible !important;
+    }
+    
+    .program-card p {
+        font-size: 1rem;
+    }
+    
+    /* Impact Box */
+    .impact-box {
+        padding: 1rem;
+    }
+    
+    .impact-item {
+        font-size: 0.875rem;
+    }
+    
+    /* Program Buttons */
+    .program-btn {
+        font-size: 1rem;
+        padding: 0.875rem;
+    }
+    
+    /* Two-button grid for fraud section */
+    div[style*="grid-template-columns: 1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+        gap: 0.75rem !important;
+    }
+    
+    /* Success Story Boxes */
+    .program-card > div[style*="background: #dbeafe"],
+    .program-card > div[style*="background: #d1fae5"],
+    .program-card > div[style*="background: #e9d5ff"],
+    .program-card > div[style*="background: #fed7aa"] {
+        padding: 1.25rem !important;
+    }
+    
+    /* CTA Banner */
+    .cta-banner {
+        padding: 2rem 1rem;
+        margin: 2rem 0;
+        margin-left: 0;
+        margin-right: 0;
+        border-radius: 12px;
+    }
+    
+    .cta-banner h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .cta-banner p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    /* How to Access Section */
+    div[style*="background: #f9fafb"] > div[style*="grid-template-columns"] {
+        grid-template-columns: 1fr !important;
+    }
+    
+    /* Forms */
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .form-container {
+        padding: 1.5rem;
+    }
+    
+    .amount-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .donation-type-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Footer */
+    .footer {
+        padding: 2rem 1rem 1rem;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+}
+
+/* Small Mobile (480px - 600px) */
+@media (max-width: 600px) {
+    /* Hero */
+    .hero h1 {
+        font-size: 1.75rem;
+        line-height: 1.3;
+    }
+    
+    .hero p {
+        font-size: 0.95rem;
+    }
+    
+    /* Section Headers */
+    .section-header h1,
+    .section-header h2 {
+        font-size: 1.1rem;
+        padding: 5px 10px;
+        max-width: 85%;
+    }
+    
+    .section-header p {
+        font-size: 0.95rem;
+    }
+    
+    /* Stats Banner */
+    .stats-banner div[style*="font-size: 3rem"] {
+        font-size: 1.75rem !important;
+    }
+    
+    .stats-banner p {
+        font-size: 0.875rem !important;
+    }
+    
+    /* Program Cards */
+    .program-card {
+        padding: 1.25rem;
+    }
+    
+    .program-header h2 {
+        font-size: 1.35rem !important;
+    }
+    
+    .program-card p {
+        font-size: 0.95rem;
+    }
+    
+    /* Card Icons */
+    .card-icon,
+    .program-icon {
+        width: 48px;
+        height: 48px;
+        padding: 10px;
+    }
+    
+    /* CTA Banner */
+    .cta-banner h2 {
+        font-size: 1.35rem;
+    }
+    
+    .cta-banner p {
+        font-size: 0.95rem;
+    }
+    
+    /* Amount Grid */
+    .amount-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Extra Small Mobile (under 480px) */
+@media (max-width: 480px) {
+    /* Navigation */
+    .nav-container {
+        height: 65px;
+        padding: 0 0.75rem;
+    }
+    
+    .navbar.scrolled .nav-container {
+        height: 55px;
+    }
+    
+    .logo-text h1 {
+        font-size: 0.85rem;
+    }
+    
+    .logo-text p {
+        font-size: 0.6rem;
+    }
+    
+    .logo-icon {
+        width: 28px;
+        height: 28px;
+    }
+    
+    /* Hero */
+    .hero {
+        padding: 90px 0.75rem 40px;
+    }
+    
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+    
+    .hero p {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .btn-primary, .btn-secondary {
+        padding: 0.875rem 1.25rem;
+        font-size: 0.95rem;
+    }
+    
+    /* Programs */
+    .programs {
+        padding-top: 70px;
+    }
+    
+    /* Sections */
+    .section {
+        padding: 2.5rem 0.75rem;
+    }
+    
+    /* Section Headers */
+    .section-header h1,
+    .section-header h2 {
+        font-size: 1rem;
+        padding: 4px 8px;
+        max-width: 80%;
+    }
+    
+    .section-header p {
+        font-size: 0.9rem;
+    }
+    
+    /* Stats Banner */
+    .stats-banner {
+        padding: 1.5rem 0.75rem !important;
+    }
+    
+    .stats-banner h2 {
+        font-size: 1.1rem !important;
+    }
+    
+    .stats-banner div[style*="font-size: 3rem"] {
+        font-size: 1.5rem !important;
+    }
+    
+    /* Program Cards */
+    .program-card {
+        padding: 1rem;
+    }
+    
+    .program-header h2 {
+        font-size: 1.25rem !important;
+    }
+    
+    /* CTA Banner */
+    .cta-banner {
+        padding: 1.5rem 0.75rem;
+    }
+    
+    .cta-banner h2 {
+        font-size: 1.25rem;
+    }
+    
+    .cta-banner p {
+        font-size: 0.9rem;
+    }
+    
+    /* Footer */
+    .footer {
+        padding: 2rem 0.75rem 1rem;
+    }
+    
+    .footer-bottom {
+        font-size: 0.8rem;
+    }
+    
+    /* Forms */
+    .form-submit {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+}
+
+/* Landscape Orientation Fix */
+@media (max-height: 600px) and (orientation: landscape) {
+    .hero {
+        padding: 100px 1rem 40px;
+    }
+    
+    .hero h1 {
+        font-size: 1.75rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .hero p {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .section {
+        padding: 2rem 1rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .navbar,
+    .mobile-toggle,
+    .hero-buttons,
+    .cta-banner,
+    .donate-btn,
+    .footer {
+        display: none;
+    }
+    
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+    
+    .section {
+        page-break-inside: avoid;
+    }
+    
+    .program-card {
+        page-break-inside: avoid;
+    }
+}@media (max-width: 600px) {
+    /* Hero */
+    .hero h1 {
+        font-size: 1.75rem;
+        line-height: 1.3;
+    }
+    
+    .hero p {
+        font-size: 0.95rem;
+    }
+    
+    /* Section Headers */
+    .section-header h1,
+    .section-header h2 {
+        font-size: 1.1rem;
+        padding: 5px 10px;
+        max-width: 85%;
+    }
+    
+    .section-header p {
+        font-size: 0.95rem;
+    }
+    
+    /* Stats Banner */
+    .stats-banner div[style*="font-size: 3rem"] {
+        font-size: 1.75rem !important;
+    }
+    
+    .stats-banner p {
+        font-size: 0.875rem !important;
+    }
+    
+    /* Program Cards */
+    .program-card {
+        padding: 1.25rem;
+    }
+    
+    .program-header h2 {
+        font-size: 1.35rem !important;
+    }
+    
+    .program-card p {
+        font-size: 0.95rem;
+    }
+    
+    /* Card Icons */
+    .card-icon,
+    .program-icon {
+        width: 48px;
+        height: 48px;
+        padding: 10px;
+    }
+    
+    /* CTA Banner */
+    .cta-banner h2 {
+        font-size: 1.35rem;
+    }
+    
+    .cta-banner p {
+        font-size: 0.95rem;
+    }
+    
+    /* Amount Grid */
+    .amount-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Extra Small Mobile (under 480px) */
+@media (max-width: 480px) {
+    /* Navigation */
+    .nav-container {
+        height: 65px;
+        padding: 0 0.75rem;
+    }
+    
+    .navbar.scrolled .nav-container {
+        height: 55px;
+    }
+    
+    .logo-text h1 {
+        font-size: 0.85rem;
+    }
+    
+    .logo-text p {
+        font-size: 0.6rem;
+    }
+    
+    .logo-icon {
+        width: 28px;
+        height: 28px;
+    }
+    
+    /* Hero */
+    .hero {
+        padding: 90px 0.75rem 40px;
+    }
+    
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+    
+    .hero p {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .btn-primary, .btn-secondary {
+        padding: 0.875rem 1.25rem;
+        font-size: 0.95rem;
+    }
+    
+    /* Programs */
+    .programs {
+        padding-top: 70px;
+    }
+    
+    /* Sections */
+    .section {
+        padding: 2.5rem 0.75rem;
+    }
+    
+    /* Section Headers */
+    .section-header h1,
+    .section-header h2 {
+        font-size: 1rem;
+        padding: 4px 8px;
+        max-width: 80%;
+    }
+    
+    .section-header p {
+        font-size: 0.9rem;
+    }
+    
+    /* Stats Banner */
+    .stats-banner {
+        padding: 1.5rem 0.75rem !important;
+    }
+    
+    .stats-banner h2 {
+        font-size: 1.1rem !important;
+    }
+    
+    .stats-banner div[style*="font-size: 3rem"] {
+        font-size: 1.5rem !important;
+    }
+    
+    /* Program Cards */
+    .program-card {
+        padding: 1rem;
+    }
+    
+    .program-header h2 {
+        font-size: 1.25rem !important;
+    }
+    
+    /* CTA Banner */
+    .cta-banner {
+        padding: 1.5rem 0.75rem;
+    }
+    
+    .cta-banner h2 {
+        font-size: 1.25rem;
+    }
+    
+    .cta-banner p {
+        font-size: 0.9rem;
+    }
+    
+    /* Footer */
+    .footer {
+        padding: 2rem 0.75rem 1rem;
+    }
+    
+    .footer-bottom {
+        font-size: 0.8rem;
+    }
+    
+    /* Forms */
+    .form-submit {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+}
+
+/* Landscape Orientation Fix */
+@media (max-height: 600px) and (orientation: landscape) {
+    .hero {
+        padding: 100px 1rem 40px;
+    }
+    
+    .hero h1 {
+        font-size: 1.75rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .hero p {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .section {
+        padding: 2rem 1rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .navbar,
+    .mobile-toggle,
+    .hero-buttons,
+    .cta-banner,
+    .donate-btn,
+    .footer {
+        display: none;
+    }
+    
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+    
+    .section {
+        page-break-inside: avoid;
+    }
+    
+    .program-card {
+        page-break-inside: avoid;
+    }
+}

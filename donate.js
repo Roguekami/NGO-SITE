@@ -34,17 +34,17 @@ function startLiveDonationCounter(element, baseAmount, incrementPerMinute) {
     let currentAmount = baseAmount;
     
     // Calculate increment per second (spread over 60 seconds)
-    const incrementPerSecond = incrementPerMinute / 60;
+    const incrementPerSecond = incrementPerMinute / 100;
     
     // Update every 1 second for smooth, slow counting
     setInterval(() => {
         // Add random small increments to make it look natural
-        const randomIncrement = (Math.random() * 1.0 + 0.5) * incrementPerSecond;
+        const randomIncrement = (Math.random() * 1.0 + 1.5) * incrementPerSecond;
         currentAmount += randomIncrement;
         
         // Update display
         element.textContent = '$' + formatNumber(Math.floor(currentAmount));
-    }, 1000); // Update every 1 second
+    }, 2000); // Update every 1 second
 }
 
 // Format number with commas
