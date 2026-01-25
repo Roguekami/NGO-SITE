@@ -1487,3 +1487,21 @@ body {
         top: 70px !important;
     }
 }
+@media (max-width: 768px) {
+    .section-header h2 img {
+        width: 16px !important;
+        height: 16px !important;
+        margin-bottom: 1px !important;
+        margin-right: 5px !important;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .section-header h2 img {
+        width: 14px !important;
+        height: 14px !important;
+        margin-bottom: 1px !important;
+        margin-right: 4px !important;
+    }
+}/* ==================== STATS BANNER MARGIN FIX ==================== */
