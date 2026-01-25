@@ -1,4 +1,3 @@
-        /* ==================== RESET & BASE STYLES ==================== */
         * {
             margin: 0;
             padding: 0;
@@ -611,7 +610,7 @@
         }
 
         .impact-item::before {
-            content: "✓";
+            content: "âœ“";
             color: #16a34a;
             font-weight: bold;
             margin-right: 0.5rem;
@@ -1277,7 +1276,7 @@
         }
 
         .impact-item::before {
-            content: "✓";
+            content: "âœ“";
             color: #16a34a;
             font-weight: bold;
             margin-right: 0.5rem;
@@ -1752,7 +1751,7 @@
     position: relative;
     padding: 140px 1.5rem 80px;
     text-align: center;
-    background-size: 100% auto;  /* ← Shows full width, auto height */
+    background-size: 100% auto;  /* â† Shows full width, auto height */
     background-position: center center;
     background-repeat: no-repeat;
     overflow: hidden;
@@ -1764,7 +1763,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);  /* ← Black overlay with 60% opacity */
+    background: rgba(0, 0, 0, 0.5);  /* â† Black overlay with 60% opacity */
     z-index: 1;
 }
 
@@ -2380,4 +2379,687 @@
 
 .faq-answer-content {
     padding: 1.5rem;
+}/* ==================== COMPLETE RESPONSIVE DESIGN FIX ==================== */
+
+/* Large Desktops - Minor adjustments */
+@media (max-width: 1280px) {
+    .nav-container {
+        padding: 0 1rem;
+    }
+    
+    .container {
+        padding: 0 1rem;
+    }
+}
+
+/* Tablets - NAVBAR COLLAPSES HERE */
+@media (max-width: 1024px) {
+    /* ===== NAVIGATION - COLLAPSE AT TABLET SIZE ===== */
+    .nav-menu {
+        display: none;
+    }
+
+    .nav-menu.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+    }
+    
+    .navbar.scrolled .nav-menu.active {
+        top: 60px;
+    }
+    
+    .nav-link {
+        width: 100%;
+        text-align: center;
+        padding: 0.75rem 1rem;
+        margin: 0.25rem 0;
+        font-size: 1rem;
+    }
+    
+    .navbar.scrolled .nav-link {
+        padding: 0.75rem 1rem;
+    }
+    
+    .donate-btn {
+        width: 100%;
+        justify-content: center;
+        margin-left: 0;
+        margin-top: 0.5rem;
+        font-size: 1rem;
+    }
+    
+    .navbar.scrolled .donate-btn {
+        padding: 0.75rem 1.5rem;
+    }
+
+    .mobile-toggle {
+        display: block;
+    }
+    
+    /* ===== OTHER TABLET STYLES ===== */
+    .nav-container {
+        height: 70px;
+    }
+    
+    .navbar.scrolled .nav-container {
+        height: 60px;
+    }
+    
+    .logo-text h1 {
+        font-size: 1.1rem;
+    }
+    
+    .logo-text p {
+        font-size: 0.7rem;
+    }
+    
+    .logo-icon {
+        width: 35px;
+        height: 35px;
+    }
+    
+    /* Header */
+    .header {
+        padding: 120px 1.5rem 60px;
+        background-size: cover;
+    }
+    
+    .header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .header p {
+        font-size: 1.2rem;
+    }
+    
+    /* Info Cards */
+    .info-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    /* Fraud Card - Make it span 2 columns on tablet */
+    div[style*="justify-content: center"] {
+        grid-column: 1 / -1;
+    }
+}
+
+/* Mobile - 768px and below - MAIN FOCUS */
+@media (max-width: 768px) {
+    /* Navigation */
+    .logo-text h1 {
+        font-size: 1rem;
+    }
+    
+    .logo-text p {
+        font-size: 0.65rem;
+    }
+    
+    .logo-icon {
+        width: 32px;
+        height: 32px;
+    }
+    
+    /* Header */
+    .header {
+        padding: 100px 1rem 50px;
+        background-size: cover;
+        margin-top: 80px;
+    }
+    
+    .header h1 {
+        font-size: 2rem;
+    }
+    
+    .header p {
+        font-size: 1.1rem;
+    }
+    
+    /* Main Content */
+    .main-content {
+        padding: 2rem 1rem;
+    }
+    
+    /* Info Cards - CRITICAL FIX */
+    .info-cards {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    /* Fraud Card Container - Remove centering */
+    div[style*="justify-content: center"] {
+        display: block !important;
+        margin-bottom: 2rem !important;
+    }
+    
+    /* Fraud Card - Remove inline styles effect */
+    .info-card[style*="border-left-color: #ea580c"] {
+        max-width: 100% !important;
+        width: 100% !important;
+        height: auto !important;
+        margin: 0 !important;
+    }
+    
+    /* All Info Cards */
+    .info-card {
+        padding: 1.5rem;
+    }
+    
+    .info-card h3 {
+        font-size: 1.125rem;
+    }
+    
+    /* Eligibility Section */
+    .eligibility-section {
+        padding: 2rem 1.5rem;
+    }
+    
+    .eligibility-section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .eligibility-list {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    /* Steps Section */
+    .steps-section {
+        padding: 2rem 1.5rem;
+    }
+    
+    .steps-section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .step {
+        gap: 1rem;
+        padding-bottom: 1.5rem;
+    }
+    
+    .step-number {
+        width: 45px;
+        height: 45px;
+        font-size: 1.125rem;
+    }
+    
+    .step-content h3 {
+        font-size: 1rem;
+    }
+    
+    /* Form Section */
+    .form-section {
+        padding: 2rem 1.5rem;
+    }
+    
+    .form-section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    /* Upload Section */
+    .upload-section {
+        padding: 1.5rem;
+    }
+    
+    .upload-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .upload-box {
+        min-height: 220px;
+        padding: 1.5rem;
+    }
+    
+    /* Timeline */
+    .timeline {
+        padding-left: 2.5rem;
+    }
+    
+    .timeline-dot {
+        left: -2.15rem;
+    }
+    
+    /* Emergency Alert */
+    .emergency-alert {
+        flex-direction: column;
+        padding: 1.5rem;
+    }
+    
+    .emergency-number {
+        font-size: 1.5rem;
+    }
+    
+    /* What Next */
+    .what-next {
+        padding: 2rem 1.5rem;
+    }
+    
+    .what-next h2 {
+        font-size: 1.5rem;
+    }
+    
+    /* FAQ Section */
+    .faq-section {
+        padding: 2rem 1.5rem;
+    }
+    
+    .faq-section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .faq-question {
+        font-size: 1rem;
+        padding: 1.25rem;
+    }
+    
+    /* Support Methods */
+    .support-methods {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    /* Donor CTA */
+    .donor-cta {
+        padding: 2rem 1.5rem;
+    }
+    
+    .donor-cta h3 {
+        font-size: 1.25rem;
+    }
+    
+    /* Footer */
+    .footer {
+        padding: 2rem 1rem 1rem;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+}
+
+/* Small Mobile - 600px and below */
+@media (max-width: 600px) {
+    /* Header */
+    .header h1 {
+        font-size: 1.75rem;
+    }
+    
+    .header p {
+        font-size: 1rem;
+    }
+    
+    /* Steps */
+    .step-number {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    /* Support Methods */
+    .support-methods {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Upload Boxes */
+    .upload-box {
+        padding: 1.25rem;
+        min-height: 200px;
+    }
+    
+    .upload-icon {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+/* Extra Small Mobile - 480px and below */
+@media (max-width: 480px) {
+    /* Navigation - FIX DROPDOWN SPACING */
+
+    
+    .donate-btn {
+        margin-top: 0.5rem;
+        padding: 0.65rem 1.5rem;
+        border-top: 2px solid #f3f4f6;
+        padding-top: 0.75rem;
+    }
+    
+    .nav-container {
+        padding: 0 1rem;
+        height: 70px;
+    }
+
+    .logo-text h1 {
+        font-size: 0.875rem;
+    }
+
+    .logo-text p {
+        font-size: 0.6rem;
+    }
+
+    .logo-icon {
+        width: 28px;
+        height: 28px;
+    }
+    
+    /* Header */
+    .header {
+        padding: 90px 0.75rem 40px;
+        margin-top: 65px;
+    }
+    
+    .header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .header p {
+        font-size: 0.95rem;
+    }
+    
+    /* Main Content */
+    .main-content {
+        padding: 1.5rem 0.75rem;
+    }
+    
+    /* Info Cards */
+    .info-card {
+        padding: 1.25rem;
+    }
+    
+    .info-card h3 {
+        font-size: 1rem;
+    }
+    
+    .info-card p {
+        font-size: 0.875rem;
+    }
+    
+    /* Eligibility Section */
+    .eligibility-section {
+        padding: 1.5rem 1rem;
+    }
+    
+    .eligibility-section h2 {
+        font-size: 1.25rem;
+    }
+    
+    /* Steps */
+    .steps-section {
+        padding: 1.5rem 1rem;
+    }
+    
+    .steps-section h2 {
+        font-size: 1.25rem;
+    }
+    
+    .step {
+        gap: 0.75rem;
+    }
+    
+    .step-number {
+        width: 35px;
+        height: 35px;
+        font-size: 0.95rem;
+    }
+    
+    .step-content h3 {
+        font-size: 0.95rem;
+    }
+    
+    .step-content p {
+        font-size: 0.875rem;
+    }
+    
+    /* Form Section */
+    .form-section {
+        padding: 1.5rem 1rem;
+    }
+    
+    .form-section h2 {
+        font-size: 1.25rem;
+    }
+    
+    .form-description {
+        font-size: 0.875rem;
+    }
+    
+    /* Upload Section */
+    .upload-section {
+        padding: 1.25rem;
+    }
+    
+    .upload-section h3 {
+        font-size: 1.1rem;
+    }
+    
+    .upload-box {
+        padding: 1rem;
+        min-height: 180px;
+    }
+    
+    .upload-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .upload-title {
+        font-size: 1rem;
+    }
+    
+    .upload-subtitle {
+        font-size: 0.8rem;
+    }
+    
+    .upload-button {
+        padding: 0.65rem 1.25rem;
+        font-size: 0.875rem;
+    }
+    
+    /* Requirements Box */
+    .requirements-box {
+        padding: 1.25rem;
+    }
+    
+    .requirements-list li {
+        font-size: 0.8rem;
+    }
+    
+    /* Timeline */
+    .timeline {
+        padding-left: 2rem;
+    }
+    
+    .timeline::before {
+        left: 10px;
+    }
+    
+    .timeline-dot {
+        left: -1.65rem;
+        width: 16px;
+        height: 16px;
+        border-width: 3px;
+    }
+    
+    .timeline-time {
+        font-size: 0.8rem;
+        padding: 0.2rem 0.5rem;
+    }
+    
+    .timeline-content h3 {
+        font-size: 0.95rem;
+    }
+    
+    .timeline-content p {
+        font-size: 0.875rem;
+    }
+    
+    /* Emergency Alert */
+    .emergency-alert {
+        padding: 1.25rem;
+    }
+    
+    .emergency-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .emergency-content h3 {
+        font-size: 1.1rem;
+    }
+    
+    .emergency-content p {
+        font-size: 0.875rem;
+    }
+    
+    .emergency-number {
+        font-size: 1.35rem;
+    }
+    
+    /* What Next */
+    .what-next {
+        padding: 1.5rem 1rem;
+    }
+    
+    .what-next h2 {
+        font-size: 1.25rem;
+    }
+    
+    /* FAQ */
+    .faq-section {
+        padding: 1.5rem 1rem;
+    }
+    
+    .faq-section h2 {
+        font-size: 1.25rem;
+    }
+    
+    .faq-question {
+        font-size: 0.95rem;
+        padding: 1rem;
+    }
+    
+    .faq-icon {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .faq-answer-content {
+        padding: 1rem;
+        font-size: 0.875rem;
+    }
+    
+    /* Support Methods */
+    .support-method {
+        padding: 1.25rem;
+    }
+    
+    .support-method-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .support-method h4 {
+        font-size: 0.95rem;
+    }
+    
+    .support-method p {
+        font-size: 0.8rem;
+    }
+    
+    /* Donor CTA */
+    .donor-cta {
+        padding: 1.5rem 1rem;
+    }
+    
+    .donor-cta h3 {
+        font-size: 1.1rem;
+    }
+    
+    .donor-cta p {
+        font-size: 0.875rem;
+    }
+    
+    .btn-donate {
+        padding: 0.875rem 1.5rem;
+        font-size: 1rem;
+    }
+    
+    /* Form Submit */
+    .form-submit {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+    
+    /* Footer */
+    .footer {
+        padding: 1.5rem 0.75rem 1rem;
+    }
+    
+    .footer-bottom {
+        font-size: 0.8rem;
+    }
+}
+
+/* Landscape Orientation Fix */
+@media (max-height: 600px) and (orientation: landscape) {
+    .header {
+        padding: 100px 1rem 40px;
+    }
+    
+    .header h1 {
+        font-size: 1.75rem;
+    }
+    
+    .header p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .nav-menu.active {
+        top: 70px !important;
+    }
+    
+    .navbar.scrolled .nav-menu.active {
+        top: 60px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-menu.active {
+        top: 70px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-menu.active {
+        top: 70px !important;
+    }
 }

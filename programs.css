@@ -280,9 +280,8 @@
         }
 
         .section-header h2 {
-        width: 21%;
+        width: 15%;
             margin: 0 auto 1rem auto;
-            padding: 4px 0px;
             background-color: #f0f0f0;
             border-radius: 40px;
             font-size: 2rem;
@@ -1042,63 +1041,22 @@
         background: white;
         padding: 1rem;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
         z-index: 999;
     }
-    
+
     .navbar.scrolled .nav-menu.active {
         top: 60px;
-    }
-    
-    .nav-link {
-        width: 100%;
-        text-align: center;
-        padding: 0.75rem 1rem;
-        margin: 0.25rem 0;
-        font-size: 1rem;
-    }
-    
-    .navbar.scrolled .nav-link {
-        padding: 0.75rem 1rem;
-    }
-    
-    .donate-btn {
-        width: 100%;
-        justify-content: center;
-        margin-left: 0;
-        margin-top: 0.5rem;
-        font-size: 1rem;
-    }
-    
-    .navbar.scrolled .donate-btn {
-        padding: 0.75rem 1.5rem;
     }
 
     .mobile-toggle {
         display: block;
     }
-    
-    /* ===== OTHER TABLET STYLES ===== */
-    .nav-container {
-        height: 70px;
-    }
-    
-    .navbar.scrolled .nav-container {
-        height: 60px;
-    }
-    
+
     .logo-text h1 {
-        font-size: 1.1rem;
+        font-size: 14px;
     }
-    
-    .logo-text p {
-        font-size: 0.7rem;
-    }
-    
-    .logo-icon {
-        width: 35px;
-        height: 35px;
-    }
-    
+
     /* Hero Section */
     .hero {
         padding: 120px 1.5rem 60px;
@@ -1201,15 +1159,16 @@
     .logo-text h1 {
         font-size: 1rem;
     }
-    
+
     .logo-text p {
         font-size: 0.65rem;
     }
-    
+
     .logo-icon {
         width: 32px;
         height: 32px;
     }
+
 
     /* Hero Section */
     .hero {
@@ -1521,27 +1480,6 @@
 /* Extra Small Mobile (under 480px) */
 @media (max-width: 480px) {
     /* Navigation */
-    .nav-container {
-        height: 65px;
-        padding: 0 0.75rem;
-    }
-    
-    .navbar.scrolled .nav-container {
-        height: 55px;
-    }
-    
-    .logo-text h1 {
-        font-size: 0.85rem;
-    }
-    
-    .logo-text p {
-        font-size: 0.6rem;
-    }
-    
-    .logo-icon {
-        width: 28px;
-        height: 28px;
-    }
     
     /* Hero */
     .hero {
@@ -1749,29 +1687,7 @@
 
 /* Extra Small Mobile (under 480px) */
 @media (max-width: 480px) {
-    /* Navigation */
-    .nav-container {
-        height: 65px;
-        padding: 0 0.75rem;
-    }
-    
-    .navbar.scrolled .nav-container {
-        height: 55px;
-    }
-    
-    .logo-text h1 {
-        font-size: 0.85rem;
-    }
-    
-    .logo-text p {
-        font-size: 0.6rem;
-    }
-    
-    .logo-icon {
-        width: 28px;
-        height: 28px;
-    }
-    
+
     /* Hero */
     .hero {
         padding: 90px 0.75rem 40px;
@@ -1907,5 +1823,80 @@
     
     .program-card {
         page-break-inside: avoid;
+    }
+}
+/* ==================== FIX FOR DOT IMAGE IN SECTION HEADERS ==================== */
+
+/* Desktop - Normal size */
+.section-header h2 img {
+    width: 20px !important;
+    height: 15px !important;
+    margin-bottom: 2px !important;
+    margin-right: 10px !important;
+    vertical-align: middle;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .section-header h2 img {
+        width: 18px !important;
+        height: 18px !important;
+        margin-bottom: 2px !important;
+        margin-right: 6px !important;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .section-header h2 img {
+        width: 16px !important;
+        height: 16px !important;
+        margin-bottom: 1px !important;
+        margin-right: 5px !important;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .section-header h2 img {
+        width: 14px !important;
+        height: 14px !important;
+        margin-bottom: 1px !important;
+        margin-right: 4px !important;
+    }
+}/* ==================== STATS BANNER MARGIN FIX ==================== */
+
+/* Tablet - Add some breathing room */
+@media (max-width: 1024px) {
+    .stats-banner {
+        margin-left: 1.5rem !important;
+        margin-right: 1.5rem !important;
+    }
+}
+
+/* Mobile - More margin for better spacing */
+@media (max-width: 768px) {
+    .stats-banner {
+        margin-left: 1rem !important;
+        margin-right: 1rem !important;
+        padding: 2rem 1.5rem !important;
+    }
+}
+
+/* Small Mobile - Even more breathing room */
+@media (max-width: 600px) {
+    .stats-banner {
+        margin-left: 1.25rem !important;
+        margin-right: 1.25rem !important;
+        padding: 2rem 1.25rem !important;
+    }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 480px) {
+    .stats-banner {
+        margin-left: 1rem !important;
+        margin-right: 1rem !important;
+        padding: 1.5rem 1rem !important;
     }
 }
