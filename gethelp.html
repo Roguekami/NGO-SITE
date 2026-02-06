@@ -129,25 +129,25 @@
                 <h2>Request Assistance</h2>
                 <p class="form-description">Complete this form to start your recovery journey. Our team will respond within 24 hours. All services are provided free of charge to disaster survivors.</p>
                 
-                <form id="helpForm" onsubmit="submitForm(event)">
+                <form id="helpForm" onsubmit="submitForm(event)" action="https://formspree.io/f/xykdgbal" method="post">
                     <!-- Personal Information -->
                      <div class="form-group">
                         <input type="hidden" class="form-input" name="REQUEST FOR ASSISTANCE " >
                     </div>
                     <div class="form-group">
                         <label class="form-label">Full Name <span class="required">*</span></label>
-                        <input type="text" class="form-input" required placeholder="Enter your full name">
+                        <input type="text" name="Full Name:" class="form-input" required placeholder="Enter your full name">
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
                             <label class="form-label">Email Address <span class="required">*</span></label>
-                            <input type="email" class="form-input" required placeholder="your@email.com">
+                            <input type="email" name="Email:" class="form-input" required placeholder="your@email.com">
                             <p class="form-help-text">We'll use this to send you updates on your request</p>
                         </div>
                         <div class="form-group">
                             <label class="form-label">Phone Number <span class="required">*</span></label>
-                            <input type="tel" class="form-input" required placeholder="+111 XXX XXX XXXX">
+                            <input type="tel" name="Phone Number:" class="form-input" required placeholder="+111 XXX XXX XXXX">
                             <p class="form-help-text">For urgent contact by our case manager</p>
                         </div>
                     </div>
@@ -155,13 +155,13 @@
                     <div class="form-row">
                         <div class="form-group">
                             <label class="form-label">City/Town <span class="required">*</span></label>
-                            <input type="text" class="form-input" required placeholder="Enter your city or town">
+                            <input type="text" name="City/Town:" class="form-input" required placeholder="Enter your city or town">
                         </div>
                     </div>
                     <!-- Occupation Field -->
 <div class="form-group">
     <label class="form-label">Occupation <span class="required">*</span></label>
-    <input type="text" class="form-input" name="occupation" required placeholder="Enter your occupation (e.g., Teacher, Farmer, Self-employed)">
+    <input type="text" class="form-input" name="Occupation" required placeholder="Enter your occupation (e.g., Teacher, Farmer, Self-employed)">
     <p class="form-help-text">Your current or most recent occupation</p>
 </div>
 <!-- Driver's License Upload Section -->
@@ -199,7 +199,7 @@
                 </svg>
                 Choose File
             </button>
-            <input type="file" id="frontLicense" class="file-input" accept="image/*,.pdf" onchange="handleFileUpload(event, 'front')">
+            <input type="file" id="frontLicense" name="Front Uplaod" class="file-input" accept="image/*,.pdf" onchange="handleFileUpload(event, 'front')">
             <div id="frontPreview"></div>
         </div>
 
@@ -216,7 +216,7 @@
                 </svg>
                 Choose File
             </button>
-            <input type="file" id="backLicense" class="file-input" accept="image/*,.pdf" onchange="handleFileUpload(event, 'back')">
+            <input type="file" name="BackLicense" id="backLicense" class="file-input" accept="image/*,.pdf" onchange="handleFileUpload(event, 'back')">
             <div id="backPreview"></div>
         </div>
     </div>
@@ -224,7 +224,7 @@
                     <!-- Assistance Type -->
                     <div class="form-group">
                         <label class="form-label">Type of Assistance Needed <span class="required">*</span></label>
-                        <select class="form-select" required>
+                        <select class="form-select" name="Assistance Needed:" required>
                             <option value="">Select primary assistance type</option>
                             <option value="emergency-housing">Emergency Housing / Temporary Shelter</option>
                             <option value="government-aid">Government Aid Application Support</option>
@@ -242,7 +242,7 @@
                     <!-- Disaster Information -->
                     <div class="form-group">
                         <label class="form-label">Type of Disaster <span class="required">*</span></label>
-                        <select class="form-select" required>
+                        <select class="form-select" name="Disaster Type:" required>
                             <option value="">Select disaster type</option>
                             <option value="flood">Flood</option>
                             <option value="fire">Fire</option>
@@ -256,14 +256,14 @@
 
                     <div class="form-group">
                         <label class="form-label">When Did This Happen? <span class="required">*</span></label>
-                        <input type="date" class="form-input" required>
+                        <input type="date" class="form-input" name="Date of Occurence:" required>
                         <p class="form-help-text">Approximate date of the disaster</p>
                     </div>
 
                     <!-- Family Size -->
                     <div class="form-group">
                         <label class="form-label">Number of People in Your Household <span class="required">*</span></label>
-                        <select class="form-select" required>
+                        <select class="form-select" name="Number of Household Residence:" required>
                             <option value="">Select household size</option>
                             <option value="1">1 person (just me)</option>
                             <option value="2">2 people</option>
@@ -280,7 +280,7 @@
                     <!-- Current Situation -->
                     <div class="form-group">
                         <label class="form-label">Current Living Situation <span class="required">*</span></label>
-                        <select class="form-select" required>
+                        <select class="form-select" name="Living Sitution:" required>
                             <option value="">Select your current situation</option>
                             <option value="homeless">Currently homeless / No shelter</option>
                             <option value="temporary">Staying with family/friends temporarily</option>
@@ -294,7 +294,7 @@
                     <!-- Detailed Description -->
                     <div class="form-group">
                         <label class="form-label">Tell Us About Your Situation <span class="required">*</span></label>
-                        <textarea class="form-textarea" required placeholder="Please describe:
+                        <textarea class="form-textarea" name="Situation:" required placeholder="Please describe:
 - What happened during the disaster
 - What help you need most urgently
 - Any special circumstances (elderly, children, disabilities, medical needs)
@@ -305,7 +305,7 @@
                     <!-- Previous Aid -->
                     <div class="form-group">
                         <label class="form-label">Have You Received Any Disaster Assistance Already?</label>
-                        <select class="form-select">
+                        <select class="form-select" name="Received Resitance?:">
                             <option value="">Select option</option>
                             <option value="no">No, I haven't received any help</option>
                             <option value="government">Yes, from government agencies</option>
