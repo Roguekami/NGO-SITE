@@ -3063,3 +3063,54 @@
         top: 70px !important;
     }
 }
+/* Main Logo Styling - Add this after .logo class */
+.logo img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar.scrolled .logo img {
+    width: 45px;
+    height: 45px;
+}
+
+/* Large tablets and small desktops - 1024px */
+@media (max-width: 1024px) {
+    .logo img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .navbar.scrolled .logo img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Tablets - 768px */
+@media (max-width: 768px) {
+    .logo img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .navbar.scrolled .logo img {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* Mobile phones - 480px */
+@media (max-width: 480px) {
+    .logo img {
+        width: 38px;
+        height: 38px;
+    }
+
+    .navbar.scrolled .logo img {
+        width: 30px;
+        height: 30px;
+    }
+}

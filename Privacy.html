@@ -139,16 +139,67 @@
                 font-size: 1.5rem;
             }
         }
+        /* Main Logo Styling - Add this after .logo class */
+.logo img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar.scrolled .logo img {
+    width: 45px;
+    height: 45px;
+}
+
+/* Large tablets and small desktops - 1024px */
+@media (max-width: 1024px) {
+    .logo img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .navbar.scrolled .logo img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Tablets - 768px */
+@media (max-width: 768px) {
+    .logo img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .navbar.scrolled .logo img {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* Mobile phones - 480px */
+@media (max-width: 480px) {
+    .logo img {
+        width: 38px;
+        height: 38px;
+    }
+
+    .navbar.scrolled .logo img {
+        width: 30px;
+        height: 30px;
+    }
+}
     </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo">
-                <svg class="logo-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                </svg>
+   <div class="logo">
+                <a href="index.html">
+<img src="images/ChatGPT Image Feb 6, 2026, 09_21_33 AM.png">
+                </a>
                 <div class="logo-text">
                     <h1>THE NGO WORLD FOUNDATION</h1>
                     <p>Disaster Relief Initiative</p>
