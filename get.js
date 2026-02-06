@@ -187,3 +187,21 @@ function submitForm(event) {
     removeFile('front');
     removeFile('back');
 }
+
+
+
+const forminit = new Forminit();
+const FORM_ID = "kgztk69kjg3"; // Replace with your actual Forminit form ID
+
+document.getElementById("helpForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const formData = new FormData(e.target);
+
+  const { data, error } = await forminit.submit(FORM_ID, formData);
+  if (error) {
+    document.getElementById("result").textContent = error.message;
+    return;
+  }
+  document.getElementById("result").textContent = "Submitted successfully!";
+  e.target.reset();
+});
