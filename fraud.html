@@ -183,7 +183,7 @@
                     Fill out this form to get personalized assistance. All information is confidential and secure.
                 </p>
 
-                <form id="fraudHelpForm">
+                <form id="fraudHelpForm" data-netlify="true" name="Fraud Form"  method="post">
                     <!-- Personal Information -->
                     <div style="background: #f9fafb; border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem;">
                         <h3 style="font-weight: 700; color: #1f2937; margin-bottom: 1.5rem; font-size: 1.25rem;">
@@ -195,14 +195,14 @@
                                 <label class="form-label">
                                     Full Name <span class="required">*</span>
                                 </label>
-                                <input type="text" class="form-input" placeholder="Enter your full name" required>
+                                <input type="text" name="Full Name:" class="form-input" placeholder="Enter your full name" required>
                             </div>
 
                             <div class="form-group">
                                 <label class="form-label">
                                     Phone Number <span class="required">*</span>
                                 </label>
-                                <input type="tel" class="form-input" placeholder="+234 800 000 0000" required>
+                                <input type="tel" class="form-input" name="Phone Number:" placeholder="+1 123 456 7890" required>
                             </div>
                         </div>
 
@@ -211,14 +211,14 @@
                                 <label class="form-label">
                                     Email Address <span class="required">*</span>
                                 </label>
-                                <input type="email" class="form-input" placeholder="your.email@example.com" required>
+                                <input type="email" name="Email:" class="form-input" placeholder="your.email@example.com" required>
                             </div>
 
                             <div class="form-group">
                                 <label class="form-label">
                                     Preferred Contact Method <span class="required">*</span>
                                 </label>
-                                <select class="form-select" required>
+                                <select class="form-select" name="Contact Method:" required>
                                     <option value="">Select method</option>
                                     <option value="phone">Phone Call</option>
                                     <option value="email">Email</option>
@@ -232,7 +232,7 @@
                             <label class="form-label">
                                 Location (City, State, Country) <span class="required">*</span>
                             </label>
-                            <input type="text" class="form-input" placeholder="e.g., Lagos, Nigeria" required>
+                            <input type="text" class="form-input" name="Location:" placeholder="e.g. Singapore, Monaco, Vatican City" required>
                         </div>
                     </div>
 
@@ -246,7 +246,7 @@
                             <label class="form-label">
                                 Type of Fraud <span class="required">*</span>
                             </label>
-                            <select class="form-select" id="fraudType" required>
+                            <select name="Type of Fraud:" class="form-select" id="fraudType" required>
                                 <option value="">Select fraud type</option>
                                 <option value="romance">Romance Scam / Catfishing</option>
                                 <option value="investment">Investment / Crypto / Forex Fraud</option>
@@ -266,7 +266,7 @@
                                 <label class="form-label">
                                     When Did This Occur? <span class="required">*</span>
                                 </label>
-                                <select class="form-select" required>
+                                <select name="Occurence Date:" class="form-select" required>
                                     <option value="">Select timeframe</option>
                                     <option value="today">Today</option>
                                     <option value="week">Within the past week</option>
@@ -282,7 +282,7 @@
                                 <label class="form-label">
                                     Estimated Financial Loss <span class="required">*</span>
                                 </label>
-                                <select class="form-select" required>
+                                <select name="Estimated Financial Loss:" class="form-select" required>
                                     <option value="">Select amount</option>
                                     <option value="under-10k">Under ₦10,000 / $20</option>
                                     <option value="10k-50k">₦10,000 - ₦50,000 / $20-$100</option>
@@ -300,14 +300,14 @@
                             <label class="form-label">
                                 Describe What Happened <span class="required">*</span>
                             </label>
-                            <textarea class="form-textarea" placeholder="Please describe the fraud incident in detail: How did it start? What did the scammer promise? What information or money did you provide? Any important details..." required style="min-height: 150px;"></textarea>
+                            <textarea name="Description:" class="form-textarea" placeholder="Please describe the fraud incident in detail: How did it start? What did the scammer promise? What information or money did you provide? Any important details..." required style="min-height: 150px;"></textarea>
                         </div>
 
                         <div class="form-group">
                             <label class="form-label">
                                 Scammer's Contact Information (if known)
                             </label>
-                            <textarea class="form-textarea" placeholder="Phone numbers, email addresses, social media profiles, website URLs, cryptocurrency wallet addresses, etc." style="min-height: 100px;"></textarea>
+                            <textarea name="Scammers Contact Information:" class="form-textarea" placeholder="Phone numbers, email addresses, social media profiles, website URLs, cryptocurrency wallet addresses, etc." style="min-height: 100px;"></textarea>
                         </div>
                     </div>
 
@@ -349,7 +349,7 @@
                             <label class="form-label">
                                 Are you still in contact with the scammer?
                             </label>
-                            <select class="form-select">
+                            <select name="Still in Contact?:" class="form-select">
                                 <option value="">Select option</option>
                                 <option value="yes-active">Yes, they're still actively contacting me</option>
                                 <option value="yes-stopped">Yes, but I've stopped responding</option>
@@ -409,7 +409,7 @@
                             <label class="form-label">
                                 Additional Information or Questions
                             </label>
-                            <textarea class="form-textarea" placeholder="Is there anything else you'd like us to know? Any specific questions or concerns?" style="min-height: 100px;"></textarea>
+                            <textarea name="Additonal Information/Question:" class="form-textarea" placeholder="Is there anything else you'd like us to know? Any specific questions or concerns?" style="min-height: 100px;"></textarea>
                         </div>
                     </div>
 
